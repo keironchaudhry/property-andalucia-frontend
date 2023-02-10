@@ -1,6 +1,8 @@
 .NavBar {
     background-color: #ffffff;
     border: 1px solid #dadadf;
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 .Logo:hover {
