@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 import styles from "../styles/NavBar.module.css";
 import logo from "../assets/logo.png";
@@ -8,21 +9,36 @@ const NavBar = () => {
   return (
     <Navbar className={styles.NavBar} expand="md" fixed="top">
       <Container>
-        <Navbar.Brand className={styles.Logo}>
-          <img src={logo} alt="Logo" height="80" />
-        </Navbar.Brand>
+        <NavLink to="/">
+          <Navbar.Brand className={styles.Logo}>
+            <img src={logo} alt="Logo" height="80" />
+          </Navbar.Brand>
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-right">
-            <Nav.Link className={styles.NavLink}>
+            <NavLink
+              exact
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/"
+            >
               <i className="fas fa-home"></i>Home
-            </Nav.Link>
-            <Nav.Link className={styles.NavLink}>
+            </NavLink>
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="signin"
+            >
               <i className="fas fa-sign-in-alt"></i>Login
-            </Nav.Link>
-            <Nav.Link className={styles.NavLink}>
+            </NavLink>
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="signup"
+            >
               <i className="fas fa-user-plus"></i>Sign Up
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
