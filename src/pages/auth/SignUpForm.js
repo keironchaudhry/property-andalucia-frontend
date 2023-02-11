@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router-dom";
 
 const SignUpForm = () => {
@@ -16,6 +18,8 @@ const SignUpForm = () => {
   });
 
   const { username, password1, password2 } = signUpData;
+
+  const [errors, setErrors] = useState({});
 
   const history = useHistory();
 
@@ -60,6 +64,11 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Form.Group className="mb-3" controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
@@ -72,6 +81,11 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.password1?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Form.Group className="mb-3" controlId="password2">
               <Form.Label className="d-none">Confirm your password</Form.Label>
@@ -84,6 +98,11 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.password2?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Form.Group className="mb-3" controlId="checkbox">
               <Form.Check
@@ -99,6 +118,11 @@ const SignUpForm = () => {
             >
               Sign Up
             </Button>
+            {errors.non_field_errors?.map((message, idx) => (
+              <Alert variant="warning" key={idx} className="mt-3">
+                {message}
+              </Alert>
+            ))}
           </Form>
         </Container>
       </Col>
