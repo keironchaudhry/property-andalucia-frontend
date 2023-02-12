@@ -116,6 +116,7 @@ const SignUpForm = () => {
 
             <Form.Group className="mb-3" controlId="checkbox">
               <Form.Check
+                className={styles.Checkbox}
                 type="checkbox"
                 label="I am selling property"
                 name="seller_status"

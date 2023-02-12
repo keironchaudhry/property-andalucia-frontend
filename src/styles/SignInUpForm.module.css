@@ -11,6 +11,10 @@
   padding: 20px;
 }
 
+.Checkbox {
+  accent-color: #f2cd5c;
+}  
+
 .Header {
   font-weight: bold;
   font-size: 30px;
