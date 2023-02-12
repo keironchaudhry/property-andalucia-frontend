@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -8,18 +9,33 @@ import appStyles from "../../App.module.css";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
 
 const LoginForm = () => {
-  const [signInData, setSignInData] = useState({
+  const [loginData, setLoginData] = useState({
     username: "",
     password: "",
   });
 
-  const { username, password } = signInData;
+  const { username, password } = loginData;
+
+  const [errors, setErrors] = useState({});
+
+  const history = useHistory();
 
   const handleChange = (event) => {
-    setSignInData({
-      ...signInData,
+    setLoginData({
+      ...loginData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("/dj-rest-auth/login/", loginData);
+      history.push("/");
+      console.log(loginData);
+    } catch (err) {
+      setErrors(err.response?.data);
+    }
   };
 
   return (
@@ -34,7 +50,7 @@ const LoginForm = () => {
             </Link>
           </Container>
 
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
@@ -47,7 +63,7 @@ const LoginForm = () => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="password1">
+            <Form.Group className="mb-3" controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
                 className={styles.Input}
@@ -63,7 +79,7 @@ const LoginForm = () => {
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} mt-3`}
               type="submit"
             >
-              Sign Up
+              Sign In
             </Button>
           </Form>
         </Container>
