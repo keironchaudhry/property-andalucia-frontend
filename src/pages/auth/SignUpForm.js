@@ -15,9 +15,10 @@ const SignUpForm = () => {
     username: "",
     password1: "",
     password2: "",
+    seller_status: false,
   });
 
-  const { username, password1, password2 } = signUpData;
+  const { username, password1, password2, seller_status } = signUpData;
 
   const [errors, setErrors] = useState({});
 
@@ -30,11 +31,20 @@ const SignUpForm = () => {
     });
   };
 
+  const handleCheckBox = (event) => {
+    setSignUpData({
+      ...signUpData,
+      [event.target.name]: event.target.checked,
+    });
+    console.log(event.target.name, event.target.checked);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
+      console.log(signUpData);
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -109,6 +119,8 @@ const SignUpForm = () => {
                 type="checkbox"
                 label="I am selling property"
                 name="seller_status"
+                value={seller_status}
+                onChange={handleCheckBox}
               />
             </Form.Group>
 
