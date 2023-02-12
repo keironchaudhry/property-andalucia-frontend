@@ -1,11 +1,7 @@
 .App {
   font-family: "Lora", sans-serif;
-  background-color: #f8f8f8;
+  background-color: #FFF5EE;
   min-height: 100vh;
-}
-
-.Main {
-  padding-top: 100px;
 }
 
 * {
@@ -28,7 +24,7 @@ a:hover i {
 }
 
 i {
-  color: #fc7300;
+  color: #f99417;
   font-size: 1.6rem;
   padding: 2px;
   vertical-align: middle;
