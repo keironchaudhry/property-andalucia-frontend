@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -9,8 +9,11 @@ import appStyles from "../../App.module.css";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router-dom";
+import { SetCurrentUserContext } from "../../App";
 
 const SignUpForm = () => {
+  const setCurrentUser = useContext(SetCurrentUserContext);
+
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -43,6 +46,7 @@ const SignUpForm = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
+      setCurrentUser(data.user);
       history.push("/signin");
       console.log(signUpData);
     } catch (err) {
