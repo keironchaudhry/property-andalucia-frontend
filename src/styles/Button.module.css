@@ -3,7 +3,6 @@
   align-self: center;
   border-radius: 100px;
   border-color: transparent;
-  padding: 6px 12px;
   margin-left: 2px;
   margin-right: 2px;
   min-width: 75px;
@@ -13,6 +12,18 @@
   opacity: 0.8;
   border-color: transparent;
   cursor: pointer;
+}
+
+.Button:hover:active {
+  background-color: #f2cd5c !important;
+}
+
+.Button:active {
+  background-color: #f2cd5c !important;
+}
+
+.Button:focus {
+  background-color: #f2cd5c !important;
 }
 
 .Wide {
