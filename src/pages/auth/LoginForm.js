@@ -88,6 +88,7 @@ const LoginForm = () => {
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} mt-3`}
               type="submit"
+              variant="warning"
             >
               Sign In
             </Button>
