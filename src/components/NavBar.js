@@ -1,15 +1,37 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 import styles from "../styles/NavBar.module.css";
 import logo from "../assets/logo.png";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
-  const loggedInIcons = <>{currentUser?.username}</>;
+  const handleLogOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const loggedInIcons = (
+    <>
+      <>
+        <NavLink className={styles.NavLink} to="/" onClick={handleLogOut}>
+          <i className="fas fa-sign-out-alt"></i>Logout
+        </NavLink>
+      </>
+    </>
+  );
 
   const loggedOutIcons = (
     <>
