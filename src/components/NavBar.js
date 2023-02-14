@@ -5,6 +5,7 @@ import axios from "axios";
 
 import styles from "../styles/NavBar.module.css";
 import logo from "../assets/logo.png";
+import Avatar from "./Avatar";
 import {
   useCurrentUser,
   useSetCurrentUser,
@@ -35,25 +36,33 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-      <>
-        <NavLink
-          className={styles.NavLink}
-          activeClassName={styles.Active}
-          to="/feed"
-        >
-          <i className="fas fa-stream"></i>Feed
-        </NavLink>
-        <NavLink
-          className={styles.NavLink}
-          activeClassName={styles.Active}
-          to="/saved"
-        >
-          <i class="fa-solid fa-bookmark"></i>Saved
-        </NavLink>
-        <NavLink className={styles.NavLink} to="/" onClick={handleLogOut}>
-          <i className="fas fa-sign-out-alt"></i>Logout
-        </NavLink>
-      </>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/feed"
+      >
+        <i className="fas fa-stream"></i>Feed
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/saved"
+      >
+        <i class="fa-solid fa-bookmark"></i>Saved
+      </NavLink>
+      <NavLink className={styles.NavLink} to="/" onClick={handleLogOut}>
+        <i className="fas fa-sign-out-alt"></i>Logout
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <Avatar
+          src={currentUser?.profile_image}
+          text={currentUser?.username}
+          height={35}
+        />
+      </NavLink>
     </>
   );
 
