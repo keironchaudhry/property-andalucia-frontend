@@ -7,8 +7,11 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 const LoginForm = () => {
+  const setCurrentUser = useSetCurrentUser();
+
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
@@ -30,7 +33,8 @@ const LoginForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("/dj-rest-auth/login/", loginData);
+      const { data } = await axios.post("/dj-rest-auth/login/", loginData);
+      setCurrentUser(data.user);
       history.push("/");
       console.log(loginData);
     } catch (err) {
