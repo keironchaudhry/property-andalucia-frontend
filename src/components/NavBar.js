@@ -23,9 +23,33 @@ const NavBar = () => {
     }
   };
 
+  const addPropertyIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/property/create"
+    >
+      <i className="far fa-plus-square"></i>Add property
+    </NavLink>
+  );
+
   const loggedInIcons = (
     <>
       <>
+        <NavLink
+          className={styles.NavLink}
+          activeClassName={styles.Active}
+          to="/feed"
+        >
+          <i className="fas fa-stream"></i>Feed
+        </NavLink>
+        <NavLink
+          className={styles.NavLink}
+          activeClassName={styles.Active}
+          to="/saved"
+        >
+          <i class="fa-solid fa-bookmark"></i>Saved
+        </NavLink>
         <NavLink className={styles.NavLink} to="/" onClick={handleLogOut}>
           <i className="fas fa-sign-out-alt"></i>Logout
         </NavLink>
@@ -60,6 +84,7 @@ const NavBar = () => {
             <img src={logo} alt="Logo" height="80" />
           </Navbar.Brand>
         </NavLink>
+        {currentUser && addPropertyIcon}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-right">
