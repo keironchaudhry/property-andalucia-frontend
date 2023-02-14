@@ -1,15 +1,73 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 import styles from "../styles/NavBar.module.css";
 import logo from "../assets/logo.png";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
+import useUntoggle from "../hooks/useUntoggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
-  const loggedInIcons = <>{currentUser?.username}</>;
+  const { expanded, setExpanded, ref } = useUntoggle();
+
+  const handleLogOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const addPropertyIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/property/create"
+    >
+      <i className="far fa-plus-square"></i>Add property
+    </NavLink>
+  );
+
+  const loggedInIcons = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/feed"
+      >
+        <i className="fas fa-stream"></i>Feed
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/saved"
+      >
+        <i class="fa-solid fa-bookmark"></i>Saved
+      </NavLink>
+      <NavLink className={styles.NavLink} to="/" onClick={handleLogOut}>
+        <i className="fas fa-sign-out-alt"></i>Logout
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <Avatar
+          src={currentUser?.profile_image}
+          text={currentUser?.username}
+          height={35}
+        />
+      </NavLink>
+    </>
+  );
 
   const loggedOutIcons = (
     <>
@@ -31,24 +89,26 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar className={styles.NavBar} expand="md" fixed="top">
+    <Navbar
+      expanded={expanded}
+      className={styles.NavBar}
+      expand="md"
+      fixed="top"
+    >
       <Container>
         <NavLink to="/">
-          <Navbar.Brand className={styles.Logo}>
+          <Navbar.Brand className={styles.Logo} to="/">
             <img src={logo} alt="Logo" height="80" />
           </Navbar.Brand>
         </NavLink>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        {currentUser && addPropertyIcon}
+        <Navbar.Toggle
+          ref={ref}
+          onClick={() => setExpanded(!expanded)}
+          aria-controls="basic-navbar-nav"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-right">
-            <NavLink
-              exact
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/"
-            >
-              <i className="fas fa-home"></i>Home
-            </NavLink>
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
