@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
@@ -10,26 +10,13 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
+import useUntoggle from "../hooks/useUntoggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  const [expanded, setExpanded] = useState(false);
-  const ref = useRef(null);
-  
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
-        setExpanded(false);
-      }
-    };
-
-    document.addEventListener("mouseup", handleClickOutside);
-    return () => {
-      document.removeEventListener("mouseup", handleClickOutside);
-    };
-  }, [ref]);
+  const { expanded, setExpanded, ref } = useUntoggle();
 
   const handleLogOut = async () => {
     try {
