@@ -17,7 +17,11 @@ function App() {
           <Route exact path="/" render={() => <h1>Home</h1>} />
           <Route exact path="/login" render={() => <LoginForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/property/create" render={() => <PropertyCreateForm />} />
+          <Route
+            exact
+            path="/property/create"
+            render={() => <PropertyCreateForm />}
+          />
           <Route render={() => <p>Page not found.</p>} />
         </Switch>
       </Container>

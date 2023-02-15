@@ -2,6 +2,8 @@
   font-family: "Lora", sans-serif;
   background-color: #FFF5EE;
   min-height: 100vh;
+  padding-top: 75px;
+  padding-bottom: 55px;
 }
 
 * {
