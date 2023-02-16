@@ -6,9 +6,11 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useHistory } from "react-router-dom";
+import Asset from "../../components/Asset";
 
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/PropertyCreateEditForm.module.css";
+import Upload from "../../assets/upload.png";
 
 export default function PropertyCreateForm() {
   const history = useHistory();
@@ -62,14 +64,18 @@ export default function PropertyCreateForm() {
             >
               <Form.Label
                 className="d-flex flex-column justify-content-center"
-                htmlFor="upload"
-              ></Form.Label>
+                htmlFor="image-upload"
+              >
+                <Asset src={Upload} message="Upload an image of your property" />
+              </Form.Label>
             </Container>
           </Col>
 
           {/* Input Fields */}
           <Col className="p-2">
-            <Container className="border border-2 p-2 rounded">{textFields}</Container>
+            <Container className="border border-2 p-2 rounded">
+              {textFields}
+            </Container>
           </Col>
         </Row>
 
