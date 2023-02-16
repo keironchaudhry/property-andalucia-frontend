@@ -1,6 +1,6 @@
 .App {
   font-family: "Lora", sans-serif;
-  background-color: #FFF5EE;
+  background-color: #fff5ee;
   min-height: 100vh;
   padding-top: 75px;
   padding-bottom: 55px;
@@ -35,4 +35,11 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
+}
+
+.Image {
+  max-height: 45vh;
+  max-width: 100%;
+  object-fit: contain;
+  white-space: normal;
 }
