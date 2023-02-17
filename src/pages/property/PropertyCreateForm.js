@@ -381,13 +381,13 @@ export default function PropertyCreateForm() {
   const buttons = (
     <>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Orange} me-3`}
+        className={`${btnStyles.Button} ${btnStyles.Bright}`}
         type="submit"
       >
         Create
       </Button>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Orange}`}
+        className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => {
           history.goBack();
         }}
