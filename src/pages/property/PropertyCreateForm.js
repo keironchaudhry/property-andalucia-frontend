@@ -57,7 +57,7 @@ export default function PropertyCreateForm() {
     formData.append("image", imageInput.current.files[0]);
 
     try {
-      const { data } = await axiosReq.post("/property/", formData);
+      const { data } = await axiosReq.post("/property/create/", formData);
       history.push(`/property/${data.id}`);
     } catch (err) {
       console.log(err);
