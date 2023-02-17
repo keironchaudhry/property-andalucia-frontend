@@ -7,3 +7,7 @@
 .AssetContainer {
   min-height: 345px;
 }
+
+.Checkbox {
+  accent-color: #f2cd5c;
+}

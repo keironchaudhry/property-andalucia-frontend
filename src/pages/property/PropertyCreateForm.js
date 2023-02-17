@@ -295,6 +295,7 @@ export default function PropertyCreateForm() {
 
       <Form.Group controlId="garden">
         <Form.Check
+          className={styles.Checkbox}
           type="checkbox"
           label="Does your property have a garden?"
           name="garden"
@@ -305,6 +306,7 @@ export default function PropertyCreateForm() {
 
       <Form.Group controlId="garage">
         <Form.Check
+          className={styles.Checkbox}
           type="checkbox"
           label="Does your property have a garage?"
           name="garage"
@@ -315,6 +317,7 @@ export default function PropertyCreateForm() {
 
       <Form.Group controlId="isSouthFacing">
         <Form.Check
+          className={styles.Checkbox}
           type="checkbox"
           label="Is your property south-facing?"
           name="isSouthFacing"
@@ -325,6 +328,7 @@ export default function PropertyCreateForm() {
 
       <Form.Group controlId="sold">
         <Form.Check
+          className={styles.Checkbox}
           type="checkbox"
           label="Has it sold?"
           name="sold"
