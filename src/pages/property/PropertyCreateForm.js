@@ -73,8 +73,8 @@ export default function PropertyCreateForm() {
   };
 
   const handleCheckBox = (event) => {
-    setSignUpData({
-      ...signUpData,
+    setPropertyData({
+      ...propertyData,
       [event.target.name]: event.target.checked,
     });
     console.log(event.target.name, event.target.checked);
