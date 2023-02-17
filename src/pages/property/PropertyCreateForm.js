@@ -87,8 +87,23 @@ export default function PropertyCreateForm() {
     const formData = new FormData();
 
     formData.append("name", name);
+    formData.append("property_type", propertyType);
+    formData.append("province", province);
+    formData.append("municipality", municipality);
+    formData.append("street", street);
+    formData.append("post_code", postCode);
+    formData.append("price", price);
+    formData.append("size", size);
+    formData.append("bedroom_count", bedrooms);
+    formData.append("bathrooms_count", bathrooms);
+    formData.append("garage", garage);
+    formData.append("garden", garden);
+    formData.append("is_south_facing", isSouthFacing);
+    formData.append("sold", sold);
     formData.append("description", description);
     formData.append("image", imageInput.current.files[0]);
+    formData.append("longitude", longitude);
+    formData.append("latitude", latitude);
 
     try {
       const { data } = await axiosReq.post("/property/create/", formData);
