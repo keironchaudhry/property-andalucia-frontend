@@ -72,6 +72,14 @@ export default function PropertyCreateForm() {
     });
   };
 
+  const handleCheckBox = (event) => {
+    setSignUpData({
+      ...signUpData,
+      [event.target.name]: event.target.checked,
+    });
+    console.log(event.target.name, event.target.checked);
+  };
+
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -291,6 +299,7 @@ export default function PropertyCreateForm() {
           label="Does your property have a garden?"
           name="garden"
           value={garden}
+          onChange={handleCheckBox}
         />
       </Form.Group>
 
@@ -300,6 +309,7 @@ export default function PropertyCreateForm() {
           label="Does your property have a garage?"
           name="garage"
           value={garage}
+          onChange={handleCheckBox}
         />
       </Form.Group>
 
@@ -309,6 +319,7 @@ export default function PropertyCreateForm() {
           label="Is your property south-facing?"
           name="isSouthFacing"
           value={isSouthFacing}
+          onChange={handleCheckBox}
         />
       </Form.Group>
 
@@ -318,6 +329,7 @@ export default function PropertyCreateForm() {
           label="Has it sold?"
           name="sold"
           value={sold}
+          onChange={handleCheckBox}
         />
       </Form.Group>
 
