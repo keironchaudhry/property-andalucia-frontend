@@ -21,11 +21,45 @@ export default function PropertyCreateForm() {
 
   const [propertyData, setPropertyData] = useState({
     name: "",
+    propertyType: "apartment",
+    province: "malaga",
+    municipality: "",
+    street: "",
+    postCode: "",
+    price: 0,
+    size: 0,
+    bedrooms: "",
+    bathrooms: "",
+    garage: false,
+    garden: false,
+    isSouthFacing: false,
+    sold: false,
     description: "",
     image: "",
+    longitude: "",
+    latitude: "",
   });
 
-  const { name, description, image } = propertyData;
+  const {
+    name,
+    propertyType,
+    province,
+    municipality,
+    street,
+    postCode,
+    price,
+    size,
+    bedrooms,
+    bathrooms,
+    garage,
+    garden,
+    isSouthFacing,
+    sold,
+    description,
+    image,
+    longitude,
+    latitude,
+  } = propertyData;
 
   const imageInput = useRef(null);
 
