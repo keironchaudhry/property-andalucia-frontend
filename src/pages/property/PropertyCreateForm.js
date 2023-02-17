@@ -36,8 +36,8 @@ export default function PropertyCreateForm() {
     sold: false,
     description: "",
     image: "",
-    longitude: "",
-    latitude: "",
+    longitude: 0,
+    latitude: 0,
   });
 
   const {
@@ -127,11 +127,199 @@ export default function PropertyCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.title?.map((message, idx) => (
+      {errors?.name?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
+      <Form.Group controlId="propertyType">
+        <Form.Label>Property Type</Form.Label>
+        <Form.Control
+          as="select"
+          name="propertyType"
+          value={propertyType}
+          onChange={handleChange}
+        >
+          <option value="apartment">Apartment</option>
+          <option value="flat">Flat</option>
+          <option value="townhouse">Townhouse</option>
+          <option value="villa">Villa</option>
+          <option value="residential housing estate">
+            Residential Housing Estate
+          </option>
+          <option value="country property">Country Property</option>
+          <option value="bungalow">Bungalow</option>
+        </Form.Control>
+      </Form.Group>
+
+      <Form.Group controlId="province">
+        <Form.Label>Province</Form.Label>
+        <Form.Control
+          as="select"
+          name="province"
+          value={province}
+          onChange={handleChange}
+        >
+          <option value="huelva">Huelva</option>
+          <option value="sevilla">Sevilla</option>
+          <option value="cadiz">Cadiz</option>
+          <option value="cordoba">Cordoba</option>
+          <option value="granada">Granada</option>
+          <option value="malaga">Malaga</option>
+          <option value="jaen">Jaen</option>
+          <option value="almeria">Almeria</option>
+        </Form.Control>
+      </Form.Group>
+
+      <Form.Group controlId="municipality">
+        <Form.Label>Municipality</Form.Label>
+        <Form.Control
+          type="text"
+          name="municipality"
+          value={municipality}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.municipality?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group controlId="street">
+        <Form.Label>Street</Form.Label>
+        <Form.Control
+          type="text"
+          name="street"
+          value={street}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.street?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group controlId="postCode">
+        <Form.Label>Postcode</Form.Label>
+        <Form.Control
+          type="text"
+          name="postCode"
+          value={postCode}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.postcode?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group controlId="price">
+        <Form.Label>Price (€)</Form.Label>
+        <Form.Control
+          min="0"
+          step="1.00"
+          type="number"
+          name="price"
+          value={price}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.price?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group controlId="size">
+        <Form.Label>Size (m²)</Form.Label>
+        <Form.Control
+          min="0"
+          step="1"
+          type="number"
+          name="size"
+          value={size}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.size?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group controlId="bedrooms">
+        <Form.Label>Bedrooms</Form.Label>
+        <Form.Control
+          min="0"
+          step="1"
+          type="number"
+          name="bedrooms"
+          value={bedrooms}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.bedrooms?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group controlId="bathrooms">
+        <Form.Label>Bathrooms</Form.Label>
+        <Form.Control
+          min="0"
+          step="1"
+          type="number"
+          name="bathrooms"
+          value={bathrooms}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.bathrooms?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group controlId="garden">
+        <Form.Check
+          type="checkbox"
+          label="Does your property have a garden?"
+          name="garden"
+          value={garden}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="garage">
+        <Form.Check
+          type="checkbox"
+          label="Does your property have a garage?"
+          name="garage"
+          value={garage}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="isSouthFacing">
+        <Form.Check
+          type="checkbox"
+          label="Is your property south-facing?"
+          name="isSouthFacing"
+          value={isSouthFacing}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="sold">
+        <Form.Check
+          type="checkbox"
+          label="Has it sold?"
+          name="sold"
+          value={sold}
+        />
+      </Form.Group>
 
       <Form.Group controlId="description">
         <Form.Label>Description</Form.Label>
@@ -144,11 +332,33 @@ export default function PropertyCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.title?.map((message, idx) => (
+      {errors?.description?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
+      <Form.Group controlId="longitude">
+        <Form.Label>Longitude</Form.Label>
+        <Form.Control
+          step="1.00"
+          type="number"
+          name="longitude"
+          value={longitude}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="latitude">
+        <Form.Label>Latitude</Form.Label>
+        <Form.Control
+          step="1.00"
+          type="number"
+          name="latitude"
+          value={latitude}
+          onChange={handleChange}
+        />
+      </Form.Group>
     </div>
   );
 
