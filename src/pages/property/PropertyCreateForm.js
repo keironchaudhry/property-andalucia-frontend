@@ -124,7 +124,7 @@ export default function PropertyCreateForm() {
     }
   };
 
-  const textFields = (
+  const mainFields = (
     <div className="text-center">
       <Form.Group controlId="name">
         <Form.Label>Property Name</Form.Label>
@@ -141,6 +141,90 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      <Form.Group controlId="description">
+        <Form.Label>Description</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows={6}
+          type="text"
+          name="description"
+          value={description}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.description?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+    </div>
+  );
+
+  const googleMapFields = (
+    <div className="text-center">
+      <Form.Group controlId="longitude">
+        <Form.Label>Longitude</Form.Label>
+        <Form.Control
+          step="1.00"
+          type="number"
+          name="longitude"
+          value={longitude}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="latitude">
+        <Form.Label>Latitude</Form.Label>
+        <Form.Control
+          step="1.00"
+          type="number"
+          name="latitude"
+          value={latitude}
+          onChange={handleChange}
+        />
+      </Form.Group>
+    </div>
+  );
+
+  const imageFields = (
+    <Container
+      className={`${styles.AssetContainer} d-flex flex-column justify-content-center border border-2 rounded p-0 mt-3`}
+    >
+      {image ? (
+        <>
+          <figure>
+            <Image className={appStyles.Image} src={image} rounded />
+          </figure>
+          <div>
+            <Form.Label
+              className={`${btnStyles.Button} ${btnStyles.Orange} btn`}
+              htmlFor="image-upload"
+            >
+              Change image
+            </Form.Label>
+          </div>
+        </>
+      ) : (
+        <Form.Label
+          className="d-flex flex-column justify-content-center"
+          htmlFor="image-upload"
+        >
+          <Asset src={Upload} message="Upload an image of your property" />
+        </Form.Label>
+      )}
+      <Form.Control
+        className="d-none"
+        type="file"
+        id="image-upload"
+        accept="image/*"
+        onChange={handleChangeImage}
+        ref={imageInput}
+      />
+    </Container>
+  );
+
+  const extraFields = (
+    <div className="text-center">
       <Form.Group controlId="propertyType">
         <Form.Label>Property Type</Form.Label>
         <Form.Control
@@ -336,45 +420,6 @@ export default function PropertyCreateForm() {
           onChange={handleCheckBox}
         />
       </Form.Group>
-
-      <Form.Group controlId="description">
-        <Form.Label>Description</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={6}
-          type="text"
-          name="description"
-          value={description}
-          onChange={handleChange}
-        />
-      </Form.Group>
-      {errors?.description?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Form.Group controlId="longitude">
-        <Form.Label>Longitude</Form.Label>
-        <Form.Control
-          step="1.00"
-          type="number"
-          name="longitude"
-          value={longitude}
-          onChange={handleChange}
-        />
-      </Form.Group>
-
-      <Form.Group controlId="latitude">
-        <Form.Label>Latitude</Form.Label>
-        <Form.Control
-          step="1.00"
-          type="number"
-          name="latitude"
-          value={latitude}
-          onChange={handleChange}
-        />
-      </Form.Group>
     </div>
   );
 
@@ -403,57 +448,33 @@ export default function PropertyCreateForm() {
     >
       <Form onSubmit={handleSubmit}>
         <Row className="d-flex flex-column flex-md-row mx-3 my-3 gap-3">
-          {/* Image */}
           <Col className="py-2 p-1 p-md-2" md={6} lg={6}>
-            <Container
-              className={`${styles.AssetContainer} d-flex flex-column justify-content-center border border-2 rounded p-0`}
-            >
-              {image ? (
-                <>
-                  <figure>
-                    <Image className={appStyles.Image} src={image} rounded />
-                  </figure>
-                  <div>
-                    <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Orange} btn`}
-                      htmlFor="image-upload"
-                    >
-                      Change image
-                    </Form.Label>
-                  </div>
-                </>
-              ) : (
-                <Form.Label
-                  className="d-flex flex-column justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset
-                    src={Upload}
-                    message="Upload an image of your property"
-                  />
-                </Form.Label>
-              )}
-              <Form.Control
-                className="d-none"
-                type="file"
-                id="image-upload"
-                accept="image/*"
-                onChange={handleChangeImage}
-                ref={imageInput}
-              />
+            {/* Image */}
+            {imageFields}
+
+            {/* Main Text Fields */}
+            <Container className="border-2 p-2 rounded mt-3">
+              {mainFields}
+            </Container>
+
+            {/* Google Maps API Fields */}
+            <Container className="border-2 p-2 rounded">
+              {googleMapFields}
             </Container>
           </Col>
 
           {/* Input Fields */}
           <Col className="p-2">
-            <Container className="border border-2 p-2 rounded">
-              {textFields}
+            <Container className="border-2 p-2 rounded">
+              {extraFields}
             </Container>
           </Col>
+
         </Row>
 
         {/* Buttons */}
         <Container className="my-4">{buttons}</Container>
+        
       </Form>
     </Container>
   );
