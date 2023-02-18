@@ -53,7 +53,7 @@ const SignUpForm = () => {
   return (
     <Row className={styles.Row}>
       <Col className="my-auto mx-auto py-2 p-md-2" md={8} lg={6}>
-        <Container className={`mt-5 ${appStyles.Content}`}>
+        <Container className={`${appStyles.Content}`}>
           <h1 className={styles.Header}>Sign Up</h1>
 
           <Container className={`mt-3 mb-3 ${appStyles.Content}`}>
