@@ -36,6 +36,7 @@ function PropertyPage() {
         <PropertyDetail
           {...propertyPost.results[0]}
           setPropertyPost={setPropertyPost}
+          propertyPage
         />
         <Container className={appStyles.Content}>Notes</Container>
       </Col>

@@ -5,8 +5,21 @@
   margin-bottom: 16px;
 }
 
-.Save{
-  color: #fc7300;
+.Icons {
+  margin: 0 5rem 0 5rem;
+}
+
+.Icons i {
+  font-size: 28.5px;
+  margin-right: 3px;
+}
+
+.Icons p {
+  letter-spacing: 1px;
+}
+
+.Save i {
+  color: #f99417;
 }
 
 .Save:hover {
@@ -14,5 +27,5 @@
 }
 
 .SaveOutline:hover {
-  color: #f85032;
+  color: #f99417;
 }
