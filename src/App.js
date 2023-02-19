@@ -8,6 +8,7 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import LoginForm from "./pages/auth/LoginForm";
 import PropertyCreateForm from "./pages/property/PropertyCreateForm";
 import PropertyPage from "./pages/property/PropertyPage";
+import PropertyList from "./pages/property/PropertyList";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home</h1>} />
+          <Route exact path="/" render={() => <PropertyList message="No results found."/>} />
           <Route exact path="/login" render={() => <LoginForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route
