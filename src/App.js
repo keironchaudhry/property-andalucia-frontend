@@ -7,6 +7,7 @@ import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import LoginForm from "./pages/auth/LoginForm";
 import PropertyCreateForm from "./pages/property/PropertyCreateForm";
+import PropertyPage from "./pages/property/PropertyPage";
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
             exact
             path="/property/create"
             render={() => <PropertyCreateForm />}
+          />
+          <Route
+            exact
+            path="/property/:id"
+            render={() => <PropertyPage />}
           />
           <Route render={() => <p>Page not found.</p>} />
         </Switch>

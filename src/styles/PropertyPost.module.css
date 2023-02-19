@@ -1,0 +1,31 @@
+.PropertyContainer {
+  border: 1px solid #dadadf;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.Icons {
+  margin: 0 5rem 0 5rem;
+}
+
+.Icons i {
+  font-size: 28.5px;
+  margin-right: 3px;
+}
+
+.Icons p {
+  letter-spacing: 1px;
+}
+
+.Save i {
+  color: #f99417;
+}
+
+.Save:hover {
+  color: #f2cd5c;
+}
+
+.SaveOutline:hover {
+  color: #f99417;
+}
