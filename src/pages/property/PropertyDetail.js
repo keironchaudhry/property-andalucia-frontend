@@ -7,6 +7,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/PropertyPost.module.css";
 import Avatar from "../../components/Avatar";
+import Map from "../../components/Map";
 
 const PropertyDetail = (props) => {
   const {
@@ -189,7 +190,9 @@ const PropertyDetail = (props) => {
       {/* Google Maps API */}
       <div className="mt-4">
         <h2 className="mb-3">Location</h2>
-        <div style={{ height: "350px", width: "100%" }}></div>
+        <div style={{ height: "350px", width: "100%" }}>
+          <Map />
+        </div>
       </div>
     </Container>
   );
