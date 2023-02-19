@@ -5,7 +5,7 @@ import { Card, Container, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
-import styles from "../../styles/PropertyPost.module.css";
+import styles from "../../styles/PropertyDetail.module.css";
 import Avatar from "../../components/Avatar";
 import Map from "../../components/Map";
 
