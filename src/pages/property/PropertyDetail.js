@@ -191,7 +191,7 @@ const PropertyDetail = (props) => {
       <div className="mt-4">
         <h2 className="mb-3">Location</h2>
         <div style={{ height: "350px", width: "100%" }}>
-          <Map />
+          <Map latitude={latitude} longitude={longitude} />
         </div>
       </div>
     </Container>
