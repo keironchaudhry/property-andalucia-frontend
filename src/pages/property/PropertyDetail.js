@@ -266,36 +266,39 @@ const PropertyDetail = (props) => {
           </Card>
 
           {/* Property Header */}
-          <div
-            className={`${styles.Icons} d-flex flex-row justify-content-between h5 mt-3`}
-          >
-            <p>
-              <i class="fa-solid fa-bed"></i>
-              {bedroom_count} bedroom(s)
-            </p>
-            <p>
-              <i class="fa-sharp fa-solid fa-sink"></i>
-              {bathrooms_count} bathroom(s)
-            </p>
-            <p>{size}m²</p>
-          </div>
+          <Container className={styles.ColContainer}>
+            <div
+              className={`${styles.Icons} d-flex flex-row justify-content-between h5 mt-3`}
+            >
+              <p>
+                <i class="fa-solid fa-bed"></i>
+                {bedroom_count} bedroom(s)
+              </p>
+              <p>
+                <i class="fa-sharp fa-solid fa-sink"></i>
+                {bathrooms_count} bathroom(s)
+              </p>
+              <p>{size}m²</p>
+            </div>
 
-          {/* Description */}
-          <div className="mt-2">
-            <p>Price: {price.toLocaleString()}€</p>
-            <p>{description}</p>
-          </div>
+            {/* Description */}
+            <div className="mt-2">
+              <p>Price: {price.toLocaleString()}€</p>
+              <p>{description}</p>
+            </div>
 
-          <div className="mt-4 d-flex justify-content-between">
-            <Link to={`/property/${id}`}>
-              <p className={`${styles.ViewMore} m-0`}>View more...</p>
-            </Link>
-            <p className="mb-1 text-muted">
-              {created_at === updated_at
-                ? `Published on ${created_at}`
-                : `Last updated on ${updated_at}`}
-            </p>
-          </div>
+            {/* View More & Date */}
+            <div className="mt-4 mb-3 d-flex justify-content-between">
+              <Link to={`/property/${id}`}>
+                <p className={`${styles.ViewMore} m-0`}>View more...</p>
+              </Link>
+              <p className="mb-1 text-muted">
+                {created_at === updated_at
+                  ? `Published on ${created_at}`
+                  : `Last updated on ${updated_at}`}
+              </p>
+            </div>
+          </Container>
         </Container>
       )}
     </>
