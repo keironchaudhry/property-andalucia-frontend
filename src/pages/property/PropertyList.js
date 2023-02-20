@@ -10,6 +10,7 @@ import appStyles from "../../App.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/noresults.png";
 
+import styles from "../../styles/PropertyDetail.module.css";
 import PropertyDetail from "./PropertyDetail";
 import Asset from "../../components/Asset";
 
@@ -21,7 +22,7 @@ function PropertyList({ message, filter = "" }) {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const { data } = await axiosReq.get(`/property/?${filter}`)
+        const { data } = await axiosReq.get(`/property/?${filter}`);
         setProperties(data);
         setHasLoaded(true);
       } catch (err) {
@@ -35,10 +36,17 @@ function PropertyList({ message, filter = "" }) {
 
   return (
     <Row className="mt-5">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles mobile</p>
+      <Col className={`${styles.ColContainer} py-2 p-0 p-lg-2`} lg={8}>
+        {/* <p>Popular profiles mobile</p> */}
         {hasLoaded ? (
           <>
+            <div className="text-center mb-2 mt-4">
+              {pathname === "/" && properties.count !== 0 && (
+                <p className="h3">
+                  {properties.count} Properties Up For Sale
+                </p>
+              )}
+            </div>
             {properties.results.length ? (
               properties.results.map((property) => (
                 <PropertyDetail
