@@ -29,3 +29,12 @@
 .SaveOutline:hover {
   color: #f99417;
 }
+
+.ViewMore {
+  color: #f99417;
+  font-size: 22.5px;
+}
+
+.ViewMore:hover {
+  text-decoration: underline;
+}
