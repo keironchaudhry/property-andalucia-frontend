@@ -281,9 +281,23 @@ const PropertyDetail = (props) => {
               <p>{size}m²</p>
             </div>
 
+            {/* Property Name */}
+            <div className="d-flex flex-column align-items-start align-content-start gap-2 me-3 mt-1">
+              <h4>
+                <span>{name}</span>
+              </h4>
+              <h5 className="text-muted">
+                <span className="text-capitalize">
+                  {province}, {municipality}, {street}, {post_code}
+                </span>
+              </h5>
+              <h5 className="text-muted">
+                <span>Price: {price.toLocaleString()}€</span>
+              </h5>
+            </div>
+
             {/* Description */}
             <div className="mt-2">
-              <p>Price: {price.toLocaleString()}€</p>
               <p>{description}</p>
             </div>
 

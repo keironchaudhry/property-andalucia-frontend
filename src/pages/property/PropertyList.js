@@ -21,21 +21,44 @@ function PropertyList({ message, filter = "" }) {
   const [properties, setProperties] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const [province, setProvince] = useState("");
+
+  const fetchProperties = async () => {
+    try {
+      const { data } = await axiosReq.get(
+        `/property/?${filter}&province=${province}`
+      );
+
+      setProperties(data);
+      setHasLoaded(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const { data } = await axiosReq.get(`/property/?${filter}`);
-        setProperties(data);
-        setHasLoaded(true);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
     setHasLoaded(false);
-    fetchProperties();
-  }, [filter, pathname]);
+    const timer = setTimeout(() => {
+      fetchProperties();
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [filter, province, pathname]);
+
+  const clearSearchFilter = () => {
+    setProvince("");
+  };
+
+  const clearSearch = () => {
+    if (province !== "") {
+      clearSearchFilter();
+      fetchProperties();
+    } else {
+      fetchProperties();
+    }
+  };
 
   return (
     <Row className="mt-5">
@@ -73,9 +96,15 @@ function PropertyList({ message, filter = "" }) {
         {/* Province Search Feed */}
         <div className={formStyles.FormContainer}>
           <Form>
-            <Form.Group className="text-center">
+            <Form.Group className="text-center" controlId="province">
               <Form.Label className="h5 mb-3">Search by province</Form.Label>
-              <Form.Control as="select">
+              <Form.Control
+                as="select"
+                type="text"
+                name="province"
+                value={province}
+                onChange={(event) => setProvince(event.target.value)}
+              >
                 <option value="huelva">Huelva</option>
                 <option value="sevilla">Sevilla</option>
                 <option value="cadiz">Cadiz</option>
@@ -92,8 +121,10 @@ function PropertyList({ message, filter = "" }) {
               <Button
                 className={`${btnStyles.Button} ${btnStyles.Bright}`}
                 type="submit"
+                aria-label="Search"
+                onClick={clearSearch}
               >
-                <i class="fa-solid fa-magnifying-glass"></i>Search
+                <i class="fa-solid fa-rotate-left"></i>Clear Filter
               </Button>
               <Button
                 className={`${btnStyles.Button} ${btnStyles.Bright}`}
