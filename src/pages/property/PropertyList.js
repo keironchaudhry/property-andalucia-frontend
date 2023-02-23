@@ -11,7 +11,6 @@ import appStyles from "../../App.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import NoResults from "../../assets/noresults.png";
 
-import styles from "../../styles/PropertyDetail.module.css";
 import formStyles from "../../styles/PropertyList.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import PropertyDetail from "./PropertyDetail";
@@ -21,12 +20,16 @@ function PropertyList({ message, filter = "" }) {
   const [properties, setProperties] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+
   const [province, setProvince] = useState("");
+  const [propertyType, setPropertyType] = useState("");
+  const [bedrooms, setBedrooms] = useState("");
+  const [bathrooms, setBathrooms] = useState("");
 
   const fetchProperties = async () => {
     try {
       const { data } = await axiosReq.get(
-        `/property/?${filter}&province=${province}`
+        `/property/?${filter}&province=${province}&property_type=${propertyType}&bedroom_count=${bedrooms}&bathrooms_count=${bathrooms}`
       );
 
       setProperties(data);
@@ -45,14 +48,22 @@ function PropertyList({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, province, pathname]);
+  }, [filter, province, propertyType, bedrooms, bathrooms, pathname]);
 
   const clearSearchFilter = () => {
     setProvince("");
+    setPropertyType("");
+    setBedrooms("");
+    setBathrooms("");
   };
 
   const clearSearch = () => {
-    if (province !== "") {
+    if (
+      province !== "" ||
+      propertyType !== "" ||
+      bedrooms !== "" ||
+      bathrooms !== ""
+    ) {
       clearSearchFilter();
       fetchProperties();
     } else {
@@ -123,64 +134,76 @@ function PropertyList({ message, filter = "" }) {
               <Form.Control
                 as="select"
                 type="text"
-                className="text-center"
                 name="propertyType"
+                value={propertyType}
+                onChange={(event) => setPropertyType(event.target.value)}
+                className="text-center"
               >
                 <option value="">Select a property type</option>
                 <option value="apartment">Apartment</option>
                 <option value="flat">Flat</option>
                 <option value="townhouse">Townhouse</option>
                 <option value="villa">Villa</option>
-                <option value="residential housing estate">Residential Housing Estate</option>
+                <option value="residential housing estate">
+                  Residential Housing Estate
+                </option>
                 <option value="country property">Country Property</option>
                 <option value="bungalow">Bungalow</option>
               </Form.Control>
             </Form.Group>
 
-            <div className="d-flex gap-3">
+            {/* <div className="d-flex gap-3">
               <Form.Group className="text-center mr-2" controlId="minPrice">
-                <Form.Label>Min Price</Form.Label>
+                <Form.Label> Min. Price</Form.Label>
                 <Form.Control
-                  className="text-center"
                   type="number"
                   name="minPrice"
                   min={0}
                   step={50000}
+                  className="text-center"
+                  value={minPrice}
+                  onChange={(event) => setMinPrice(event.target.value)}
                 />
               </Form.Group>
 
               <Form.Group className="text-center ml-2" controlId="maxPrice">
-                <Form.Label>Max Price</Form.Label>
+                <Form.Label>Max. Price</Form.Label>
                 <Form.Control
-                  className="text-center"
                   type="number"
                   name="maxPrice"
                   min={0}
                   step={50000}
+                  className="text-center"
+                  value={maxPrice}
+                  onChange={(event) => setMaxPrice(event.target.value)}
                 />
               </Form.Group>
-            </div>
+            </div> */}
 
             <div className="d-flex gap-3">
-              <Form.Group className="text-center mr-2" controlId="minBedrooms">
-                <Form.Label className="me-2">Min Bedrooms</Form.Label>
+              <Form.Group className="text-center mr-2" controlId="bedrooms">
+                <Form.Label className="me-2">Bedrooms</Form.Label>
                 <Form.Control
-                  className="text-center"
                   type="number"
-                  name="minBedrooms"
+                  name="bedrooms"
                   min={0}
                   step={1}
+                  value={bedrooms}
+                  onChange={(event) => setBedrooms(event.target.value)}
+                  className="text-center"
                 />
               </Form.Group>
 
-              <Form.Group className="text-center ml-2" controlId="maxBedrooms">
-                <Form.Label className="me-2">Max Bedrooms</Form.Label>
+              <Form.Group className="text-center ml-2" controlId="bathrooms">
+                <Form.Label className="me-2">Bathrooms</Form.Label>
                 <Form.Control
-                  className="text-center"
                   type="number"
-                  name="maxBedrooms"
+                  name="bathrooms"
                   min={0}
                   step={1}
+                  value={bathrooms}
+                  onChange={(event) => setBathrooms(event.target.value)}
+                  className="text-center"
                 />
               </Form.Group>
             </div>
