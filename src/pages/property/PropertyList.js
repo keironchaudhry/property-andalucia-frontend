@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -9,6 +10,7 @@ import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
+import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/noresults.png";
 
 import formStyles from "../../styles/PropertyList.module.css";
@@ -83,13 +85,19 @@ function PropertyList({ message, filter = "" }) {
               )}
             </div>
             {properties.results.length ? (
-              properties.results.map((property) => (
-                <PropertyDetail
-                  key={property.id}
-                  {...property}
-                  setProperties={setProperties}
-                />
-              ))
+              <InfiniteScroll
+                children={properties.results.map((property) => (
+                  <PropertyDetail
+                    key={property.id}
+                    {...property}
+                    setproperties={setProperties}
+                  />
+                ))}
+                dataLength={properties.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!properties.next}
+                next={() => fetchMoreData(properties, setProperties)}
+              />
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />
