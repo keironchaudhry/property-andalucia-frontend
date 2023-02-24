@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { Card, Container, OverlayTrigger, Tooltip } from "react-bootstrap";
 
+import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/PropertyDetail.module.css";
@@ -44,6 +45,20 @@ const PropertyDetail = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
+
+  const handleEdit = () => {
+    history.push(`/property/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/property/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleSave = async () => {
     try {
@@ -90,22 +105,21 @@ const PropertyDetail = (props) => {
       {propertyPage ? (
         <Container className={`${styles.PropertyContainer} p-3 p-md-4 rounded`}>
           {/* Property Name & Address*/}
-          <div>
-            <h2 className="d-flex flex-column align-items-start align-content-start gap-2 me-3">
-              <span>{name}</span>
-            </h2>
-            <h5 className="text-muted">
-              <span>
-                {municipality}, {street}, {post_code}
-              </span>
-            </h5>
-            <p className="text-muted">
-              {created_at === updated_at
-                ? `Published on ${created_at}`
-                : `Last updated on ${updated_at}`}
-            </p>
-            {is_owner && propertyPage && "..."}
-          </div>
+          <Container className="align-items-center justify-content-between">
+            <div className="d-flex flex-row justify-content-between mb-3">
+              <h3 className="align-items-center">
+                <span>{name}</span>
+              </h3>
+              <div className="d-flex align-items-center">
+                {is_owner && propertyPage && (
+                  <MoreDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                  />
+                )}
+              </div>
+            </div>
+          </Container>
 
           {/* Image */}
           <Card style={{}}>
@@ -203,6 +217,12 @@ const PropertyDetail = (props) => {
               <Map latitude={latitude} longitude={longitude} />
             </div>
           </div>
+
+          <p className="text-muted mt-4">
+            {created_at === updated_at
+              ? `Published on ${created_at}`
+              : `Last updated on ${updated_at}`}
+          </p>
         </Container>
       ) : (
         // Property Listing View

@@ -1,0 +1,9 @@
+.DropdownItem {
+  display: inline-block;
+  max-width: 50%;
+}
+
+.Absolute {
+  position: absolute;
+  z-index: 99;
+}
