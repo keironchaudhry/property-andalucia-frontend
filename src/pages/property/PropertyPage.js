@@ -6,12 +6,19 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import appStyles from "../../App.module.css";
+import styles from "../../styles/PropertyDetail.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import PropertyDetail from "./PropertyDetail";
+import NoteCreateForm from "../notes/NoteCreateForm";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PropertyPage() {
   const { id } = useParams();
   const [propertyPost, setPropertyPost] = useState({ results: [] });
+
+  const currentUser = useCurrentUser();
+  const profile_image = currentUser?.profile_image;
+  const [notes, setNotes] = useState({ results: [] });
 
   useEffect(() => {
     const handleMount = async () => {
@@ -38,7 +45,18 @@ function PropertyPage() {
           setPropertyPost={setPropertyPost}
           propertyPage
         />
-        <Container className={appStyles.Content}>Notes</Container>
+        <Container className={styles.PropertyContainer}>
+          {currentUser ? (
+            <NoteCreateForm
+              profile_id={currentUser.profile_id}
+              profileImage={currentUser.profile_image}
+              property={id}
+              setNotes={setNotes}
+            />
+          ) : notes.results.length ? (
+            "Comments"
+          ) : null}
+        </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         Popular Sellers for desktop
