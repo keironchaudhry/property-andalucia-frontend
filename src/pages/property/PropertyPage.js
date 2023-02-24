@@ -5,7 +5,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import appStyles from "../../App.module.css";
 import styles from "../../styles/PropertyDetail.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import PropertyDetail from "./PropertyDetail";
@@ -51,7 +50,7 @@ function PropertyPage() {
           {currentUser ? (
             <NoteCreateForm
               profile_id={currentUser.profile_id}
-              profileImage={currentUser.profile_image}
+              profileImage={profile_image}
               property={id}
               setNotes={setNotes}
             />
@@ -60,7 +59,7 @@ function PropertyPage() {
           ) : null}
           {notes.results.length ? (
             notes.results.map((note) => (
-              <Note key={note.id} {...note} />
+              <Note key={note.id} {...note} setNotes={setNotes} />
             ))
           ) : currentUser ? (
             <span>No notes yet, be the first to comment!</span>
