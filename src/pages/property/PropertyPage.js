@@ -9,6 +9,7 @@ import appStyles from "../../App.module.css";
 import styles from "../../styles/PropertyDetail.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import PropertyDetail from "./PropertyDetail";
+import Note from "../notes/Note";
 import NoteCreateForm from "../notes/NoteCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
@@ -23,11 +24,12 @@ function PropertyPage() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: propertyPost }] = await Promise.all([
+        const [{ data: propertyPost }, { data: notes }] = await Promise.all([
           axiosReq.get(`/property/${id}`),
+          axiosReq.get(`/notes/?property=${id}`),
         ]);
         setPropertyPost({ results: [propertyPost] });
-        console.log(propertyPost);
+        setNotes(notes);
       } catch (err) {
         console.log(err);
       }
@@ -56,6 +58,15 @@ function PropertyPage() {
           ) : notes.results.length ? (
             "Comments"
           ) : null}
+          {notes.results.length ? (
+            notes.results.map((note) => (
+              <Note key={note.id} {...note} />
+            ))
+          ) : currentUser ? (
+            <span>No notes yet, be the first to comment!</span>
+          ) : (
+            <span>No notes... yet</span>
+          )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
