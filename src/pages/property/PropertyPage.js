@@ -14,20 +14,21 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PropertyPage() {
   const { id } = useParams();
-  const [propertyPost, setPropertyPost] = useState({ results: [] });
+  const [property, setProperty] = useState({ results: [] });
+  const [notes, setNotes] = useState({ results: [] });
 
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
-  const [notes, setNotes] = useState({ results: [] });
 
   useEffect(() => {
+    setNotes({ results: [] });
     const handleMount = async () => {
       try {
-        const [{ data: propertyPost }, { data: notes }] = await Promise.all([
+        const [{ data: property }, { data: notes }] = await Promise.all([
           axiosReq.get(`/property/${id}`),
           axiosReq.get(`/notes/?property=${id}`),
         ]);
-        setPropertyPost({ results: [propertyPost] });
+        setProperty({ results: [property] });
         setNotes(notes);
       } catch (err) {
         console.log(err);
@@ -42,8 +43,8 @@ function PropertyPage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular Sellers for mobile</p>
         <PropertyDetail
-          {...propertyPost.results[0]}
-          setPropertyPost={setPropertyPost}
+          {...property.results[0]}
+          setProperty={setProperty}
           propertyPage
         />
         <Container className={styles.PropertyContainer}>
