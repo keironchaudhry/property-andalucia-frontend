@@ -39,7 +39,7 @@ const PropertyDetail = (props) => {
     latitude,
     created_at,
     updated_at,
-    setPropertyPost,
+    setProperty,
     propertyPage,
   } = props;
 
@@ -63,7 +63,7 @@ const PropertyDetail = (props) => {
   const handleSave = async () => {
     try {
       const { data } = await axiosRes.post("/saves/", { property: id });
-      setPropertyPost((prevProperty) => ({
+      setProperty((prevProperty) => ({
         ...prevProperty,
         results: prevProperty.results.map((property) => {
           return property.id === id
@@ -83,7 +83,7 @@ const PropertyDetail = (props) => {
   const handleUnsave = async () => {
     try {
       await axiosRes.delete(`/saves/${save_id}/`);
-      setPropertyPost((prevProperty) => ({
+      setProperty((prevProperty) => ({
         ...prevProperty,
         results: prevProperty.results.map((property) => {
           return property.id === id
