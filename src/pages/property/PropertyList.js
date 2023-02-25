@@ -17,6 +17,7 @@ import formStyles from "../../styles/PropertyList.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import PropertyDetail from "./PropertyDetail";
 import Asset from "../../components/Asset";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PropertyList({ message, filter = "" }) {
   const [properties, setProperties] = useState({ results: [] });
@@ -75,8 +76,8 @@ function PropertyList({ message, filter = "" }) {
 
   return (
     <Row className="mt-5">
+      <PopularProfiles mobile />
       <Col className={`${formStyles.ColContainer} py-2 p-0 p-lg-2`} lg={8}>
-        {/* <p>Popular profiles mobile</p> */}
         {hasLoaded ? (
           <>
             <div className="text-center mb-2 mt-4">
@@ -231,8 +232,8 @@ function PropertyList({ message, filter = "" }) {
         </div>
 
         {/* Popular Profiles */}
-        <div className="mt-3">
-          <p>Popular profiles for desktop</p>
+        <div className={`${formStyles.PopularProfilesDiv} mt-3`}>
+          <PopularProfiles />
         </div>
       </Col>
     </Row>

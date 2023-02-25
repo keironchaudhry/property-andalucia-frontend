@@ -20,3 +20,15 @@
   border: 1px solid #dadadf;
   min-width: 350px;
 }
+
+.PopularProfileContainer {
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #dadadf;
+  min-width: 350px;
+  padding: 15px 15px;
+}
+
+.PopularProfilesDiv {
+  margin-left: 6px;
+}

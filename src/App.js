@@ -19,7 +19,7 @@ function App() {
   return (
     <div className={styles.App}>
       <NavBar />
-      <Container className={styles.Main}>
+      <Container>
         <Switch>
           <Route
             exact
