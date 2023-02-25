@@ -27,11 +27,12 @@ const Note = (props) => {
 
   return (
     <div>
-      <hr />
       <Media>
         <Media.Body className="align-self-center ml-2">
-          <span>{owner}</span>
-          <span>{updated_at}</span>
+          <div className="d-flex flex-row">
+            <span class="pr-2 font-weight-bold">{owner}</span>
+            <span class="pl-2">{updated_at}</span>
+          </div>
           {showEditForm ? (
             <NoteEditForm
               id={id}
