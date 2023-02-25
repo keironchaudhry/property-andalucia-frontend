@@ -103,7 +103,7 @@ const PropertyDetail = (props) => {
   return (
     <>
       {propertyPage ? (
-        <Container className={`${styles.PropertyContainer} p-3 p-md-4 rounded`}>
+        <Container className={`${styles.PropertyContainer} p-3 p-md-4 rounded mt-1`}>
           {/* Property Name & Address*/}
           <Container className="align-items-center justify-content-between">
             <div className="d-flex flex-row justify-content-between mb-3">
@@ -226,7 +226,7 @@ const PropertyDetail = (props) => {
         </Container>
       ) : (
         // Property Listing View
-        <Container className={`${styles.PropertyContainer} p-3 p-md-4 rounded`}>
+        <Container className={`${styles.ListContainer} p-3 p-md-4 rounded`}>
           {/* Property Name & Address*/}
           <div>{is_owner && propertyPage && "..."}</div>
 

@@ -48,7 +48,7 @@ const LoginForm = () => {
         <Container className={`${appStyles.Content}`}>
           <h1 className={styles.Header}>Login</h1>
 
-          <Container className={`mt-3 mb-3 ${appStyles.Content}`}>
+          <Container className={`mb-3 ${appStyles.Content}`}>
             <Link className={styles.Link} to="/signup">
               New to Property Andalucia? <span>Create your account here.</span>
             </Link>

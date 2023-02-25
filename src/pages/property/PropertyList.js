@@ -75,7 +75,7 @@ function PropertyList({ message, filter = "" }) {
   };
 
   return (
-    <Row className="mt-5">
+    <Row className="mt-3">
       <PopularProfiles mobile />
       <Col className={`${formStyles.ColContainer} py-2 p-0 p-lg-2`} lg={8}>
         {hasLoaded ? (
