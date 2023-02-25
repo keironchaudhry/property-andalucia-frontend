@@ -4,12 +4,15 @@ import { useParams } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import styles from "../../styles/PropertyDetail.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
+import { fetchMoreData } from "../../utils/utils";
 import PropertyDetail from "./PropertyDetail";
 import Note from "../notes/Note";
 import NoteCreateForm from "../notes/NoteCreateForm";
+import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PropertyPage() {
@@ -59,11 +62,22 @@ function PropertyPage() {
             "Comments"
           ) : null}
           {notes.results.length ? (
-            notes.results.map((note) => (
-              <Note key={note.id} {...note} setNotes={setNotes} />
-            ))
+            <InfiniteScroll
+              children={notes.results.map((note) => (
+                <Note
+                  key={note.id}
+                  {...note}
+                  setProperty={setProperty}
+                  setNotes={setNotes}
+                />
+              ))}
+              dataLength={notes.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!notes.next}
+              next={() => fetchMoreData(notes, setNotes)}
+            />
           ) : currentUser ? (
-            <span>No notes yet, be the first to comment!</span>
+            <span>No notes yet, be the first to leave a note!</span>
           ) : (
             <span>No notes... yet</span>
           )}
