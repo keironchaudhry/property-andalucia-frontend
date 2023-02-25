@@ -14,6 +14,7 @@ import Note from "../notes/Note";
 import NoteCreateForm from "../notes/NoteCreateForm";
 import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PropertyPage() {
   const { id } = useParams();
@@ -44,7 +45,7 @@ function PropertyPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular Sellers for mobile</p>
+        <PopularProfiles mobile />
         <PropertyDetail
           {...property.results[0]}
           setProperty={setProperty}
@@ -83,9 +84,12 @@ function PropertyPage() {
           )}
         </Container>
       </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        Popular Sellers for desktop
+      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2 border-0 mt-1">
+        <PopularProfiles />
       </Col>
+      {/* <div className={`${formStyles.PopularProfilesDiv} mt-3`}>
+          <PopularProfiles />
+        </div> */}
     </Row>
   );
 }

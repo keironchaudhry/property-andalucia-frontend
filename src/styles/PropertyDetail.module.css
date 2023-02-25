@@ -1,15 +1,15 @@
 .PropertyContainer {
   background-color: #ffffff;
+  border: 1px solid #dadadf;
   border-radius: 2px;
   margin-bottom: 16px;
 }
 
-/* .ColContainer {
+.ListContainer {
   background-color: #ffffff;
   border-radius: 2px;
-  border: 1px solid #dadadf;
-  min-width: 350px;
-} */
+  margin-bottom: 16px;
+}
 
 .Icons {
   margin: 0 5rem 0 5rem;

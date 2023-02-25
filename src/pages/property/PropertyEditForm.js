@@ -249,7 +249,7 @@ export default function PropertyEditForm() {
 
   const imageFields = (
     <Container
-      className={`${styles.AssetContainer} d-flex flex-column justify-content-center border border-2 rounded p-0 mt-3`}
+      className={`${styles.AssetContainer} d-flex flex-column justify-content-center border border-2 rounded p-0 mt-3=`}
     >
       {image ? (
         <>
@@ -509,7 +509,7 @@ export default function PropertyEditForm() {
 
   return (
     <Container
-      className={`${styles.FormContainer} mt-5 p-0 text-center rounded`}
+      className={`${styles.FormContainer} mt-3 p-0 text-center rounded`}
     >
       <Form onSubmit={handleSubmit}>
         <Row className="d-flex flex-column flex-md-row mx-3 my-3 gap-3">
