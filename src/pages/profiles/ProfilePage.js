@@ -7,7 +7,6 @@ import Container from "react-bootstrap/Container";
 import Asset from "../../components/Asset";
 
 import styles from "../../styles/ProfilePage.module.css";
-import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 import PopularProfiles from "./PopularProfiles";
@@ -60,18 +59,16 @@ function ProfilePage() {
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
-            <Col xs={3} className="my-2">
-              {/* <div>{profile?.posts_count}</div> */}
-              <div>0</div>
-              <div>Listings</div>
+            <Col className="my-2">
+              <div>Property Listings: {profile?.propertys_count}</div>
             </Col>
-            <Col xs={3} className="my-2">
-              <div>{profile?.followers_count}</div>
-              <div>Followers</div>
+          </Row>
+          <Row className="justify-content-center no-gutters">
+            <Col className="my-2">
+              <div>Followers: {profile?.followers_count}</div>
             </Col>
-            <Col xs={3} className="my-2">
-              <div>{profile?.following_count}</div>
-              <div>Following</div>
+            <Col className="my-2">
+              <div>Following: {profile?.following_count}</div>
             </Col>
           </Row>
         </Col>
@@ -94,7 +91,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
+        {profile?.bio && <Col className="p-3">{profile.bio}</Col>}
       </Row>
     </>
   );
