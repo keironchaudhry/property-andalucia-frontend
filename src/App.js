@@ -12,6 +12,7 @@ import PropertyList from "./pages/property/PropertyList";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import PropertyEditForm from "./pages/property/PropertyEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
+import UsernameForm from "./pages/profiles/UsernameForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -57,8 +58,17 @@ function App() {
             render={() => <PropertyCreateForm />}
           />
           <Route exact path="/property/:id" render={() => <PropertyPage />} />
-          <Route exact path="/property/:id/edit" render={() => <PropertyEditForm />} />
+          <Route
+            exact
+            path="/property/:id/edit"
+            render={() => <PropertyEditForm />}
+          />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route
+            exact
+            path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />}
+          />
           <Route render={() => <p>Page not found.</p>} />
         </Switch>
       </Container>
