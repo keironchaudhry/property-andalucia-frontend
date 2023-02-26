@@ -22,6 +22,7 @@ import {
 } from "../../contexts/ProfileDataContext";
 import { fetchMoreData } from "../../utils/utils";
 import PropertyDetail from "../property/PropertyDetail";
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -59,6 +60,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center mt-5">
         <Col lg={3} className="text-lg-left">
           <Image
@@ -115,7 +117,11 @@ function ProfilePage() {
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((property) => (
-            <PropertyDetail key={property.id} {...property} setPosts={setProfilePosts} />
+            <PropertyDetail
+              key={property.id}
+              {...property}
+              setPosts={setProfilePosts}
+            />
           ))}
           dataLength={profilePosts.results.length}
           loader={<Asset spinner />}

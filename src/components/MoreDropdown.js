@@ -45,7 +45,10 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (
-    <Dropdown className="mr-auto" drop="right">
+    <Dropdown
+      className={`${styles.ProfileDropdown} ms-auto text-align-right`}
+      drop="right"
+    >
       <Dropdown.Toggle as={ThreeDots} />
 
       <Dropdown.Menu
@@ -77,7 +80,6 @@ export function ProfileEditDropdown({ id }) {
           <i className="fas fa-key" />
           Change your password
         </Dropdown.Item>
-
       </Dropdown.Menu>
     </Dropdown>
   );
