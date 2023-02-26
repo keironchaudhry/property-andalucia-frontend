@@ -64,7 +64,7 @@ function ProfilePage() {
       <Row noGutters className="px-3 text-center mt-5">
         <Col lg={3} className="text-lg-left">
           <Image
-            className={styles.ProfileImage}
+            className={`${styles.ProfileImage}`}
             roundedCircle
             src={profile?.image}
           />
