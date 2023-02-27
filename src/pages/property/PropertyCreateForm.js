@@ -15,8 +15,10 @@ import Upload from "../../assets/upload.png";
 import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 export default function PropertyCreateForm() {
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [propertyData, setPropertyData] = useState({
@@ -469,12 +471,10 @@ export default function PropertyCreateForm() {
               {extraFields}
             </Container>
           </Col>
-
         </Row>
 
         {/* Buttons */}
         <Container className="my-4">{buttons}</Container>
-        
       </Form>
     </Container>
   );
