@@ -1,9 +1,15 @@
 .DropdownItem {
   display: inline-block;
-  max-width: 50%;
+  max-width: 65%;
 }
 
 .Absolute {
   position: absolute;
   z-index: 99;
+}
+
+.ProfileDropdown {
+  text-align: right;
+  margin-top: 1rem;
+  margin-bottom: -4rem;
 }
