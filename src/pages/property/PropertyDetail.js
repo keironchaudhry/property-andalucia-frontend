@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import { Card, Container, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Col, Card, Container, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -103,7 +103,9 @@ const PropertyDetail = (props) => {
   return (
     <>
       {propertyPage ? (
-        <Container className={`${styles.PropertyContainer} p-3 p-md-4 rounded mt-1`}>
+        <Container
+          className={`${styles.PropertyContainer} p-3 p-md-4 rounded mt-1`}
+        >
           {/* Property Name & Address*/}
           <Container className="align-items-center justify-content-between">
             <div className="d-flex flex-row justify-content-between mb-3">
@@ -189,40 +191,68 @@ const PropertyDetail = (props) => {
             <p>{size}m²</p>
           </div>
 
-          {/* Property Info */}
-          <div className="mt-4">
-            <h2 className="mb-3">Property Info</h2>
-            <ul className={`h5`}>
-              <li>Price: {price}€</li>
-              <li className="text-capitalize">{province}</li>
-              <li className="text-capitalize">{property_type}</li>
-              <li>Total bedrooms: {bedroom_count}</li>
-              <li>Total bathrooms: {bathrooms_count}</li>
-              {garden && <li>This property has a garden.</li>}
-              {garage && <li>This property has parking.</li>}
-              {is_south_facing && <li>This property is south-facing.</li>}
-            </ul>
+          {/* Description */}
+          <div className="mt-4 h5 text-center">
+            {/* <h2 className="mb-3">Description</h2> */}
+            <p>{description}</p>
           </div>
 
-          {/* Description */}
-          <div className="mt-4 h5">
-            <h2 className="mb-3">Description</h2>
-            <p>{description}</p>
+          {/* Property Info */}
+          <div className="mt-5">
+            <h4 className="mb-4 text-center">
+              <u>Property Info</u>
+            </h4>
+            <div className="d-flex flex-row justify-content-between">
+              <Col>
+                <h5 className="mb-3">Basic characteristics:</h5>
+                <ul className="">
+                  <li className="text-capitalize">Province: {province}</li>
+                  <li className="text-capitalize">Type: {property_type}</li>
+                  <li className="text-capitalize">Size: {size}m²</li>
+                  <li>Total bedrooms: {bedroom_count}</li>
+                  <li>Total bathrooms: {bathrooms_count}</li>
+                </ul>
+              </Col>
+              <Col>
+                <h5 className="mb-3">Additional information:</h5>
+                <ul>
+                  {garden ? (
+                    <li>This property has a garden.</li>
+                  ) : (
+                    <li>This property does not have a garden.</li>
+                  )}
+                  {garage ? (
+                    <li>This property has parking.</li>
+                  ) : (
+                    <li>This property does not have parking.</li>
+                  )}
+                  {is_south_facing ? (
+                    <li>This property is south-facing.</li>
+                  ) : (
+                    <li>This property is not south-facing.</li>
+                  )}
+                </ul>
+              </Col>
+            </div>
           </div>
 
           {/* Google Maps API */}
           <div className="mt-4">
-            <h2 className="mb-3">Location</h2>
+            <h4 className="mb-4 text-center">
+              <u>Location</u>
+            </h4>
             <div style={{ height: "350px", width: "100%" }}>
               <Map latitude={latitude} longitude={longitude} />
             </div>
           </div>
 
-          <p className="text-muted mt-4">
-            {created_at === updated_at
-              ? `Published on ${created_at}`
-              : `Last updated on ${updated_at}`}
-          </p>
+          <div className="text-right">
+            <p className="text-muted mt-3">
+              {created_at === updated_at
+                ? `Published on ${created_at}`
+                : `Last updated on ${updated_at}`}
+            </p>
+          </div>
         </Container>
       ) : (
         // Property Listing View

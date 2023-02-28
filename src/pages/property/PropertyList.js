@@ -20,7 +20,7 @@ import Asset from "../../components/Asset";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 function PropertyList({ message, filter = "" }) {
-  const [properties, setProperties] = useState({ results: [] });
+  const [property, setProperty] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
@@ -35,7 +35,7 @@ function PropertyList({ message, filter = "" }) {
         `/property/?${filter}&province=${province}&property_type=${propertyType}&bedroom_count=${bedrooms}&bathrooms_count=${bathrooms}`
       );
 
-      setProperties(data);
+      setProperty(data);
       setHasLoaded(true);
     } catch (err) {
       console.log(err);
@@ -81,23 +81,23 @@ function PropertyList({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             <div className="text-center mb-2 mt-4">
-              {pathname === "/" && properties.count !== 0 && (
-                <p className="h3">{properties.count} Properties Up For Sale</p>
+              {pathname === "/" && property.count !== 0 && (
+                <p className="h3">{property.count} Properties Up For Sale</p>
               )}
             </div>
-            {properties.results.length ? (
+            {property.results.length ? (
               <InfiniteScroll
-                children={properties.results.map((property) => (
+                children={property.results.map((property) => (
                   <PropertyDetail
                     key={property.id}
                     {...property}
-                    setproperties={setProperties}
+                    setProperty={setProperty}
                   />
                 ))}
-                dataLength={properties.results.length}
+                dataLength={property.results.length}
                 loader={<Asset spinner />}
-                hasMore={!!properties.next}
-                next={() => fetchMoreData(properties, setProperties)}
+                hasMore={!!property.next}
+                next={() => fetchMoreData(property, setProperty)}
               />
             ) : (
               <Container className={appStyles.Content}>

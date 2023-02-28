@@ -78,18 +78,23 @@ function PropertyPage() {
               next={() => fetchMoreData(notes, setNotes)}
             />
           ) : currentUser ? (
-            <span>No notes yet, be the first to leave a note!</span>
+            <div className="mb-4 text-center">
+              <span>Leave yourself a private note here. Don't worry, they can't be seen by anyone else.</span>
+            </div>
           ) : (
-            <span>No notes... yet</span>
+            <div className="mt-4 mb-4 text-center">
+              <span>
+                <u>
+                  Create an account or login to leave private notes.
+                </u>
+              </span>
+            </div>
           )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2 border-0 mt-1">
         <PopularProfiles />
       </Col>
-      {/* <div className={`${formStyles.PopularProfilesDiv} mt-3`}>
-          <PopularProfiles />
-        </div> */}
     </Row>
   );
 }
