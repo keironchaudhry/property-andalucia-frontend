@@ -31,7 +31,9 @@ const Note = (props) => {
         <Media.Body className="align-self-center ml-2">
           <div className="d-flex flex-row">
             <span class="pr-2 font-weight-bold">{owner}</span>
-            <span class="pl-2">{updated_at}</span>
+            <span class="pl-2">
+              <u>{updated_at}</u>
+            </span>
           </div>
           {showEditForm ? (
             <NoteEditForm
@@ -41,7 +43,9 @@ const Note = (props) => {
               setShowEditForm={setShowEditForm}
             />
           ) : (
-            <p>{content}</p>
+            <div className="mt-2 mb-4 ml-1">
+              <p>{content}</p>
+            </div>
           )}
         </Media.Body>
         {is_owner && (

@@ -48,7 +48,7 @@ export default function NoteCreateForm(props) {
             as="textarea"
             value={content}
             onChange={handleChange}
-            placeholder="Leave yourself a private note here. Don't worry, they can't be seen by anyone else."
+            placeholder="Note to self..."
           />
         </InputGroup>
       </Form.Group>
