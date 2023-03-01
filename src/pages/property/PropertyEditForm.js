@@ -258,7 +258,7 @@ export default function PropertyEditForm() {
           </figure>
           <div>
             <Form.Label
-              className={`${btnStyles.Button} ${btnStyles.Orange} btn`}
+              className={`${btnStyles.Button} ${btnStyles.Bright} btn`}
               htmlFor="image-upload"
             >
               Change image
@@ -491,13 +491,13 @@ export default function PropertyEditForm() {
   const buttons = (
     <>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        className={`${btnStyles.Button} ${btnStyles.Bright} mr-1`}
         type="submit"
       >
         Save
       </Button>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        className={`${btnStyles.Button} ${btnStyles.Bright} ml-1`}
         onClick={() => {
           history.goBack();
         }}

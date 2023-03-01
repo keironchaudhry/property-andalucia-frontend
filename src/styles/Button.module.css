@@ -13,6 +13,9 @@
   opacity: 0.8;
   border-color: transparent;
   cursor: pointer;
+  transform: scale(1.05);
+  transition: 100ms;
+  letter-spacing: 1px;
 }
 
 .Button:hover:active {
@@ -20,11 +23,11 @@
 }
 
 .Button:active {
-  background-color: #f2cd5c !important;
+  background-color: #fc7300 !important;
 }
 
 .Button:focus {
-  background-color: #f2cd5c !important;
+  background-color: #fc7300 !important;
 }
 
 .Wide {
