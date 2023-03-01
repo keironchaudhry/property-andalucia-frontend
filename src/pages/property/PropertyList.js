@@ -7,6 +7,8 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import { Card } from "react-bootstrap";
+import { Accordion } from "react-bootstrap";
 
 import appStyles from "../../App.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -114,54 +116,69 @@ function PropertyList({ message, filter = "" }) {
 
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         {/* Province Search Feed */}
-        <div className={formStyles.FormContainer}>
-          <Form>
-            <Form.Group className="text-center mt-2" controlId="province">
-              <Form.Label>Search by province</Form.Label>
-              <Form.Control
-                as="select"
-                type="text"
-                name="province"
-                value={province}
-                onChange={(event) => setProvince(event.target.value)}
-                className="text-center"
-              >
-                <option value="">Select a province</option>
-                <option value="huelva">Huelva</option>
-                <option value="sevilla">Sevilla</option>
-                <option value="cadiz">Cadiz</option>
-                <option value="cordoba">Cordoba</option>
-                <option value="granada">Granada</option>
-                <option value="malaga">Malaga</option>
-                <option value="jaen">Jaen</option>
-                <option value="almeria">Almeria</option>
-              </Form.Control>
-            </Form.Group>
 
-            <Form.Group className="text-center" controlId="propertyType">
-              <Form.Label>Search by property</Form.Label>
-              <Form.Control
-                as="select"
-                type="text"
-                name="propertyType"
-                value={propertyType}
-                onChange={(event) => setPropertyType(event.target.value)}
-                className="text-center"
+        <Accordion className={formStyles.FormContainer}>
+          <Card className="border-0">
+            <Card.Header className="text-center border-bottom-0">
+              <Accordion.Toggle
+                as={Button}
+                variant="link"
+                eventKey="0"
+                className="font-weight-light text-reset"
               >
-                <option value="">Select a property type</option>
-                <option value="apartment">Apartment</option>
-                <option value="flat">Flat</option>
-                <option value="townhouse">Townhouse</option>
-                <option value="villa">Villa</option>
-                <option value="residential housing estate">
-                  Residential Housing Estate
-                </option>
-                <option value="country property">Country Property</option>
-                <option value="bungalow">Bungalow</option>
-              </Form.Control>
-            </Form.Group>
+                <h5>
+                  Search Filters
+                </h5>
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Form className="pl-3 pr-3 pb-3">
+                <Form.Group className="text-center mt-2" controlId="province">
+                  <Form.Label>Search by province</Form.Label>
+                  <Form.Control
+                    as="select"
+                    type="text"
+                    name="province"
+                    value={province}
+                    onChange={(event) => setProvince(event.target.value)}
+                    className="text-center"
+                  >
+                    <option value="">Select a province</option>
+                    <option value="huelva">Huelva</option>
+                    <option value="sevilla">Sevilla</option>
+                    <option value="cadiz">Cadiz</option>
+                    <option value="cordoba">Cordoba</option>
+                    <option value="granada">Granada</option>
+                    <option value="malaga">Malaga</option>
+                    <option value="jaen">Jaen</option>
+                    <option value="almeria">Almeria</option>
+                  </Form.Control>
+                </Form.Group>
 
-            {/* <div className="d-flex gap-3">
+                <Form.Group className="text-center" controlId="propertyType">
+                  <Form.Label>Search by property</Form.Label>
+                  <Form.Control
+                    as="select"
+                    type="text"
+                    name="propertyType"
+                    value={propertyType}
+                    onChange={(event) => setPropertyType(event.target.value)}
+                    className="text-center"
+                  >
+                    <option value="">Select a property type</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="flat">Flat</option>
+                    <option value="townhouse">Townhouse</option>
+                    <option value="villa">Villa</option>
+                    <option value="residential housing estate">
+                      Residential Housing Estate
+                    </option>
+                    <option value="country property">Country Property</option>
+                    <option value="bungalow">Bungalow</option>
+                  </Form.Control>
+                </Form.Group>
+
+                {/* <div className="d-flex gap-3">
               <Form.Group className="text-center mr-2" controlId="minPrice">
                 <Form.Label> Min. Price</Form.Label>
                 <Form.Control
@@ -189,47 +206,52 @@ function PropertyList({ message, filter = "" }) {
               </Form.Group>
             </div> */}
 
-            <div className="d-flex gap-3">
-              <Form.Group className="text-center mr-2" controlId="bedrooms">
-                <Form.Label className="me-2">Bedrooms</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="bedrooms"
-                  min={0}
-                  step={1}
-                  value={bedrooms}
-                  onChange={(event) => setBedrooms(event.target.value)}
-                  className="text-center"
-                />
-              </Form.Group>
+                <div className="d-flex gap-3">
+                  <Form.Group className="text-center mr-2" controlId="bedrooms">
+                    <Form.Label className="me-2">Bedrooms</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="bedrooms"
+                      min={0}
+                      step={1}
+                      value={bedrooms}
+                      onChange={(event) => setBedrooms(event.target.value)}
+                      className="text-center"
+                    />
+                  </Form.Group>
 
-              <Form.Group className="text-center ml-2" controlId="bathrooms">
-                <Form.Label className="me-2">Bathrooms</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="bathrooms"
-                  min={0}
-                  step={1}
-                  value={bathrooms}
-                  onChange={(event) => setBathrooms(event.target.value)}
-                  className="text-center"
-                />
-              </Form.Group>
-            </div>
+                  <Form.Group
+                    className="text-center ml-2"
+                    controlId="bathrooms"
+                  >
+                    <Form.Label className="me-2">Bathrooms</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="bathrooms"
+                      min={0}
+                      step={1}
+                      value={bathrooms}
+                      onChange={(event) => setBathrooms(event.target.value)}
+                      className="text-center"
+                    />
+                  </Form.Group>
+                </div>
 
-            {/* Buttons */}
-            <div className="flex-row text-center pt-1 pb-1">
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Bright}`}
-                type="submit"
-                aria-label="Search"
-                onClick={clearSearch}
-              >
-                <i class="fa-solid fa-rotate-left"></i>Clear Filter
-              </Button>
-            </div>
-          </Form>
-        </div>
+                {/* Buttons */}
+                <div className="flex-row text-center pt-1 pb-1">
+                  <Button
+                    className={`${btnStyles.Button} ${btnStyles.Bright}`}
+                    type="submit"
+                    aria-label="Search"
+                    onClick={clearSearch}
+                  >
+                    <i class="fa-solid fa-rotate-left"></i>Clear Filter
+                  </Button>
+                </div>
+              </Form>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
 
         {/* Popular Profiles */}
         <div className={`${formStyles.PopularProfilesDiv} mt-3`}>
