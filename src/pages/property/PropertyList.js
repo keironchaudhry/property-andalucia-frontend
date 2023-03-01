@@ -126,9 +126,7 @@ function PropertyList({ message, filter = "" }) {
                 eventKey="0"
                 className="font-weight-light text-reset"
               >
-                <h5>
-                  Search Filters
-                </h5>
+                Search Filters
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
