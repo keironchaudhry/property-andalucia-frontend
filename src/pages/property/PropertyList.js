@@ -119,19 +119,19 @@ function PropertyList({ message, filter = "" }) {
 
         <Accordion className={formStyles.FormContainer}>
           <Card className="border-0">
-            <Card.Header className="text-center border-bottom-0">
-              <Accordion.Toggle
-                as={Button}
-                variant="link"
-                eventKey="0"
-                className="font-weight-light text-reset"
-              >
+            <Accordion.Toggle
+              as={Card.Header}
+              variant="link"
+              eventKey="0"
+              className="font-weight-light text-reset text-decoration-none text-center"
+            >
+              <h5 className={`${formStyles.SearchFilterTitle} pt-1`}>
                 Search Filters
-              </Accordion.Toggle>
-            </Card.Header>
+              </h5>
+            </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Form className="pl-3 pr-3 pb-3">
-                <Form.Group className="text-center mt-2" controlId="province">
+                <Form.Group className="text-center mt-3" controlId="province">
                   <Form.Label>Search by province</Form.Label>
                   <Form.Control
                     as="select"

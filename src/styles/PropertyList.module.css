@@ -32,3 +32,18 @@
 .PopularProfilesDiv {
   margin-left: 6px;
 }
+
+.SearchFilterTitle {
+  color: #f99417;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.SearchFilterTitle:hover {
+  color: #f2cd5c;
+  cursor: pointer;
+}
+
+.SearchFilterTitle button:focus {
+  box-shadow: none;
+}

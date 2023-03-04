@@ -101,7 +101,7 @@ const NavBar = () => {
             <img src={logo} alt="Logo" height="80" />
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addPropertyIcon}
+        {currentUser?.seller_status && addPropertyIcon}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
