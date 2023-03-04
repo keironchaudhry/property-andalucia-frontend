@@ -145,7 +145,7 @@ function ProfilePage() {
           {hasLoaded ? (
             <>
               {mainProfile}
-              {currentUser?.seller_status && mainProfilePosts}
+              {profile?.seller_status && mainProfilePosts}
             </>
           ) : (
             <Asset spinner />
