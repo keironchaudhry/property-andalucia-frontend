@@ -1,11 +1,20 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import { Col, Card, Container, OverlayTrigger, Tooltip } from "react-bootstrap";
+import {
+  Col,
+  Card,
+  Container,
+  OverlayTrigger,
+  Tooltip,
+  Button,
+  Popover,
+} from "react-bootstrap";
 
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
+import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/PropertyDetail.module.css";
 import Avatar from "../../components/Avatar";
 import Map from "../../components/Map";
@@ -99,6 +108,22 @@ const PropertyDetail = (props) => {
       console.log(err);
     }
   };
+
+  const handlePopover = currentUser ? (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Contact details</Popover.Title>
+      <Popover.Content>
+        <span className="d-block p-2">Phone: {profile_telephone}</span>
+        <span className="d-block p-2">E-mail: {profile_email}</span>
+      </Popover.Content>
+    </Popover>
+  ) : (
+    <Popover id="popover-basic">
+      <Popover.Content>
+        Login or create an account to view contact details.
+      </Popover.Content>
+    </Popover>
+  );
 
   return (
     <>
@@ -208,7 +233,7 @@ const PropertyDetail = (props) => {
                 <ul className="">
                   <li className="text-capitalize">Province: {province}</li>
                   <li className="text-capitalize">Type: {property_type}</li>
-                  <li className="text-capitalize">Size: {size}m²</li>
+                  <li>Size: {size}m²</li>
                   <li>Total bedrooms: {bedroom_count}</li>
                   <li>Total bathrooms: {bathrooms_count}</li>
                 </ul>
@@ -234,6 +259,22 @@ const PropertyDetail = (props) => {
                 </ul>
               </Col>
             </div>
+          </div>
+
+          {/* Contact Info Button */}
+          <div className="text-center mt-4 pb-4">
+            <OverlayTrigger
+              trigger="click"
+              placement="right"
+              overlay={handlePopover}
+            >
+              <Button
+                className={`${btnStyles.Button} ${btnStyles.Bright}`}
+                type="submit"
+              >
+                <strong>Contact Info</strong>
+              </Button>
+            </OverlayTrigger>
           </div>
 
           {/* Google Maps API */}
