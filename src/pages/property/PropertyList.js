@@ -30,11 +30,13 @@ function PropertyList({ message, filter = "" }) {
   const [propertyType, setPropertyType] = useState("");
   const [bedrooms, setBedrooms] = useState("");
   const [bathrooms, setBathrooms] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
 
   const fetchProperties = async () => {
     try {
       const { data } = await axiosReq.get(
-        `/property/?${filter}&province=${province}&property_type=${propertyType}&bedroom_count=${bedrooms}&bathrooms_count=${bathrooms}`
+        `/property/?${filter}&province=${province}&property_type=${propertyType}&bedroom_count=${bedrooms}&bathrooms_count=${bathrooms}&price_min=${minPrice}&price_max=${maxPrice}`
       );
 
       setProperty(data);
@@ -53,13 +55,24 @@ function PropertyList({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, province, propertyType, bedrooms, bathrooms, pathname]);
+  }, [
+    filter,
+    province,
+    propertyType,
+    bedrooms,
+    bathrooms,
+    minPrice,
+    maxPrice,
+    pathname,
+  ]);
 
   const clearSearchFilter = () => {
     setProvince("");
     setPropertyType("");
     setBedrooms("");
     setBathrooms("");
+    setMinPrice("");
+    setMaxPrice("");
   };
 
   const clearSearch = () => {
@@ -67,7 +80,9 @@ function PropertyList({ message, filter = "" }) {
       province !== "" ||
       propertyType !== "" ||
       bedrooms !== "" ||
-      bathrooms !== ""
+      bathrooms !== "" ||
+      minPrice !== "" ||
+      maxPrice !== ""
     ) {
       clearSearchFilter();
       fetchProperties();
@@ -176,33 +191,33 @@ function PropertyList({ message, filter = "" }) {
                   </Form.Control>
                 </Form.Group>
 
-                {/* <div className="d-flex gap-3">
-              <Form.Group className="text-center mr-2" controlId="minPrice">
-                <Form.Label> Min. Price</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="minPrice"
-                  min={0}
-                  step={50000}
-                  className="text-center"
-                  value={minPrice}
-                  onChange={(event) => setMinPrice(event.target.value)}
-                />
-              </Form.Group>
+                <div className="d-flex gap-3">
+                  <Form.Group className="text-center mr-2" controlId="minPrice">
+                    <Form.Label> Min. Price</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="minPrice"
+                      min={0}
+                      step={50000}
+                      className="text-center"
+                      value={minPrice}
+                      onChange={(event) => setMinPrice(event.target.value)}
+                    />
+                  </Form.Group>
 
-              <Form.Group className="text-center ml-2" controlId="maxPrice">
-                <Form.Label>Max. Price</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="maxPrice"
-                  min={0}
-                  step={50000}
-                  className="text-center"
-                  value={maxPrice}
-                  onChange={(event) => setMaxPrice(event.target.value)}
-                />
-              </Form.Group>
-            </div> */}
+                  <Form.Group className="text-center ml-2" controlId="maxPrice">
+                    <Form.Label>Max. Price</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="maxPrice"
+                      min={0}
+                      step={50000}
+                      className="text-center"
+                      value={maxPrice}
+                      onChange={(event) => setMaxPrice(event.target.value)}
+                    />
+                  </Form.Group>
+                </div>
 
                 <div className="d-flex gap-3">
                   <Form.Group className="text-center mr-2" controlId="bedrooms">
