@@ -12,12 +12,12 @@ const PopularProfiles = ({ mobile }) => {
   return (
     <Container
       className={`${formStyles.PopularProfileContainer} ${
-        mobile && "d-lg-none text-center mb-3"
+        mobile && "d-lg-none text-center mb-3 mt-1"
       }`}
     >
       {popularProfiles.results.length ? (
         <>
-          <h5 className="text-center mt-2 mb-4">Most Popular Sellers</h5>
+          <h5 className="text-center mt-1 mb-4">Most Popular Sellers</h5>
           {mobile ? (
             <div className="d-flex justify-content-around">
               {popularProfiles.results.slice(0, 4).map((profile) => (

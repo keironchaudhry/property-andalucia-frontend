@@ -153,14 +153,9 @@ const PropertyDetail = (props) => {
             <Card.Img src={image} variant="top" />
 
             {/* User Profile */}
-            <Card.Body className="d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+            <Card.Body className="d-flex flex-sm-row justify-content-between align-items-center">
               <Link to={`/profiles/${profile_id}`} className="d-md-none">
-                <Avatar
-                  src={profile_image}
-                  height={55}
-                  mobile
-                  text="Placeholder"
-                />
+                <Avatar src={profile_image} height={45} mobile />
                 {owner}
               </Link>
               <Link
@@ -207,13 +202,16 @@ const PropertyDetail = (props) => {
           >
             <p>
               <i class="fa-solid fa-bed"></i>
-              {bedroom_count} bedroom(s)
+              {bedroom_count} bed
             </p>
             <p>
               <i class="fa-sharp fa-solid fa-sink"></i>
-              {bathrooms_count} bathroom(s)
+              {bathrooms_count} bath
             </p>
-            <p>{size}m²</p>
+            <p>
+              <i class="fa-solid fa-ruler"></i>
+              {size}m²
+            </p>
           </div>
 
           {/* Description */}
@@ -230,7 +228,7 @@ const PropertyDetail = (props) => {
             <div className="d-flex flex-row justify-content-between">
               <Col>
                 <h5 className="mb-3">Basic characteristics:</h5>
-                <ul className="">
+                <ul className={styles.ListMobileSpacing}>
                   <li className="text-capitalize">Province: {province}</li>
                   <li className="text-capitalize">Type: {property_type}</li>
                   <li>Size: {size}m²</li>
@@ -240,7 +238,7 @@ const PropertyDetail = (props) => {
               </Col>
               <Col>
                 <h5 className="mb-3">Additional information:</h5>
-                <ul>
+                <ul className={styles.ListMobileSpacing}>
                   {garden ? (
                     <li>This property has a garden.</li>
                   ) : (
@@ -308,14 +306,9 @@ const PropertyDetail = (props) => {
             </Link>
 
             {/* User Profile */}
-            <Card.Body className="d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+            <Card.Body className="d-flex flex-sm-row justify-content-between align-items-center">
               <Link to={`/profiles/${profile_id}`} className="d-md-none">
-                <Avatar
-                  src={profile_image}
-                  height={55}
-                  mobile
-                  text="Placeholder"
-                />
+                <Avatar src={profile_image} height={45} mobile />
                 {owner}
               </Link>
               <Link
@@ -363,18 +356,21 @@ const PropertyDetail = (props) => {
             >
               <p>
                 <i class="fa-solid fa-bed"></i>
-                {bedroom_count} bedroom(s)
+                {bedroom_count} bed
               </p>
               <p>
                 <i class="fa-sharp fa-solid fa-sink"></i>
-                {bathrooms_count} bathroom(s)
+                {bathrooms_count} bath
               </p>
-              <p>{size}m²</p>
+              <p>
+                <i class="fa-solid fa-ruler"></i>
+                {size}m²
+              </p>
             </div>
 
             {/* Property Name */}
             <div className="d-flex flex-column align-items-start align-content-start gap-2 me-3 mt-1">
-              <h4>
+              <h4 className={styles.PropertyNameMobile}>
                 <span>{name}</span>
               </h4>
               <h5 className="text-muted">

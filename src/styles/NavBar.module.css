@@ -26,3 +26,13 @@
 .Active i {
   color: #CC5500;
 }
+
+@media screen and (max-width: 430px) {
+  .NavBar {
+    margin: 0px;
+  }
+
+  .NavBar img {
+    height: 55px;
+  }
+}
