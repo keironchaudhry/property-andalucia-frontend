@@ -27,8 +27,8 @@
   color: #CC5500;
 }
 
-/* @media screen and (max-width: 430px) {
-  .NavBar {
-    margin-top: 0px;
+@media screen and (max-width: 430px) {
+  .NavBar img {
+    height: 55px;
   }
-} */
+}
