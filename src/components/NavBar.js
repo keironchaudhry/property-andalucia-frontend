@@ -101,7 +101,6 @@ const NavBar = () => {
             <img src={logo} alt="Logo" height="80" />
           </Navbar.Brand>
         </NavLink>
-        {currentUser?.seller_status && addPropertyIcon}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
@@ -109,6 +108,7 @@ const NavBar = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-right">
+            {currentUser?.seller_status && addPropertyIcon}
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
