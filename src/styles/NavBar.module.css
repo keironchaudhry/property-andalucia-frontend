@@ -28,6 +28,10 @@
 }
 
 @media screen and (max-width: 430px) {
+  .NavBar {
+    margin: 0px;
+  }
+
   .NavBar img {
     height: 55px;
   }
