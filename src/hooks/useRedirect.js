@@ -8,9 +8,15 @@ export const useRedirect = (userAuthStatus) => {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        await axios.post("/dj-rest-auth/token/refresh/");
+        const { data: userProfile } = await axios.post(
+          "/dj-rest-auth/token/refresh/"
+        );
         if (userAuthStatus === "loggedIn") {
           history.push("/");
+        } else if (userAuthStatus === "notSeller") {
+          if (!userProfile.seller_status) {
+            history.push("/");
+          }
         }
       } catch (err) {
         if (userAuthStatus === "loggedOut") {

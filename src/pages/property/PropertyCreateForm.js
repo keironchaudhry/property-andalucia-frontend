@@ -19,6 +19,7 @@ import { useRedirect } from "../../hooks/useRedirect";
 
 export default function PropertyCreateForm() {
   useRedirect("loggedOut");
+  useRedirect("notSeller");
   const [errors, setErrors] = useState({});
 
   const [propertyData, setPropertyData] = useState({
