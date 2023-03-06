@@ -105,6 +105,11 @@ const ProfileEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.email?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group controlId="phoneNum">
         <Form.Label>Phone</Form.Label>
@@ -115,6 +120,11 @@ const ProfileEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.telephone?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group controlId="userBio">
         <Form.Label>Bio</Form.Label>
@@ -126,12 +136,12 @@ const ProfileEditForm = () => {
           rows={7}
         />
       </Form.Group>
-
       {errors?.bio?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
       <Button
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => history.goBack()}
