@@ -222,6 +222,11 @@ export default function PropertyCreateForm() {
         onChange={handleChangeImage}
         ref={imageInput}
       />
+      {errors?.image?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
     </Container>
   );
 
@@ -246,6 +251,11 @@ export default function PropertyCreateForm() {
           <option value="bungalow">Bungalow</option>
         </Form.Control>
       </Form.Group>
+      {errors?.property_type?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group controlId="province">
         <Form.Label>Province</Form.Label>
@@ -265,6 +275,11 @@ export default function PropertyCreateForm() {
           <option value="almeria">Almeria</option>
         </Form.Control>
       </Form.Group>
+      {errors?.province?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group controlId="municipality">
         <Form.Label>Municipality</Form.Label>
@@ -305,7 +320,7 @@ export default function PropertyCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.postcode?.map((message, idx) => (
+      {errors?.post_code?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -315,7 +330,6 @@ export default function PropertyCreateForm() {
         <Form.Label>Price (€)</Form.Label>
         <Form.Control
           min="0"
-          step="1.00"
           type="number"
           name="price"
           value={price}
@@ -332,7 +346,6 @@ export default function PropertyCreateForm() {
         <Form.Label>Size (m²)</Form.Label>
         <Form.Control
           min="0"
-          step="1"
           type="number"
           name="size"
           value={size}
@@ -356,7 +369,7 @@ export default function PropertyCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.bedrooms?.map((message, idx) => (
+      {errors?.bedroom_count?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -373,7 +386,7 @@ export default function PropertyCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.bathrooms?.map((message, idx) => (
+      {errors?.bathrooms_count?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
