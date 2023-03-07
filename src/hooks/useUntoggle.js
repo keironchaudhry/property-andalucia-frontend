@@ -1,5 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const useUntoggle = () => {
   const [expanded, setExpanded] = useState(false);
   const ref = useRef(null);

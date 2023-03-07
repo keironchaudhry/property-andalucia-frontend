@@ -10,6 +10,10 @@ import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const LoginForm = () => {
   const setCurrentUser = useSetCurrentUser();
   useRedirect("loggedIn");

@@ -3,6 +3,10 @@ import { useHistory } from "react-router";
 
 import { axiosReq } from "../api/axiosDefaults";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 export const useRedirect = (userAuthStatus) => {
   const history = useHistory();
 

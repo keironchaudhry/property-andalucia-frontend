@@ -16,6 +16,10 @@ import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import PopularProfiles from "../profiles/PopularProfiles";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 function PropertyPage() {
   const { id } = useParams();
   const [property, setProperty] = useState({ results: [] });

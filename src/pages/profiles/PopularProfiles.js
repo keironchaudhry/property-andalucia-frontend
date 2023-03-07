@@ -6,6 +6,10 @@ import Asset from "../../components/Asset";
 import formStyles from "../../styles/PropertyList.module.css";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const PopularProfiles = ({ mobile }) => {
   const { popularProfiles } = useProfileData();
 

@@ -17,6 +17,10 @@ import {
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/ProfilePage.module.css";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const UsernameForm = () => {
   const [username, setUsername] = useState("");
   const [errors, setErrors] = useState({});

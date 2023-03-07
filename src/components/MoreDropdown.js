@@ -4,6 +4,10 @@ import { useHistory } from "react-router";
 
 import styles from "../styles/MoreDropdown.module.css";
 
+/**
+ * Code provided by Code Institute's "Moments" walkthrough.
+ */
+
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   <i
     className="fas fa-ellipsis-v"

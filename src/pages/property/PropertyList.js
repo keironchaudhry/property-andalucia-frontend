@@ -21,6 +21,10 @@ import PropertyDetail from "./PropertyDetail";
 import Asset from "../../components/Asset";
 import PopularProfiles from "../profiles/PopularProfiles";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 function PropertyList({ message, filter = "" }) {
   const [property, setProperty] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);

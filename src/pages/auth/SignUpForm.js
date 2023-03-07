@@ -11,6 +11,10 @@ import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const SignUpForm = () => {
   useRedirect("loggedIn");
 

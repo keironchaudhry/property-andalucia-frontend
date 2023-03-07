@@ -24,6 +24,10 @@ import { fetchMoreData } from "../../utils/utils";
 import PropertyDetail from "../property/PropertyDetail";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
