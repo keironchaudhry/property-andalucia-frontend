@@ -104,7 +104,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.bio && <Col className="p-3">{profile.bio}</Col>}
+        {profile?.bio && <Col className="p-3 pb-5">{profile.bio}</Col>}
       </Row>
     </>
   );
@@ -112,7 +112,10 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">{profile?.owner}'s Listings</p>
+      <p className="text-center h5">
+        <i class="fa-solid fa-list mr-1"></i>
+        {profile?.owner}'s Listings
+      </p>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll

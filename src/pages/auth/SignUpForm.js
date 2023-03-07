@@ -57,13 +57,7 @@ const SignUpForm = () => {
     <Row className={styles.Row}>
       <Col className="my-auto mx-auto py-2 p-md-2" md={8} lg={6}>
         <Container className={`${appStyles.Content}`}>
-          <h1 className={styles.Header}>Sign Up</h1>
-
-          <Container className={`mb-3 ${appStyles.Content}`}>
-            <Link className={styles.Link} to="/signin">
-              Already have an account? <span>Sign in here.</span>
-            </Link>
-          </Container>
+          <h1 className={`${styles.Header} mb-4`}>Sign Up</h1>
 
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="username">
@@ -141,6 +135,11 @@ const SignUpForm = () => {
               </Alert>
             ))}
           </Form>
+          <Container className={`mt-3 ${appStyles.Content}`}>
+            <Link className={styles.Link} to="/signin">
+              Already have an account? <span>Sign in here.</span>
+            </Link>
+          </Container>
         </Container>
       </Col>
     </Row>
