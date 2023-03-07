@@ -8,6 +8,10 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 export default function NoteCreateForm(props) {
   const { property, setNotes, profileImage, profile_id } = props;
   const [content, setContent] = useState("");

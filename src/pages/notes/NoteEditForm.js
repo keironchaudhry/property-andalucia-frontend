@@ -6,6 +6,10 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 export default function NoteEditForm(props) {
   const { id, content, setNotes, setShowEditForm } = props;
   const [formContent, setFormContent] = useState(content);
@@ -57,7 +61,6 @@ export default function NoteEditForm(props) {
       <div className="align-self-end">
         <button
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
-          //   disabled={!content.trim()}
           type="submit"
         >
           Save
@@ -65,7 +68,6 @@ export default function NoteEditForm(props) {
         <button
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
           onClick={() => setShowEditForm(false)}
-          //   disabled={!content.trim()}
         >
           Cancel
         </button>

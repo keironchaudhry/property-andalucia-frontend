@@ -6,6 +6,10 @@ import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import NoteEditForm from "./NoteEditForm";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const Note = (props) => {
   const { id, owner, updated_at, content, setNotes } = props;
   const [showEditForm, setShowEditForm] = useState(false);

@@ -17,8 +17,13 @@ import { Image } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 export default function PropertyCreateForm() {
   useRedirect("loggedOut");
+  useRedirect("notSeller");
   const [errors, setErrors] = useState({});
 
   const [propertyData, setPropertyData] = useState({

@@ -1,5 +1,9 @@
 import { axiosReq } from "../api/axiosDefaults";
 
+/**
+ * Code provided by Code Institute's "Moments" walkthrough.
+ */
+
 export const fetchMoreData = async (resource, setResource) => {
   try {
     const { data } = await axiosReq.get(resource.next);

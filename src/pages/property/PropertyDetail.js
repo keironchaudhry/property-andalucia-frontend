@@ -19,6 +19,10 @@ import styles from "../../styles/PropertyDetail.module.css";
 import Avatar from "../../components/Avatar";
 import Map from "../../components/Map";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const PropertyDetail = (props) => {
   const {
     id,

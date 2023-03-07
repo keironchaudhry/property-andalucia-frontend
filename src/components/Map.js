@@ -1,5 +1,12 @@
-import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import React from "react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+
+/**
+ * Code adapted from tutorial by "Google Maps Platform" on YouTube.
+ * URL: https://www.youtube.com/watch?v=9e-5QHpadi0
+ * "@react-google-maps/api" documentation also helped in adapting this code.
+ * URL: https://www.npmjs.com/package/@react-google-maps/api
+ */
 
 const Map = (props) => {
   const { latitude, longitude } = props;
@@ -25,6 +32,6 @@ const Map = (props) => {
       </GoogleMap>
     </LoadScript>
   );
-}
+};
 
-export default Map
+export default Map;

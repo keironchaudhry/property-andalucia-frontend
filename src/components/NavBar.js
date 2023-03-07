@@ -12,6 +12,10 @@ import {
 } from "../contexts/CurrentUserContext";
 import useUntoggle from "../hooks/useUntoggle";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();

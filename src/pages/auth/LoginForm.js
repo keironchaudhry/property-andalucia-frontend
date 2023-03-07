@@ -10,6 +10,10 @@ import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 const LoginForm = () => {
   const setCurrentUser = useSetCurrentUser();
   useRedirect("loggedIn");
@@ -48,13 +52,7 @@ const LoginForm = () => {
     <Row className={styles.Row}>
       <Col className="my-auto mx-auto py-2 p-md-2" md={8} lg={6}>
         <Container className={`${appStyles.Content}`}>
-          <h1 className={styles.Header}>Login</h1>
-
-          <Container className={`mb-3 ${appStyles.Content}`}>
-            <Link className={styles.Link} to="/signup">
-              New to Property Andalucia? <span>Create your account here.</span>
-            </Link>
-          </Container>
+          <h1 className={`${styles.Header} mb-4`}>Login</h1>
 
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="username">
@@ -104,6 +102,11 @@ const LoginForm = () => {
               </Alert>
             ))}
           </Form>
+          <Container className={`mt-3 ${appStyles.Content}`}>
+            <Link className={styles.Link} to="/signup">
+            First time? <span>Create your account here.</span>
+            </Link>
+          </Container>
         </Container>
       </Col>
     </Row>
