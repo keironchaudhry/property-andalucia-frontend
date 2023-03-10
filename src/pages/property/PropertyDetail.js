@@ -1,15 +1,13 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import {
-  Col,
-  Card,
-  Container,
-  OverlayTrigger,
-  Tooltip,
-  Button,
-  Popover,
-} from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import Button from "react-bootstrap/Button";
+import Popover from "react-bootstrap/Popover";
 
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -69,7 +67,7 @@ const PropertyDetail = (props) => {
       await axiosRes.delete(`/property/${id}/`);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -89,7 +87,7 @@ const PropertyDetail = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -109,7 +107,7 @@ const PropertyDetail = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

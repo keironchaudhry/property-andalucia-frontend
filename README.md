@@ -119,7 +119,7 @@ Epics, User Stories and Backend Tasks can be found in this GitHub repository pro
 
 ## **Wireframes**
 
-Images for the wireframes can be found in a separate page [here]().
+Images for the wireframes can be found in a separate page [here](/documentation/wireframes.md).
 
 ## **Colour**
 

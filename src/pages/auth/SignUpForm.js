@@ -6,7 +6,11 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";
@@ -43,7 +47,6 @@ const SignUpForm = () => {
       ...signUpData,
       [event.target.name]: event.target.checked,
     });
-    console.log(event.target.name, event.target.checked);
   };
 
   const handleSubmit = async (event) => {
@@ -51,7 +54,6 @@ const SignUpForm = () => {
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/login");
-      console.log(signUpData);
     } catch (err) {
       setErrors(err.response?.data);
     }

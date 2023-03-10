@@ -1,5 +1,7 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 
@@ -11,6 +13,7 @@ import {
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import useUntoggle from "../hooks/useUntoggle";
+import { removeTokenTimestamp } from "../utils/utils";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
@@ -26,8 +29,9 @@ const NavBar = () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

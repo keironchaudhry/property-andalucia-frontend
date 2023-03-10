@@ -7,25 +7,29 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { Card } from "react-bootstrap";
-import { Accordion } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Accordion from "react-bootstrap/Accordion";
 
-import appStyles from "../../App.module.css";
-import { axiosReq } from "../../api/axiosDefaults";
-import { fetchMoreData } from "../../utils/utils";
-import NoResults from "../../assets/noresults.png";
-
-import formStyles from "../../styles/PropertyList.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import PropertyDetail from "./PropertyDetail";
 import Asset from "../../components/Asset";
 import PopularProfiles from "../profiles/PopularProfiles";
+
+import { axiosReq } from "../../api/axiosDefaults";
+import { fetchMoreData } from "../../utils/utils";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import NoResults from "../../assets/noresults.png";
+
+import appStyles from "../../App.module.css";
+import formStyles from "../../styles/PropertyList.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
  */
 
 function PropertyList({ message, filter = "" }) {
+  const currentUser = useCurrentUser();
+
   const [property, setProperty] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -46,7 +50,7 @@ function PropertyList({ message, filter = "" }) {
       setProperty(data);
       setHasLoaded(true);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -68,6 +72,7 @@ function PropertyList({ message, filter = "" }) {
     minPrice,
     maxPrice,
     pathname,
+    currentUser,
   ]);
 
   const clearSearchFilter = () => {

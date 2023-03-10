@@ -7,13 +7,13 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
+import Image from "react-bootstrap/Image";
 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/PropertyCreateEditForm.module.css";
 import Upload from "../../assets/upload.png";
 import Asset from "../../components/Asset";
-import { Image } from "react-bootstrap";
 
 import { useRedirect } from "../../hooks/useRedirect";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -125,7 +125,7 @@ export default function PropertyEditForm() {
             })
           : history.push("/");
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -144,7 +144,6 @@ export default function PropertyEditForm() {
       ...propertyData,
       [event.target.name]: event.target.checked,
     });
-    console.log(event.target.name, event.target.checked);
   };
 
   const handleChangeImage = (event) => {
@@ -187,7 +186,7 @@ export default function PropertyEditForm() {
       await axiosReq.put(`/property/${id}/`, formData);
       history.push(`/property/${id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
