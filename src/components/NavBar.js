@@ -11,6 +11,7 @@ import {
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import useUntoggle from "../hooks/useUntoggle";
+import { removeTokenTimestamp } from "../utils/utils";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
@@ -26,6 +27,7 @@ const NavBar = () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (err) {
       console.log(err);
     }
