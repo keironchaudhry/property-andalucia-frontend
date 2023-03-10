@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+
+import Avatar from "../../components/Avatar";
 import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Link } from "react-router-dom";
-import Avatar from "../../components/Avatar";
-import { Button } from "react-bootstrap";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 /**

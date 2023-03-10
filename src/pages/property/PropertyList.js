@@ -7,19 +7,20 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { Card } from "react-bootstrap";
-import { Accordion } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Accordion from "react-bootstrap/Accordion";
 
-import appStyles from "../../App.module.css";
+import PropertyDetail from "./PropertyDetail";
+import Asset from "../../components/Asset";
+import PopularProfiles from "../profiles/PopularProfiles";
+
 import { axiosReq } from "../../api/axiosDefaults";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/noresults.png";
 
+import appStyles from "../../App.module.css";
 import formStyles from "../../styles/PropertyList.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import PropertyDetail from "./PropertyDetail";
-import Asset from "../../components/Asset";
-import PopularProfiles from "../profiles/PopularProfiles";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
