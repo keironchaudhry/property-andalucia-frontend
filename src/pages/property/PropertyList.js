@@ -16,6 +16,7 @@ import PopularProfiles from "../profiles/PopularProfiles";
 
 import { axiosReq } from "../../api/axiosDefaults";
 import { fetchMoreData } from "../../utils/utils";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import NoResults from "../../assets/noresults.png";
 
 import appStyles from "../../App.module.css";
@@ -27,6 +28,8 @@ import btnStyles from "../../styles/Button.module.css";
  */
 
 function PropertyList({ message, filter = "" }) {
+  const currentUser = useCurrentUser();
+
   const [property, setProperty] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -69,6 +72,7 @@ function PropertyList({ message, filter = "" }) {
     minPrice,
     maxPrice,
     pathname,
+    currentUser,
   ]);
 
   const clearSearchFilter = () => {
