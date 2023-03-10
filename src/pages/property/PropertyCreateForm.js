@@ -84,7 +84,6 @@ export default function PropertyCreateForm() {
       ...propertyData,
       [event.target.name]: event.target.checked,
     });
-    console.log(event.target.name, event.target.checked);
   };
 
   const handleChangeImage = (event) => {
@@ -124,7 +123,7 @@ export default function PropertyCreateForm() {
       const { data } = await axiosReq.post("/property/create/", formData);
       history.push(`/property/${data.id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

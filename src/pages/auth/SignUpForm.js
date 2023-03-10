@@ -47,7 +47,6 @@ const SignUpForm = () => {
       ...signUpData,
       [event.target.name]: event.target.checked,
     });
-    console.log(event.target.name, event.target.checked);
   };
 
   const handleSubmit = async (event) => {
@@ -55,7 +54,6 @@ const SignUpForm = () => {
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/login");
-      console.log(signUpData);
     } catch (err) {
       setErrors(err.response?.data);
     }

@@ -67,7 +67,7 @@ const PropertyDetail = (props) => {
       await axiosRes.delete(`/property/${id}/`);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -87,7 +87,7 @@ const PropertyDetail = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -107,7 +107,7 @@ const PropertyDetail = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

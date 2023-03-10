@@ -39,7 +39,7 @@ function PropertyPage() {
         setProperty({ results: [property] });
         setNotes(notes);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

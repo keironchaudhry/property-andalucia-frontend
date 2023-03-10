@@ -125,7 +125,7 @@ export default function PropertyEditForm() {
             })
           : history.push("/");
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -144,7 +144,6 @@ export default function PropertyEditForm() {
       ...propertyData,
       [event.target.name]: event.target.checked,
     });
-    console.log(event.target.name, event.target.checked);
   };
 
   const handleChangeImage = (event) => {
@@ -187,7 +186,7 @@ export default function PropertyEditForm() {
       await axiosReq.put(`/property/${id}/`, formData);
       history.push(`/property/${id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
