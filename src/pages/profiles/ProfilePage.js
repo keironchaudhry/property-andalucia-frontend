@@ -118,7 +118,7 @@ function ProfilePage() {
     <>
       <hr />
       <p className="text-center h5">
-        <i class="fa-solid fa-list mr-1"></i>
+        <i className="fa-solid fa-list mr-1"></i>
         {profile?.owner}'s Listings
       </p>
       <hr />

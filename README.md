@@ -1,6 +1,6 @@
 # **Property Andalucia**
 
-amiresponsive
+![am-i-responsive](/documentation/readme_images/design/am%20i%20responsive.png)
 
 Property Andalucia is a property marketplace platform designed for selling and buying property. It allows the user to create their own listings and sell their property. As a visitor you can also search for property using a variety of search filter methods. The users can register for the website as a seller or a buyer, and gain access to further features such as saving posts and following other users.
 
@@ -27,6 +27,24 @@ This part of the project serves as the Frontend, created using React.js, which c
     * [Iconography](#iconography)
 * [Features](#features)
     * [Existing Features](#existing-features)
+        * [Navigation Bar](#navigation-bar)
+        * [Home Page](#home-page)
+        * [Sign Up](#sign-up)
+        * [Login](#login)
+        * [Add Property Form](#add-property-form)
+        * [Edit Property Form](#edit-profile-form)
+        * [Property List View](#property-list-view)
+        * [Property Detail View](#property-detail-view)
+        * [Search Filter](#search-filter)
+        * [Notes](#notes)
+        * [Saves](#saves)
+        * [Saved Feed](#saved-feed)
+        * [Popular Sellers](#popular-sellers)
+        * [Follow Feed](#follow-feed)
+        * [Profile](#profile)
+        * [Edit Profile Form](#edit-profile-form)
+        * [Username and Password Forms](#username-and-password-forms)
+        * [No Results Found](#no-results-found)
     * [Future features to implement](#future-features-to-implement)
 * [Testing](#testing)
 * [Bugs during development](#bugs-during-development)
@@ -127,7 +145,7 @@ The colour design used for this site has been a mixture of white, peach and shad
 
 The hex codes are (in descending order as seen on the palette): #CC5500, #F99417, #FFF5EE, and #FFFFFF.
 
-![colour-palette](/documentation/readme_images/colour%20palette.png)
+![colour-palette](/documentation/readme_images/design/colour%20palette.png)
 
 ## **Fonts**
 
@@ -146,7 +164,188 @@ The interactive icons found across the web application were imported from [Font 
 
 ## **Existing features**
 
-To be added.
+#### **Navigation Bar** 
+
+* Contains links for site navigation throughout application
+* State changes links depending on logged-in status versus logged-out
+    * If a user signs up as a seller they will be able to see the link to 'Add Property', as well as the other collective iconed links: view 'Saved' properties, view property 'Feed' (property listed by other followed sellers), their profile and the 'Logout' icon.
+    * If a user signs up as a non-seller they will be able to see all the aforementioned links save the 'Add Property' icon.
+* The brand logo is a clickable button that returns the user to home page.
+
+![navbar-logged-out](/documentation/readme_images/features/navbar%20logged%20out.png)
+![navbar-logged-in](/documentation/readme_images/features/navbar%20logged%20in.png)
+![navbar-logged-in-2](/documentation/readme_images/features/navbar%20logged%20in%20(2).png)
+
+* Designed to be responsive depending on screen size; links form a dropdown button when viewed on smaller viewport.
+![navbar-small-viewport](/documentation/readme_images/features/navbar%20small%20viewport.png)
+
+#### **Home Page**
+
+* The home page is the first page seen upon visiting the web app and logging in.
+* It contains the navigation bar, a list of property posts made by users, and the search filter component so visitors are able to interact with site content.
+
+![home-page](/documentation/readme_images/features/home%20page%20logged%20out%20.png)
+
+#### **Sign Up**
+
+* Visitors are able to sign up for an account which allows them to add property posts, save posts, management of their profile and view property listing information.
+* Visitors who wish to make a sellers account must simply check the checkbox indicated with "I am selling property" statement.
+* Visitors must create a unique username and a password. 
+
+![signup-form](/documentation/readme_images/features/sign%20up%20form.png)
+
+#### **Login**
+
+* Upon successful registration, the user is redirected to the 'login' page, where they can sign in with the created credentials.
+* Users are requested to enter their username and password credentials.
+
+![login-form](/documentation/readme_images/features/login%20form.png)
+
+#### **Add Property Form**
+
+* Authenticated sellers have exclusive access to the 'Add Property' icon, which directs them to the property post creation form.
+* This form is not available to non-sellers, who are redirected back to the home page if attempted entry.
+* Users are able to upload an image of their property
+* If the image field is left empty, an automated default image will be rendered from the API
+* Some fields are required and users are alerted by the API via warnings if there are any missing or invalid fields. 
+* Input fields vary in type, some are text, some are numbers and some are checkboxes. 
+
+![add-property-form](/documentation/readme_images/features/add%20property%20form.png)
+
+#### **Edit Property Form**
+
+* Edit property form mimics the property creation form, thus all of the fields are identical
+* The form contains pre-populated input and image fields, which are easily editable.
+* Save changes are evident from the moment of clicking the 'Save' button.
+
+![edit-property-form](/documentation/readme_images/features/edit%20property%20form.png)
+
+#### **Property List View**
+
+* This view contains the shortened, listed view of all available properties.
+* Contains a property listing count at the top, which increases/decreases with each addition or deletion.
+* Property detail view can be accessed via the "View more..." link at the bottom of each listed property.
+* Each listed object contains brief but important information about the listing, such as the image, the title, address, the price, description, measurement and bedroom/bathroom count.
+* Each listing also contains the profile avatar and name of each object owner, as well as a save button. 
+* All listings are ordered by creation date, the latest post being the top and first-seen post.
+
+![property-list-view](/documentation/readme_images/features/property%20list%20view.png)
+
+#### **Property Detail View**
+
+* When accessed, the detail view reveals further information about a property object, such as the "Basic characteristics" and "Additional information".
+* It contains a button to reveal the object owners telephone and email information. This can only be accessed by authenticated users and not by anonymous visitors.
+* Contains a "Location" section, featuring the Google Maps component with the location of the property.
+* Contains the "Notes" section at the bottom of the page, where all authenticated users can leave a private note. 
+
+![property-detail-view](/documentation/readme_images/features/property%20detail%20view.png)
+
+#### **Search Filter**
+
+* Search filter can be accessed on home page, saved posts page and followers feed page.
+* It can be interacted with by all users, authenticated or anonymous. 
+* Users are able to filter by province, property type, price range, bedroom count and bathroom count.
+* Filters work in coordination with each other, meaning that a property can be filtered gradually, an example would be: first by province, then by price, then by bedroom count.
+* Contains a "Clear Filter" button which clears the search filters and restores the page to normal. 
+
+![search-filter](/documentation/readme_images/features/search%20filters%20.png)
+
+#### **Notes**
+
+* Notes can be found at the bottom of all property detail views.
+* The note form is easily accessible and instantly creates a note made by an authenticated user.
+* All notes are made private in the API, thus only the current user can view notes.
+* Anonymous users cannot make any notes without creating an account first.
+* All notes made can be instantly edited via the dropdown menu.
+* All notes amde can be instantly deleted via the dropdown menu.
+
+![notes](/documentation/readme_images/features/note%20form%20and%20comments.png)
+
+#### **Saves**
+
+* Save icon can be found on both the list and detail view of a property post.
+* Its state changes instantly upon clicking and unclicking.
+* All saved property posts are filtered as listings under the "Saved" feed icon.
+* Authenticated sellers cannot save their own posts.
+* Anonymous visitors cannot make use of the save functionality.
+
+![saves](/documentation/readme_images/features/saves.png)
+![saves-1](/documentation/readme_images/features/saves%20(2).png)
+![saves-2](/documentation/readme_images/features/saves%20(3).png)
+
+#### **Saved Feed**
+
+* "Saved" feed can be accessed in the navigation bar by both sellers and non-sellers.
+* The icon on the navigation bar is not visible to anonymous visitors. 
+* Posted objects in this filtered feed can increase/decrease saving/unsaving more posts.
+* Akin to the home page, it contains a list view and detail view of all post listings.
+
+![saved-feed](/documentation/readme_images/features/saves%20feed.png)
+
+#### **Popular Sellers**
+
+* Popular Sellers component can be viewed on the home page, saved page, follow feed page and logged-out page.
+* Contains a list of the most followed sellers profile.
+* Contains the Follow/Unfollow buttons, visible only to authenticated users.
+* Does not contain any non-seller profiles as it is filtered in the API. 
+* Anonymous visitors cannot follow or unfollow profiles.
+* User profiles can be accessed and viewed via the visible avatars.
+
+![popular-sellers](/documentation/readme_images/features/popular%20sellers.png)
+
+#### **Follow Feed**
+
+* "Feed" icon can be accessed in the navigation bar by both sellers and non-sellers.
+* The icon on the navigation bar is not visible to anonymous visitors. 
+* Contains a feed of all posts by a user that is being followed
+* Posts increase/decrease according to the follow/unfollowing of a user
+* Akin to the home page, it contains a list view and access to detail view of displayed listings.
+
+![follow-feed](/documentation/readme_images/features/follow%20feed.png)
+
+#### **Profile**
+
+* Profiles pages are visible to both authenticated users and anonymous.
+* Seller accounts are public whereas non-seller accounts are private
+* Profiles pages are editable for both sellers and non-sellers, with fields such as email, telephone and image to match their desired brand.
+* A dropdown button is available in which to modify username, password and profile.
+* Seller profiles have post listings which can be accessed via their profile, revealing posts specific to the profile owner.
+* Profiles contain follower and following counts.
+* Profile pages contain a "Follow"/"Unfollow" button.
+* Profile owners cannot follow their own pages
+
+![profile](/documentation/readme_images/features/seller%20profile.png)
+![profile-2](/documentation/readme_images/features/buyer%20profile.png)
+
+#### **Edit Profile Form**
+
+* Edit profile form can be accessed by dropdown menu by the owner of a profile object
+* The form contains pre-populated fields with the current, modifiable inputs
+* All inputs are updated when the "Save" button is clicked
+* Email field is validated via the API and warns the user if the email entered is not standardised. 
+* The telephone field is also validated via the API, requesting users enter a Spanish number (9 digits, beginning with 6, 7 or 9).
+
+![edit-profile-form](/documentation/readme_images/features/edit%20profile%20form.png)
+
+#### **Username and Password Forms**
+
+* Username form contains functionality to change the username.
+* Users cannot enter the same username and will receive an alert if they do.
+* Password form contains functionality to modify the current password.
+
+![username-form](/documentation/readme_images/features/username%20form.png)
+![password-form](/documentation/readme_images/features/password%20form.png)
+
+#### **No results found**
+
+* "No Result" pages are as follows:
+    * When there are no saved property listings
+    * When the following feed is empty
+    * When the user comes across a non-existent page (404 HTTP error)
+
+![not-found-saves](/documentation/readme_images/features/no%20results%20found%20saves.png)
+![not-found-follow](/documentation/readme_images/features/no%20results%20found%20follow.png)
+![not-found-404](/documentation/readme_images/features/no%20results%20found%20404.png)
 
 ## **Future features to implement**
 

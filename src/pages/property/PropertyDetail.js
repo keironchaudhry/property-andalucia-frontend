@@ -203,22 +203,21 @@ const PropertyDetail = (props) => {
             className={`${styles.Icons} d-flex flex-row justify-content-between h5 mt-3`}
           >
             <p>
-              <i class="fa-solid fa-bed"></i>
+              <i className="fa-solid fa-bed"></i>
               {bedroom_count} bed
             </p>
             <p>
-              <i class="fa-sharp fa-solid fa-sink"></i>
+              <i className="fa-sharp fa-solid fa-sink"></i>
               {bathrooms_count} bath
             </p>
             <p>
-              <i class="fa-solid fa-ruler"></i>
+              <i className="fa-solid fa-ruler"></i>
               {size}m²
             </p>
           </div>
 
           {/* Description */}
           <div className="mt-4 h5 text-center">
-            {/* <h2 className="mb-3">Description</h2> */}
             <p>{description}</p>
           </div>
 
@@ -255,6 +254,11 @@ const PropertyDetail = (props) => {
                     <li>This property is south-facing.</li>
                   ) : (
                     <li>This property is not south-facing.</li>
+                  )}
+                  {sold ? (
+                    <li><strong>This property has been sold.</strong></li>
+                  ) : (
+                    <li>This property is still up for sale.</li>
                   )}
                 </ul>
               </Col>
@@ -357,15 +361,15 @@ const PropertyDetail = (props) => {
               className={`${styles.Icons} d-flex flex-row justify-content-between h5 mt-3`}
             >
               <p>
-                <i class="fa-solid fa-bed"></i>
+                <i className="fa-solid fa-bed"></i>
                 {bedroom_count} bed
               </p>
               <p>
-                <i class="fa-sharp fa-solid fa-sink"></i>
+                <i className="fa-sharp fa-solid fa-sink"></i>
                 {bathrooms_count} bath
               </p>
               <p>
-                <i class="fa-solid fa-ruler"></i>
+                <i className="fa-solid fa-ruler"></i>
                 {size}m²
               </p>
             </div>
