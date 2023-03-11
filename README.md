@@ -401,7 +401,7 @@ Ideas for possible future implementation are as follows:
 
 # **Testing**
 
-To be added
+Testing can be found in a separate document [here](/documentation/testing.md).
 
 
 # **Bugs during development**
