@@ -168,17 +168,6 @@ export default function PropertyCreateForm() {
 
   const googleMapFields = (
     <div className="text-center">
-      <Form.Group controlId="longitude">
-        <Form.Label>Longitude</Form.Label>
-        <Form.Control
-          step="1.00"
-          type="number"
-          name="longitude"
-          value={longitude}
-          onChange={handleChange}
-        />
-      </Form.Group>
-
       <Form.Group controlId="latitude">
         <Form.Label>Latitude</Form.Label>
         <Form.Control
@@ -186,6 +175,17 @@ export default function PropertyCreateForm() {
           type="number"
           name="latitude"
           value={latitude}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="longitude">
+        <Form.Label>Longitude</Form.Label>
+        <Form.Control
+          step="1.00"
+          type="number"
+          name="longitude"
+          value={longitude}
           onChange={handleChange}
         />
       </Form.Group>

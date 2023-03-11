@@ -8,12 +8,12 @@ Wireframes were not created for every single page, rather for the main pages and
 
 ## **Principal page** 
 
-![wireframes-main-page](/documentation/readme_images/wireframe%20landing%20page%20(and%20mobile).png)
+![wireframes-main-page](/documentation/readme_images/design/wireframe%20landing%20page%20(and%20mobile).png)
 
 ## **Detail view**
 
-![wireframes-detail-page](/documentation/readme_images/wireframe%20detail%20view%20(and%20mobile).png)
+![wireframes-detail-page](/documentation/readme_images/design/wireframe%20detail%20view%20(and%20mobile).png)
 
 ## **Creation form**
 
-![wireframes-creation-form](/documentation/readme_images/wireframe%20creation%20form%20(and%20mobile).png)
+![wireframes-creation-form](/documentation/readme_images/design/wireframe%20creation%20form%20(and%20mobile).png)

@@ -267,7 +267,7 @@ function PropertyList({ message, filter = "" }) {
                     aria-label="Search"
                     onClick={clearSearch}
                   >
-                    <i class="fa-solid fa-rotate-left"></i>Clear Filter
+                    <i className="fa-solid fa-rotate-left"></i>Clear Filter
                   </Button>
                 </div>
               </Form>
