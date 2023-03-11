@@ -26,28 +26,34 @@ This part of the project serves as the Frontend, created using React.js, which c
     * [Fonts](#fonts)
     * [Iconography](#iconography)
 * [Features](#features)
-    * [Existing Features](#existing-features)
-        * [Navigation Bar](#navigation-bar)
-        * [Home Page](#home-page)
-        * [Sign Up](#sign-up)
-        * [Login](#login)
-        * [Add Property Form](#add-property-form)
-        * [Edit Property Form](#edit-profile-form)
-        * [Property List View](#property-list-view)
-        * [Property Detail View](#property-detail-view)
-        * [Search Filter](#search-filter)
-        * [Notes](#notes)
-        * [Saves](#saves)
-        * [Saved Feed](#saved-feed)
-        * [Popular Sellers](#popular-sellers)
-        * [Follow Feed](#follow-feed)
-        * [Profile](#profile)
-        * [Edit Profile Form](#edit-profile-form)
-        * [Username and Password Forms](#username-and-password-forms)
-        * [No Results Found](#no-results-found)
+        <details>
+        <summary>[Existing Features](#existing-features)</summary>
+        <ul>
+        <li>[Navigation Bar](#navigation-bar)</li>
+        <li>[Home Page](#home-page)</li>
+        <li>[Sign Up](#sign-up)</li>
+        <li>[Login](#login)</li>
+        <li>[Add Property Form](#add-property-form)</li>
+        <li>[Edit Property Form](#edit-profile-form)</li>
+        <li>[Property List View](#property-list-view)</li>
+        <li>[Property Detail View](#property-detail-view)</li>
+        <li>[Search Filter](#search-filter)</li>
+        <li>[Notes](#notes)</li>
+        <li>[Saves](#saves)</li>
+        <li>[Saved Feed](#saved-feed)</li>
+        <li>[Popular Sellers](#popular-sellers)</li>
+        <li>[Follow Feed](#follow-feed)</li>
+        <li>[Profile](#profile)</li>
+        <li>[Edit Profile Form](#edit-profile-form)</li>
+        <li>[Username and Password Forms](#username-and-password-forms)</li>
+        <li>[No Results Found](#no-results-found)</li>
+        </ul>
+        </details>
     * [Future features to implement](#future-features-to-implement)
 * [Testing](#testing)
 * [Bugs during development](#bugs-during-development)
+    * [Fixed bugs](#fixed-bugs)
+    * [Remaining bugs](#remaining-bugs)
 * [Technologies and libraries used](#technologies-and-libraries-used)
     * [Languages](#languages)
     * [Libraries and other resources](#libraries-and-other-resources)
@@ -347,6 +353,40 @@ The interactive icons found across the web application were imported from [Font 
 ![not-found-follow](/documentation/readme_images/features/no%20results%20found%20follow.png)
 ![not-found-404](/documentation/readme_images/features/no%20results%20found%20404.png)
 
+## **Components**
+
+Components in React.js are independent pieces of [UI](https://www.techtarget.com/searchapparchitecture/definition/user-interface-UI) design that are split into reusable code blocks that can then be further developed and treated as a piece of code in isolation. This means that rather than having a single file for a web application page with hundreds to thousands of lines of code, variables and functions, different groups of code relating to a specific area of the page can be isolated and worked on separately. 
+
+There are several components used and managed in this project and they are the following:
+
+* Asset/Spinner
+    * This component is used in several places in the application, moreover wherever data may be loading. When the Search Filter is used this component is utilised while the data is being fetched. 
+    * Due to this, the UX is greatly improved as the page does not refresh redundantly and while the search filter is in use (such as clicking the dropdown option).
+
+* Avatar 
+    * Used to display the user profile image throughout the site.
+    * UX experience is improved as users are able to instantly identify the owners of a publication and their information.
+
+* Map
+    * This component was used to create a map location on the property detail view pages.
+    * It improves UX as it allows users to orientate themselves with relation to the property location.
+    * It requires the user to enter a latitude and longitude to form a centre point. These can generally be found by going into Google Maps, holding right-click on a desired location which will then reveal the latitude and longitude points.
+    * The [react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api) package was used to create this component. An API key is also needed from Google Cloud.
+
+* MoreDropdown
+    * This component is used in the property detail view page, published notes and user profile. It is a UX improvement as it allows users to access a dropdown menu to be able to modify or delete their own data.
+
+* NavBar
+    * The NavBar component is present on every page of the application. 
+    * It contributes to improved UX as the user can access most of the site features in one place from all pages across the app.
+    * The NavBar design collapsed into a burger menu with a smaller viewport size.
+
+* NotFound
+    * This component appears whenever a user tries to access an invalid or non-existent URL. 
+    * It contributes to improved UX as the user is informed that the page does not exist.
+    * It also appears where there are no saved posts or followed profiles with posts via the "Saved" and "Feed" buttons on the NavBar.
+
+
 ## **Future features to implement**
 
 Ideas for possible future implementation are as follows:
@@ -361,12 +401,18 @@ Ideas for possible future implementation are as follows:
 
 # **Testing**
 
-To be added
+Testing can be found in a separate document [here](/documentation/testing.md).
 
 
 # **Bugs during development**
 
-To be added
+#### **Fixed Bugs**
+
+* To find a list of fixed bugs that were mended during development, [click here](https://github.com/keironchaudhry/property-andalucia-frontend/issues?q=label%3Abug+is%3Aclosed).
+
+#### **Remaining Bugs**
+
+* There are currently no known bugs.
 
 
 # **Technologies and libraries used**
