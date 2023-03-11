@@ -404,7 +404,13 @@ To be added
 
 # **Bugs during development**
 
-To be added
+**Fixed Bugs**
+
+* To find a list of fixed bugs that were mended during development, [click here](https://github.com/keironchaudhry/property-andalucia-frontend/issues?q=label%3Abug+is%3Aclosed).
+
+**Remaining Bugs**
+
+* There are currently no known bugs.
 
 
 # **Technologies and libraries used**
