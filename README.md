@@ -52,6 +52,8 @@ This part of the project serves as the Frontend, created using React.js, which c
     * [Future features to implement](#future-features-to-implement)
 * [Testing](#testing)
 * [Bugs during development](#bugs-during-development)
+    * [Fixed bugs](#fixed-bugs)
+    * [Remaining bugs](#remaining-bugs)
 * [Technologies and libraries used](#technologies-and-libraries-used)
     * [Languages](#languages)
     * [Libraries and other resources](#libraries-and-other-resources)
@@ -404,11 +406,11 @@ To be added
 
 # **Bugs during development**
 
-**Fixed Bugs**
+#### **Fixed Bugs**
 
 * To find a list of fixed bugs that were mended during development, [click here](https://github.com/keironchaudhry/property-andalucia-frontend/issues?q=label%3Abug+is%3Aclosed).
 
-**Remaining Bugs**
+#### **Remaining Bugs**
 
 * There are currently no known bugs.
 
