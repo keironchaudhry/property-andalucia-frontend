@@ -1,5 +1,17 @@
 # **Testing**
 
+## **Table of content**
+
+* [Testing User Stories](#testing-user-stories)
+    * [Site Navigation](#site-navigation-1)
+    * [User Authentication](#user-authentication-2)
+    * [Property](#property-3)
+    * [Profile Creation and Management](#profile-creation-and-management-4)
+* [Code Validation](#code-validation)
+    * [JSX](#jsx)
+    * [CSS](#css)
+    * [Lighthouse](#lighthouse)
+
 ## **Testing User Stories**
 
 <hr>
@@ -274,3 +286,15 @@ As a **User**, I can **unfollow a profile** so that I can **better manage posts 
 
 
 ## **Code Validation**
+
+### **JSX**
+
+All JSX code was validated and corrected throughout the development of the project.
+
+### **CSS**
+
+The [W3C CSS Validator Service](https://jigsaw.w3.org/css-validator/) returned no CSS errors.
+
+### **Lighthouse**
+
+To be added.
