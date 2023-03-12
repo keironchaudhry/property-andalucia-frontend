@@ -49,6 +49,7 @@ This part of the project serves as the Frontend, created using React.js, which c
         <li>[No Results Found](#no-results-found)</li>
         </ul>
         </details>
+    * [Components](#components)
     * [Future features to implement](#future-features-to-implement)
 * [Testing](#testing)
 * [Bugs during development](#bugs-during-development)
