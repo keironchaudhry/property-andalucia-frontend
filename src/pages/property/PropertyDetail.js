@@ -153,8 +153,8 @@ const PropertyDetail = (props) => {
           </Container>
 
           {/* Image */}
-          <Card style={{}}>
-            <Card.Img src={image} variant="top" />
+          <Card>
+            <Card.Img src={image} variant="top" alt="Property image" />
 
             {/* User Profile */}
             <Card.Body className="d-flex flex-sm-row justify-content-between align-items-center">
@@ -311,9 +311,9 @@ const PropertyDetail = (props) => {
           <div>{is_owner && propertyPage && "..."}</div>
 
           {/* Image */}
-          <Card style={{}}>
+          <Card>
             <Link to={`/property/${id}`}>
-              <Card.Img src={image} variant="top" />
+              <Card.Img src={image} variant="top" alt="Property image" />
             </Link>
 
             {/* User Profile */}
