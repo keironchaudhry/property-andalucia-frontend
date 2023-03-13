@@ -232,6 +232,7 @@ const PropertyDetail = (props) => {
               <Col>
                 <h5 className="mb-3">Basic characteristics:</h5>
                 <ul className={styles.ListMobileSpacing}>
+                  <li>Price: {price}€</li>
                   <li className="text-capitalize">Province: {province}</li>
                   <li className="text-capitalize">Type: {property_type}</li>
                   <li>Size: {size}m²</li>
@@ -258,7 +259,9 @@ const PropertyDetail = (props) => {
                     <li>This property is not south-facing.</li>
                   )}
                   {sold ? (
-                    <li><strong>This property has been sold.</strong></li>
+                    <li>
+                      <strong>This property has been sold.</strong>
+                    </li>
                   ) : (
                     <li>This property is still up for sale.</li>
                   )}
