@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 
 import Avatar from "../../components/Avatar";
 import btnStyles from "../../styles/Button.module.css";
+import styles from "../../styles/Profile.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
@@ -30,7 +31,7 @@ const Profile = (props) => {
           <Avatar src={image} height={imageSize} />
         </Link>
       </div>
-      <div>
+      <div className={styles.ProfileNames}>
         {/* Profile owner */}
         <strong>{owner}</strong>
       </div>
