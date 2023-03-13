@@ -65,6 +65,7 @@ const SignUpForm = () => {
         <Container className={`${appStyles.Content}`}>
           <h1 className={`${styles.Header} mb-4`}>Sign Up</h1>
 
+          {/* Enter username form */}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
@@ -83,6 +84,7 @@ const SignUpForm = () => {
               </Alert>
             ))}
 
+            {/* Enter password form */}
             <Form.Group className="mb-3" controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
@@ -100,6 +102,7 @@ const SignUpForm = () => {
               </Alert>
             ))}
 
+            {/* Confirm password form */}
             <Form.Group className="mb-3" controlId="password2">
               <Form.Label className="d-none">Confirm your password</Form.Label>
               <Form.Control
@@ -117,6 +120,7 @@ const SignUpForm = () => {
               </Alert>
             ))}
 
+            {/* Selling property checkbox */}
             <Form.Group className="mb-3" controlId="checkbox">
               <Form.Check
                 className={styles.Checkbox}
@@ -127,7 +131,8 @@ const SignUpForm = () => {
                 onChange={handleCheckBox}
               />
             </Form.Group>
-
+            
+            {/* Sign Up Button */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
@@ -141,9 +146,11 @@ const SignUpForm = () => {
               </Alert>
             ))}
           </Form>
+
+          {/* Link to login page */}
           <Container className={`mt-3 ${appStyles.Content}`}>
-            <Link className={styles.Link} to="/signin">
-              Already have an account? <span>Sign in here.</span>
+            <Link className={styles.Link} to="/login">
+              Already have an account? <span>Login here.</span>
             </Link>
           </Container>
         </Container>

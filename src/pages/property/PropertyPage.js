@@ -49,12 +49,15 @@ function PropertyPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {/* Popular sellers : mobile */}
         <PopularProfiles mobile />
+        {/* Property posts */}
         <PropertyDetail
           {...property.results[0]}
           setProperty={setProperty}
           propertyPage
         />
+        {/* Note creation form + notes */}
         <Container className={styles.PropertyContainer}>
           {currentUser ? (
             <NoteCreateForm
@@ -64,7 +67,7 @@ function PropertyPage() {
               setNotes={setNotes}
             />
           ) : notes.results.length ? (
-            "Comments"
+            "Notes"
           ) : null}
           {notes.results.length ? (
             <InfiniteScroll
@@ -82,10 +85,12 @@ function PropertyPage() {
               next={() => fetchMoreData(notes, setNotes)}
             />
           ) : currentUser ? (
+            // If there are no notes
             <div className="mb-4 text-center">
               <span>Leave yourself a private note here. Don't worry, they can't be seen by anyone else.</span>
             </div>
           ) : (
+            // If user is not authenticated
             <div className="mt-4 mb-4 text-center">
               <span>
                 <u>
@@ -96,6 +101,8 @@ function PropertyPage() {
           )}
         </Container>
       </Col>
+
+      {/* Popular sellers : desktop */}
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2 border-0 mt-1">
         <PopularProfiles />
       </Col>

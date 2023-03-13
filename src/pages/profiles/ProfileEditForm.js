@@ -100,6 +100,7 @@ const ProfileEditForm = () => {
 
   const textFields = (
     <>
+      {/* Email address form */}
       <Form.Group controlId="emailAddress">
         <Form.Label>Email</Form.Label>
         <Form.Control
@@ -115,6 +116,7 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
 
+      {/* Phone number form */}
       <Form.Group controlId="phoneNum">
         <Form.Label>Phone</Form.Label>
         <Form.Control
@@ -130,6 +132,7 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
 
+      {/* Bio form */}
       <Form.Group controlId="userBio">
         <Form.Label>Bio</Form.Label>
         <Form.Control
@@ -146,6 +149,7 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
 
+      {/* Submit/cancel buttons */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => history.goBack()}
@@ -166,6 +170,7 @@ const ProfileEditForm = () => {
       <Row className={`${styles.Profile} mt-3`}>
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className="mt-5">
+            {/* If image exists, then show image and show edit file */}
             <Form.Group>
               {image && (
                 <figure>
@@ -190,6 +195,7 @@ const ProfileEditForm = () => {
                   Change the image
                 </Form.Label>
               </div>
+              {/* Change image form */}
               <Form.File
                 className="d-none"
                 id="image-upload"

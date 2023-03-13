@@ -3,6 +3,9 @@ import NoResults from "../assets/noresults.png";
 import styles from "../styles/NotFound.module.css";
 import Asset from "./Asset";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
 
 const NotFound = () => {
   return (

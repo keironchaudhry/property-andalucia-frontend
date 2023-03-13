@@ -27,6 +27,11 @@ import btnStyles from "../../styles/Button.module.css";
  * Code adapted from Code Institute's "Moments" walkthrough.
  */
 
+/**
+ * Search form has been created to filter down results based 
+ * on : province, property type, price, bedroom/bathroom count.
+ */
+
 function PropertyList({ message, filter = "" }) {
   const currentUser = useCurrentUser();
 
@@ -106,11 +111,13 @@ function PropertyList({ message, filter = "" }) {
       <Col className={`${formStyles.ColContainer} py-2 p-0 p-lg-2`} lg={8}>
         {hasLoaded ? (
           <>
+            {/* Property posts count display */}
             <div className="text-center mb-2 mt-4">
               {pathname === "/" && property.count !== 0 && (
                 <p className="h3">{property.count} Properties Up For Sale</p>
               )}
             </div>
+            {/* Property posts */}
             {property.results.length ? (
               <InfiniteScroll
                 children={property.results.map((property) => (
@@ -140,7 +147,6 @@ function PropertyList({ message, filter = "" }) {
 
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         {/* Province Search Feed */}
-
         <Accordion className={formStyles.FormContainer}>
           <Card className="border-0">
             <Accordion.Toggle
@@ -155,6 +161,7 @@ function PropertyList({ message, filter = "" }) {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Form className="pl-3 pr-3 pb-3">
+                {/* Search by province form */}
                 <Form.Group className="text-center mt-3" controlId="province">
                   <Form.Label>Search by province</Form.Label>
                   <Form.Control
@@ -177,6 +184,7 @@ function PropertyList({ message, filter = "" }) {
                   </Form.Control>
                 </Form.Group>
 
+                {/* Search by property form */}
                 <Form.Group className="text-center" controlId="propertyType">
                   <Form.Label>Search by property</Form.Label>
                   <Form.Control
@@ -200,6 +208,7 @@ function PropertyList({ message, filter = "" }) {
                   </Form.Control>
                 </Form.Group>
 
+                {/* Search by min/max price forms */}
                 <div className="d-flex gap-3">
                   <Form.Group className="text-center mr-2" controlId="minPrice">
                     <Form.Label> Min. Price</Form.Label>
@@ -228,6 +237,7 @@ function PropertyList({ message, filter = "" }) {
                   </Form.Group>
                 </div>
 
+                {/* Search by bedroom/bathroom count forms */}
                 <div className="d-flex gap-3">
                   <Form.Group className="text-center mr-2" controlId="bedrooms">
                     <Form.Label className="me-2">Bedrooms</Form.Label>

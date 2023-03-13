@@ -67,6 +67,7 @@ function ProfilePage() {
     <>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center mt-5">
+        {/* Profile image */}
         <Col lg={3} className="text-lg-left">
           <Image
             className={`${styles.ProfileImage}`}
@@ -75,12 +76,15 @@ function ProfilePage() {
           />
         </Col>
         <Col lg={6}>
+          {/* Profile owner */}
           <h3 className="m-2">{profile?.owner}</h3>
+          {/* Profile-related property count */}
           <Row className="justify-content-center no-gutters">
             <Col className="my-2">
               <div>Property Listings: {profile?.propertys_count}</div>
             </Col>
           </Row>
+          {/* Profile-related follow/following count */}
           <Row className="justify-content-center no-gutters">
             <Col className="my-2">
               <div>Followers: {profile?.followers_count}</div>
@@ -90,6 +94,7 @@ function ProfilePage() {
             </Col>
           </Row>
         </Col>
+        {/* Follow/unfollow buttons */}
         <Col lg={3} className="text-lg-right">
           {currentUser &&
             !is_owner &&
@@ -109,11 +114,13 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
+        {/* Profile bio description */}
         {profile?.bio && <Col className="p-3 pb-5">{profile.bio}</Col>}
       </Row>
     </>
   );
 
+  // Profile property listings
   const mainProfilePosts = (
     <>
       <hr />
@@ -147,19 +154,22 @@ function ProfilePage() {
 
   return (
     <Row>
+      {/* Popular sellers : mobile */}
       <PopularProfiles mobile />
       <Col className="py-2 p-0 p-lg-2 mt-2" lg={8}>
+        {/* Profile info : if seller, show posts, if not seller, leave empty */}
         <Container className={styles.Profile}>
           {hasLoaded ? (
             <>
               {mainProfile}
-              {profile?.seller_status && mainProfilePosts}
+              {profile?.seller_status && mainProfilePosts} 
             </>
           ) : (
             <Asset spinner />
           )}
         </Container>
       </Col>
+      {/* Popular sellers : desktop */}
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2 mt-2">
         <PopularProfiles />
       </Col>

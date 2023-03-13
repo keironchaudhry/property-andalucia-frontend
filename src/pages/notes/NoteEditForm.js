@@ -47,6 +47,7 @@ export default function NoteEditForm(props) {
       className="w-100 d-flex flex-column mt-2 pt-3 pb-3"
       onSubmit={handleSubmit}
     >
+      {/* Pre-populated editable field */}
       <Form.Group>
         <InputGroup>
           <Form.Control
@@ -59,6 +60,7 @@ export default function NoteEditForm(props) {
         </InputGroup>
       </Form.Group>
       <div className="align-self-end">
+        {/* Submit/cancel buttons */}
         <button
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
           type="submit"

@@ -33,12 +33,16 @@ const Note = (props) => {
     <div>
       <Media>
         <Media.Body className="align-self-center ml-2">
+
+          {/* User avatar + timestamp */}
           <div className="d-flex flex-row">
             <span className="pr-2 font-weight-bold">{owner}</span>
             <span className="pl-2">
               <u>{updated_at}</u>
             </span>
           </div>
+
+          {/* Ternary condition : edit form or note content */}
           {showEditForm ? (
             <NoteEditForm
               id={id}
@@ -52,6 +56,8 @@ const Note = (props) => {
             </div>
           )}
         </Media.Body>
+
+        {/* Dropdown component */}
         {is_owner && (
           <MoreDropdown
             handleEdit={() => setShowEditForm(true)}

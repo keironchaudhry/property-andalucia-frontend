@@ -60,6 +60,7 @@ const LoginForm = () => {
         <Container className={`${appStyles.Content}`}>
           <h1 className={`${styles.Header} mb-4`}>Login</h1>
 
+          {/* Enter username form */}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
@@ -78,6 +79,7 @@ const LoginForm = () => {
               </Alert>
             ))}
 
+            {/* Enter password form */}
             <Form.Group className="mb-3" controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
@@ -95,6 +97,7 @@ const LoginForm = () => {
               </Alert>
             ))}
 
+            {/* Login button */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} mt-3`}
               type="submit"
@@ -108,6 +111,8 @@ const LoginForm = () => {
               </Alert>
             ))}
           </Form>
+
+          {/* Link to sign up */}
           <Container className={`mt-3 ${appStyles.Content}`}>
             <Link className={styles.Link} to="/signup">
               First time? <span>Create your account here.</span>
