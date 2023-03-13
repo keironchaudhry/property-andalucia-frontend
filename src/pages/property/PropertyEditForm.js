@@ -22,6 +22,10 @@ import { axiosReq } from "../../api/axiosDefaults";
  * Code adapted from Code Institute's "Moments" walkthrough.
  */
 
+/**
+ * Property edit form returns pre-populated inputs field that can be modified
+ */
+
 export default function PropertyEditForm() {
   useRedirect("loggedOut");
   useRedirect("notSeller");
@@ -195,6 +199,7 @@ export default function PropertyEditForm() {
 
   const mainFields = (
     <div className="text-center">
+      {/* Property name form */}
       <Form.Group controlId="name">
         <Form.Label>Property Name</Form.Label>
         <Form.Control
@@ -210,6 +215,7 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Description form */}
       <Form.Group controlId="description">
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -229,6 +235,7 @@ export default function PropertyEditForm() {
     </div>
   );
 
+  // Google Maps latitude + longitude forms
   const googleMapFields = (
     <div className="text-center">
       <Form.Group controlId="longitude">
@@ -259,6 +266,7 @@ export default function PropertyEditForm() {
     <Container
       className={`${styles.AssetContainer} d-flex flex-column justify-content-center border border-2 rounded p-0 mt-3=`}
     >
+      {/* When image is uploaded : show image + "change image" button */}
       {image ? (
         <>
           <figure>
@@ -281,6 +289,7 @@ export default function PropertyEditForm() {
           <Asset src={Upload} message="Upload an image of your property" />
         </Form.Label>
       )}
+      {/* Image form */}
       <Form.Control
         className="d-none"
         type="file"
@@ -299,6 +308,7 @@ export default function PropertyEditForm() {
 
   const extraFields = (
     <div className="text-center">
+      {/* Property type form */}
       <Form.Group controlId="propertyType">
         <Form.Label>Property Type</Form.Label>
         <Form.Control
@@ -324,6 +334,7 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Province form */}
       <Form.Group controlId="province">
         <Form.Label>Province</Form.Label>
         <Form.Control
@@ -348,6 +359,7 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Municipality form */}
       <Form.Group controlId="municipality">
         <Form.Label>Municipality</Form.Label>
         <Form.Control
@@ -363,6 +375,7 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Street form */}
       <Form.Group controlId="street">
         <Form.Label>Street</Form.Label>
         <Form.Control
@@ -378,6 +391,7 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Postcode form */}
       <Form.Group controlId="postCode">
         <Form.Label>Postcode</Form.Label>
         <Form.Control
@@ -393,10 +407,12 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Price form */}
       <Form.Group controlId="price">
         <Form.Label>Price (€)</Form.Label>
         <Form.Control
           min="0"
+          step="any"
           type="number"
           name="price"
           value={price}
@@ -409,10 +425,12 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Size form */}
       <Form.Group controlId="size">
         <Form.Label>Size (m²)</Form.Label>
         <Form.Control
           min="0"
+          step="1"
           type="number"
           name="size"
           value={size}
@@ -425,10 +443,12 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Bedroom count form */}
       <Form.Group controlId="bedrooms">
         <Form.Label>Bedrooms</Form.Label>
         <Form.Control
           min="0"
+          step="1"
           type="number"
           name="bedrooms"
           value={bedrooms}
@@ -441,10 +461,12 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Bathroom count form */}
       <Form.Group controlId="bathrooms">
         <Form.Label>Bathrooms</Form.Label>
         <Form.Control
           min="0"
+          step="1"
           type="number"
           name="bathrooms"
           value={bathrooms}
@@ -457,6 +479,7 @@ export default function PropertyEditForm() {
         </Alert>
       ))}
 
+      {/* Garden checkbox form */}
       <Form.Group controlId="garden">
         <Form.Check
           className={styles.Checkbox}
@@ -469,6 +492,7 @@ export default function PropertyEditForm() {
         />
       </Form.Group>
 
+      {/* Garage checkbox form */}
       <Form.Group controlId="garage">
         <Form.Check
           className={styles.Checkbox}
@@ -481,6 +505,7 @@ export default function PropertyEditForm() {
         />
       </Form.Group>
 
+      {/* South-facing checkbox form */}
       <Form.Group controlId="isSouthFacing">
         <Form.Check
           className={styles.Checkbox}
@@ -493,6 +518,7 @@ export default function PropertyEditForm() {
         />
       </Form.Group>
 
+      {/* Sold checkbox form */}
       <Form.Group controlId="sold">
         <Form.Check
           className={styles.Checkbox}

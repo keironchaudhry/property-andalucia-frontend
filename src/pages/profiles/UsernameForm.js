@@ -60,6 +60,7 @@ const UsernameForm = () => {
     <Row>
       <Col className="py-2 mx-auto text-center mt-2" md={6}>
         <Container className={styles.Profile}>
+          {/* Change username form */}
           <Form onSubmit={handleSubmit} className="my-2 mb-3">
             <Form.Group>
               <Form.Label>Change username</Form.Label>
@@ -75,6 +76,8 @@ const UsernameForm = () => {
                 {message}
               </Alert>
             ))}
+            
+            {/* Submit/cancel buttons */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Bright}`}
               onClick={() => history.goBack()}

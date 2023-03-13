@@ -132,6 +132,8 @@ export default function PropertyCreateForm() {
 
   const mainFields = (
     <div className="text-center">
+
+      {/* Property name form */}
       <Form.Group controlId="name">
         <Form.Label>Property Name</Form.Label>
         <Form.Control
@@ -147,6 +149,7 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Description form */}
       <Form.Group controlId="description">
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -166,6 +169,7 @@ export default function PropertyCreateForm() {
     </div>
   );
 
+  // Google Maps latitude + longitude forms
   const googleMapFields = (
     <div className="text-center">
       <Form.Group controlId="latitude">
@@ -196,6 +200,7 @@ export default function PropertyCreateForm() {
     <Container
       className={`${styles.AssetContainer} d-flex flex-column justify-content-center border border-2 rounded p-0 mt-3`}
     >
+      {/* When image is uploaded : show image + "change image" button */}
       {image ? (
         <>
           <figure>
@@ -218,6 +223,7 @@ export default function PropertyCreateForm() {
           <Asset src={Upload} message="Upload an image of your property" />
         </Form.Label>
       )}
+      {/* Image form */}
       <Form.Control
         className="d-none"
         type="file"
@@ -236,6 +242,7 @@ export default function PropertyCreateForm() {
 
   const extraFields = (
     <div className="text-center">
+      {/* Property type form */}
       <Form.Group controlId="propertyType">
         <Form.Label>Property Type</Form.Label>
         <Form.Control
@@ -261,6 +268,7 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Province form */}
       <Form.Group controlId="province">
         <Form.Label>Province</Form.Label>
         <Form.Control
@@ -285,6 +293,7 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Municipality form */}
       <Form.Group controlId="municipality">
         <Form.Label>Municipality</Form.Label>
         <Form.Control
@@ -300,6 +309,7 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Street form */}
       <Form.Group controlId="street">
         <Form.Label>Street</Form.Label>
         <Form.Control
@@ -315,6 +325,7 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Postcode form */}
       <Form.Group controlId="postCode">
         <Form.Label>Postcode</Form.Label>
         <Form.Control
@@ -330,10 +341,12 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Price form */}
       <Form.Group controlId="price">
         <Form.Label>Price (€)</Form.Label>
         <Form.Control
           min="0"
+          step="any"
           type="number"
           name="price"
           value={price}
@@ -345,11 +358,13 @@ export default function PropertyCreateForm() {
           {message}
         </Alert>
       ))}
-
+      
+      {/* Size form */}
       <Form.Group controlId="size">
         <Form.Label>Size (m²)</Form.Label>
         <Form.Control
           min="0"
+          step="1"
           type="number"
           name="size"
           value={size}
@@ -362,6 +377,7 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Bedroom count form */}
       <Form.Group controlId="bedrooms">
         <Form.Label>Bedrooms</Form.Label>
         <Form.Control
@@ -379,6 +395,7 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Bathroom count form */}
       <Form.Group controlId="bathrooms">
         <Form.Label>Bathrooms</Form.Label>
         <Form.Control
@@ -396,6 +413,7 @@ export default function PropertyCreateForm() {
         </Alert>
       ))}
 
+      {/* Garden checkbox form */}
       <Form.Group controlId="garden">
         <Form.Check
           className={styles.Checkbox}
@@ -406,7 +424,8 @@ export default function PropertyCreateForm() {
           onChange={handleCheckBox}
         />
       </Form.Group>
-
+      
+      {/* Garage checkbox form */}
       <Form.Group controlId="garage">
         <Form.Check
           className={styles.Checkbox}
@@ -417,7 +436,8 @@ export default function PropertyCreateForm() {
           onChange={handleCheckBox}
         />
       </Form.Group>
-
+      
+      {/* South-facing checkbox form */}
       <Form.Group controlId="isSouthFacing">
         <Form.Check
           className={styles.Checkbox}
@@ -429,6 +449,7 @@ export default function PropertyCreateForm() {
         />
       </Form.Group>
 
+      {/* Sold checkbox form */}
       <Form.Group controlId="sold">
         <Form.Check
           className={styles.Checkbox}

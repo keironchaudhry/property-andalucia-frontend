@@ -59,6 +59,7 @@ const UserPasswordForm = () => {
     <Row>
       <Col className="py-2 mx-auto text-center mt-2" md={6}>
         <Container className={styles.Profile}>
+          {/* Change password form */}
           <Form onSubmit={handleSubmit} className="mb-3">
             <Form.Group className="mt-3">
               <Form.Label>New password</Form.Label>
@@ -75,6 +76,8 @@ const UserPasswordForm = () => {
                 {message}
               </Alert>
             ))}
+
+            {/* Confirm password form */}
             <Form.Group>
               <Form.Label>Confirm password</Form.Label>
               <Form.Control
@@ -90,6 +93,8 @@ const UserPasswordForm = () => {
                 {message}
               </Alert>
             ))}
+
+            {/* Submit/cancel buttons */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Bright}`}
               onClick={() => history.goBack()}

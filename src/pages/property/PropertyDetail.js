@@ -111,6 +111,8 @@ const PropertyDetail = (props) => {
     }
   };
 
+  // Popover created to display post owner info
+  // Works only if current user is authenticated
   const handlePopover = currentUser ? (
     <Popover id="popover-basic">
       <Popover.Title as="h3">Contact details</Popover.Title>

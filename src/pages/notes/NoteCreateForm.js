@@ -44,9 +44,12 @@ export default function NoteCreateForm(props) {
     >
       <Form.Group>
         <InputGroup>
+          {/* Avatar with link to profile */}
           <Link className="mr-2" to={`/profiles/${profile_id}`}>
             <Avatar height={50} src={profileImage} />
           </Link>
+
+          {/* Note creation form */}
           <Form.Control
             rows={2}
             as="textarea"
@@ -57,6 +60,7 @@ export default function NoteCreateForm(props) {
         </InputGroup>
       </Form.Group>
       <div className="align-self-end">
+        {/* Submit button */}
         <button
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
           disabled={!content.trim()}

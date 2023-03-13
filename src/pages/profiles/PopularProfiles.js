@@ -21,7 +21,9 @@ const PopularProfiles = ({ mobile }) => {
     >
       {popularProfiles.results.length ? (
         <>
+          {/* Popular Sellers Title */}
           <h5 className="text-center mt-1 mb-4">Most Popular Sellers</h5>
+          {/* Mobile view */}
           {mobile ? (
             <div className="d-flex justify-content-around">
               {popularProfiles.results.slice(0, 4).map((profile) => (
@@ -29,6 +31,7 @@ const PopularProfiles = ({ mobile }) => {
               ))}
             </div>
           ) : (
+            // Desktop view
             popularProfiles.results.map((profile) => (
               <Profile key={profile.id} profile={profile} />
             ))

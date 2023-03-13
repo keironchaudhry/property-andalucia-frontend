@@ -3,7 +3,6 @@
   border-radius: 2px;
   border: 1px solid #dadadf;
   min-width: 350px;
-  /* padding: 15px 15px; */
   margin-top: -8px;
   margin-left: 6px;
 }
@@ -18,14 +17,12 @@
   background-color: #ffffff;
   border-radius: 2px;
   border: 1px solid #dadadf;
-  /* min-width: 350px; */
 }
 
 .PopularProfileContainer {
   background-color: #ffffff;
   border-radius: 2px;
   border: 1px solid #dadadf;
-  /* min-width: 350px; */
   padding: 15px 15px;
 }
 
