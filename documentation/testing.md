@@ -297,4 +297,24 @@ The [W3C CSS Validator Service](https://jigsaw.w3.org/css-validator/) returned n
 
 ### **Lighthouse**
 
-To be added.
+Google Developers Tools Lighthouse was used to test the performance of the web application on both desktop and mobile.
+
+* **Desktop**:
+
+![desktop-lighthouse](/documentation/readme_images/lighthouse/lighthouse%20desktop%20main%20page.png)
+
+* **Mobile**:
+
+The Lighthouse performance for mobile on the developers internet speed ran a test which resulted in a performance of between 34-37.
+
+However, when the same Lighthouse test for mobile was carried out on the developers mentors network speed and computer, the results were a more positive attribute of 70-80.
+
+Both images are displayed for clarity and evidence.
+
+* Developers Results:
+
+![mobile-lighthouse](/documentation/readme_images/lighthouse/lighthouse%20mobile%20main%20page.png)
+
+* Mentors Results: 
+
+![mobile-lighthouse-mentor](/documentation/readme_images/lighthouse/mentor-lighthouse-mobile.png)
