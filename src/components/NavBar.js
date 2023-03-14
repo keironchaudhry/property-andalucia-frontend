@@ -118,6 +118,13 @@ const NavBar = () => {
           <Nav className="ml-auto text-right">
             {currentUser?.seller_status && addPropertyIcon}
             {currentUser ? loggedInIcons : loggedOutIcons}
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/"
+            >
+              <i class="fa-regular fa-comment"></i>Our Blog
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
