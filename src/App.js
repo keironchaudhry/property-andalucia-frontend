@@ -16,6 +16,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
+import BlogCreateForm from "./pages/blog/BlogCreateForm";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
@@ -85,6 +86,11 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
+          />
+          <Route
+            exact
+            path="/blog/create"
+            render={() => <BlogCreateForm />}
           />
           <Route render={() => <NotFound />} />
         </Switch>
