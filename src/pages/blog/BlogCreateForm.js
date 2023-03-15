@@ -55,13 +55,13 @@ export default function BlogCreateForm() {
 
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("image", image);
+    formData.append("image", imageInput.current.files[0]);
 
     try {
       const { data } = await axiosReq.post("/blog/create/", formData);
       history.push(`/blog/${data.id}`);
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

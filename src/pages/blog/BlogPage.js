@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 import { axiosReq } from "../../api/axiosDefaults";
+import BlogDetail from "./BlogDetail";
 
 export default function BlogPage() {
   const { id } = useParams();
@@ -28,7 +29,7 @@ export default function BlogPage() {
   return (
     <Container>
       <Col>
-        <p>blog page</p>
+        <BlogDetail {...blog.results[0]} setBlog={setBlog} blogPage />
       </Col>
     </Container>
   );
