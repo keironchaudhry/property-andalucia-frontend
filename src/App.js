@@ -18,6 +18,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
 import BlogCreateForm from "./pages/blog/BlogCreateForm";
 import BlogPage from "./pages/blog/BlogPage";
+import BlogEditForm from "./pages/blog/BlogEditForm";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
@@ -90,6 +91,7 @@ function App() {
           />
           <Route exact path="/blog/create" render={() => <BlogCreateForm />} />
           <Route exact path="/blog/:id" render={() => <BlogPage />} />
+          <Route exact path="/blog/:id/edit" render={() => <BlogEditForm />} />
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>

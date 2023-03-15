@@ -1,8 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import Col from "react-bootstrap/Col";
-import Media from "react-bootstrap/Media";
 import Container from "react-bootstrap/Container";
 
 import Avatar from "../../components/Avatar";
