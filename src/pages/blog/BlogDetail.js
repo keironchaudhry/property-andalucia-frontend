@@ -2,12 +2,13 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
 
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/PropertyDetail.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card } from "react-bootstrap";
+import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 
 const BlogDetail = (props) => {
@@ -28,6 +29,19 @@ const BlogDetail = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  const handleEdit = () => {
+    history.push(`/blog/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/blog/${id}/`);
+      history.goBack();
+    } catch (err) {
+      // console.log(err);
+    }
+  };
+
   return (
     <Container
       className={`${styles.PropertyContainer} mt-3 p-3 p-md-4 rounded mt-1 container-fluid`}
@@ -39,7 +53,10 @@ const BlogDetail = (props) => {
           </h3>
           <div className="d-flex align-items-center">
             {is_owner && blogPage && (
-              <MoreDropdown handleEdit={() => {}} handleDelete={() => {}} />
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
             )}
           </div>
         </div>
