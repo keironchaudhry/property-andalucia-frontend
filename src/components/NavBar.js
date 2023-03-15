@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import { NavLink } from "react-router-dom";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
+
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
 
 import styles from "../styles/NavBar.module.css";
 import logo from "../assets/logo.png";
@@ -45,6 +46,16 @@ const NavBar = () => {
     </NavLink>
   );
 
+  const addBlogPostIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/blog/create"
+    >
+      <i class="fa-solid fa-pen-to-square"></i>Create post
+    </NavLink>
+  );
+
   const loggedInIcons = (
     <>
       <NavLink
@@ -71,7 +82,7 @@ const NavBar = () => {
         <Avatar
           src={currentUser?.profile_image}
           text={currentUser?.username}
-          height={35}
+          height={30}
         />
       </NavLink>
     </>
@@ -100,7 +111,7 @@ const NavBar = () => {
     <Navbar
       expanded={expanded}
       className={styles.NavBar}
-      expand="md"
+      expand="lg"
       fixed="top"
     >
       <Container>
@@ -116,8 +127,16 @@ const NavBar = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-right">
+            {currentUser?.is_staff && addBlogPostIcon}
             {currentUser?.seller_status && addPropertyIcon}
             {currentUser ? loggedInIcons : loggedOutIcons}
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              to="/blog"
+            >
+              <i class="fa-regular fa-comment"></i>Our Blog
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

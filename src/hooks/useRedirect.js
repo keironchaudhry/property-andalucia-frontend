@@ -20,6 +20,10 @@ export const useRedirect = (userAuthStatus) => {
           if (!currentUser.seller_status) {
             history.push("/");
           }
+        } else if (userAuthStatus === "notStaff") {
+          if (!currentUser.is_staff) {
+            history.push("/");
+          }
         }
       } catch (err) {
         if (userAuthStatus === "loggedOut") {
