@@ -8,6 +8,7 @@ import styles from "../../styles/PropertyDetail.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card } from "react-bootstrap";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 const BlogDetail = (props) => {
   const {
@@ -37,12 +38,16 @@ const BlogDetail = (props) => {
             <span>{title}</span>
           </h3>
           <div className="d-flex align-items-center">
-            {is_owner && blogPage && "..."}
+            {is_owner && blogPage && (
+              <MoreDropdown handleEdit={() => {}} handleDelete={() => {}} />
+            )}
           </div>
         </div>
       </Container>
       <Card className="mr-3 ml-3">
-        <Card.Img src={image} variant="top" alt="Blog image" />
+        <Link to={`/blog/${id}`}>
+          <Card.Img src={image} variant="top" alt="Blog image" />
+        </Link>
       </Card>
       <Container className="mt-4 h5 text-center">
         <p>{content}</p>
