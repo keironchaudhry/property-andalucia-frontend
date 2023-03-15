@@ -19,6 +19,7 @@ import NotFound from "./components/NotFound";
 import BlogCreateForm from "./pages/blog/BlogCreateForm";
 import BlogPage from "./pages/blog/BlogPage";
 import BlogEditForm from "./pages/blog/BlogEditForm";
+import BlogList from "./pages/blog/BlogList";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
@@ -88,6 +89,13 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
+          />
+          <Route
+            exact
+            path="/blog"
+            render={() => (
+              <BlogList message="No results found, please try adjusting your search query." />
+            )}
           />
           <Route exact path="/blog/create" render={() => <BlogCreateForm />} />
           <Route exact path="/blog/:id" render={() => <BlogPage />} />

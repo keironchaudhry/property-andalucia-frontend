@@ -121,7 +121,7 @@ const NavBar = () => {
             <NavLink
               className={styles.NavLink}
               activeClassName={styles.Active}
-              to="/"
+              to="/blog"
             >
               <i class="fa-regular fa-comment"></i>Our Blog
             </NavLink>
