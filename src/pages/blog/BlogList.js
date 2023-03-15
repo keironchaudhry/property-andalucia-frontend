@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 
+import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 
 import Asset from "../../components/Asset";
 import BlogDetail from "./BlogDetail";
 import NoResults from "../../assets/noresults.png";
+import styles from "../../styles/BlogList.module.css";
 
 import { fetchMoreData } from "../../utils/utils";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -24,9 +26,7 @@ function BlogList({ message, filter = "" }) {
   useEffect(() => {
     const fetchBlogPosts = async () => {
       try {
-        const { data } = await axiosReq.get(
-          `/blog/?${filter}search=${query}`
-        );
+        const { data } = await axiosReq.get(`/blog/?${filter}search=${query}`);
         setBlog(data);
         setHasLoaded(true);
       } catch (err) {
@@ -46,18 +46,18 @@ function BlogList({ message, filter = "" }) {
 
   return (
     <Container>
-      <div>
-        <Form
-          onSubmit={(event) => event.preventDefault()}
-        >
-          <Form.Control
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            type="text"
-            placeholder="Search through our posts using keywords..."
-          />
-        </Form>
-      </div>
+      <i class={`fa-solid fa-magnifying-glass ${styles.SearchIcon}`}></i>
+      <Form
+        onSubmit={(event) => event.preventDefault()}
+        className={styles.SearchFeed}
+      >
+        <Form.Control
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          type="text"
+          placeholder="Search through our posts using keywords..."
+        />
+      </Form>
 
       {hasLoaded ? (
         <>
@@ -78,7 +78,7 @@ function BlogList({ message, filter = "" }) {
           )}
         </>
       ) : (
-        <Container>
+        <Container className="mt-3">
           <Asset spinner />
         </Container>
       )}
