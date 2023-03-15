@@ -18,6 +18,8 @@ import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/PropertyCreateEditForm.module.css";
 
 export default function BlogEditForm() {
+  useRedirect("notStaff");
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [blogData, setBlogData] = useState({
