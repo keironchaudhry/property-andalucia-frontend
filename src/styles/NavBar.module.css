@@ -14,9 +14,9 @@
 .NavLink {
   font-weight: 500;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.05rem;
   letter-spacing: 0.25px;
-  padding: 5px;
+  padding: 4px;
 }
 
 .NavLink:hover {
@@ -27,7 +27,21 @@
   color: #CC5500;
 }
 
+@media screen and (max-width: 1030px) {
+  .NavLink {
+    font-size: 0.8rem;
+  }
+
+  .NavLink i {
+    font-size: 20px;
+  }
+}
+
 @media screen and (max-width: 430px) {
+  .NavLink {
+    font-size: 1.1rem;
+  }
+
   .NavBar {
     margin: 0px;
   }
