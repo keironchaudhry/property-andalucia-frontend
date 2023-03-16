@@ -18,6 +18,10 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/PropertyCreateEditForm.module.css";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 export default function BlogCreateForm() {
   useRedirect("notStaff");
   useRedirect("loggedOut");

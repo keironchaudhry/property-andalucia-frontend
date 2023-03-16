@@ -7,6 +7,10 @@ import Container from "react-bootstrap/Container";
 import { axiosReq } from "../../api/axiosDefaults";
 import BlogDetail from "./BlogDetail";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 export default function BlogPage() {
   const { id } = useParams();
   const [blog, setBlog] = useState({ results: [] });

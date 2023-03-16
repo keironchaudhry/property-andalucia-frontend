@@ -14,6 +14,10 @@ import { fetchMoreData } from "../../utils/utils";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
+/**
+ * Code adapted from Code Institute's "Moments" walkthrough.
+ */
+
 function BlogList({ message, filter = "" }) {
   const [blog, setBlog] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
