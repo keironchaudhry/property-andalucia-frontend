@@ -1,0 +1,21 @@
+@media screen and (max-width: 430px) {
+    .TitleMobileScreen {
+        font-size: 15px;
+    }
+
+    .ContainerMobileScreen {
+        padding: 0px;
+    }
+
+    .ContentMobileScreen {
+        font-size: 12px;
+    }
+
+    .DateMobileScreen {
+        font-size: 10px;
+    }
+
+    .OwnerMobileScreen {
+        font-size: 12px;
+    }
+}

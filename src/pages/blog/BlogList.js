@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 
@@ -55,7 +54,7 @@ function BlogList({ message, filter = "" }) {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           type="text"
-          placeholder="Search through our posts using keywords..."
+          placeholder="Enter a keyword..."
         />
       </Form>
 
