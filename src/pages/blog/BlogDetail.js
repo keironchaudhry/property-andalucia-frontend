@@ -150,8 +150,8 @@ const BlogDetail = (props) => {
             </p>
 
             {/* Blog Owner Name + Avatar */}
-            <h5 className={mobileStyles.OwnerMobileScreen}>
-              by {owner}
+            <h5>
+              <p className="d-none d-md-inline">by {owner}</p>
               <Link className="ml-2" to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={40} />
               </Link>
