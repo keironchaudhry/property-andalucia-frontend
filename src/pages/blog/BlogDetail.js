@@ -56,7 +56,6 @@ const BlogDetail = (props) => {
         >
           <Container className="align-items-center justify-content-between">
             <div className="d-flex flex-row justify-content-between mb-3">
-
               {/* Blog Title */}
               <h3 className="align-items-center">
                 <span className={mobileStyles.TitleMobileScreen}>{title}</span>
@@ -108,7 +107,6 @@ const BlogDetail = (props) => {
         >
           <Container className="align-items-center justify-content-between">
             <div className="d-flex flex-row justify-content-between mb-3">
-
               {/* Blog Title */}
               <h3 className="align-items-center">
                 <span className={mobileStyles.TitleMobileScreen}>{title}</span>
@@ -160,7 +158,7 @@ const BlogDetail = (props) => {
             </h5>
           </Container>
         </Container>
-      )};
+      )}
     </>
   );
 };
