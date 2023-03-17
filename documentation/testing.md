@@ -7,6 +7,7 @@
     * [User Authentication](#user-authentication-2)
     * [Property](#property-3)
     * [Profile Creation and Management](#profile-creation-and-management-4)
+    * [Blog](#blog-5)
 * [Code Validation](#code-validation)
     * [JSX](#jsx)
     * [CSS](#css)
@@ -283,6 +284,53 @@ As a **User**, I can **unfollow a profile** so that I can **better manage posts 
 | **Test** | Issue | Result |
 | --- | --- | --- |
 | 1 | Users should be able to click an unfollow button to stop following other user. | PASS |
+
+## **Blog** [#88](https://github.com/keironchaudhry/property-andalucia-frontend/issues/88)
+
+User Story [#89](https://github.com/keironchaudhry/property-andalucia-frontend/issues/89):
+
+As a **Staff User**, I can **create a blog post** so that I can **write about the recent events and promote the web application brand**.
+
+| **Test** | Issue | Result |
+| --- | --- | --- |
+| 1 | User can enter information into a form and save blog data into an API. | PASS |
+| 2 | User input should be validated with all errors reported to the User. | PASS |
+
+User Story [#90](https://github.com/keironchaudhry/property-andalucia-frontend/issues/90):
+
+As a **User**, I can **view a blog post** so that I can **find out more about the web application brand**.
+
+| **Test** | Issue | Result |
+| --- | --- | --- |
+| 1 | Users should be able to individually view a blog post individually. | PASS |
+
+User Story [#91](https://github.com/keironchaudhry/property-andalucia-frontend/issues/91):
+
+As a **User**, I can **view a list of all blog posts available** so that I can **explore and learn more about the web application brand**.
+
+| **Test** | Issue | Result |
+| --- | --- | --- |
+| 1 | All blog posts should be viewed in a single descending list. | PASS |
+| 2 | Blog posts should be organised by the most recent post. | PASS |
+
+User Story [#92](https://github.com/keironchaudhry/property-andalucia-frontend/issues/92):
+
+As a **Staff User**, I can **modify a blog post content** so that I can **make any necessary and desired changes**.
+
+| **Test** | Issue | Result |
+| --- | --- | --- |
+| 1 | Staff Users should be able to modify the content of their original post. | PASS |
+| 2 | Staff Users should be able to access an edit form separately. | PASS |
+| 3 | Prepopulated information from original post should already be present. | PASS |
+| 4 | When saved, the newly entered information will replace the original. | PASS |
+
+User Story [#93](https://github.com/keironchaudhry/property-andalucia-frontend/issues/93):
+
+As a **Staff User**, I can **delete a blog post that I have created** so that I can **erase my blog post from the web application**.
+
+| **Test** | Issue | Result |
+| --- | --- | --- |
+| 1 | A blog post can be deleted using a link within the individual blog view. | PASS |
 
 
 ## **Code Validation**
