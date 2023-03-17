@@ -83,6 +83,14 @@ The goal of this project was to build a marketplace for sellers to be able to di
 * Registered users should be able to follow sellers to stay up to date with their listings
 * Both sellers and buyers can update their information in a profile page to better personalise their information and advertise themselves to potential sellers or buyers.
 
+**Additionally:**
+
+* Build a site that also distinguishes between buyers, sellers and staff with different access points.
+* Include a blog feature part of the site with full CRUD functionality.
+* Create a search feed to be able to narrow down blog posts by title or user.
+* All users are able to view blog posts.
+* Only staff users are able to create, modify and delete blog posts.
+
 Please see [inspiration](#inspiration) section on this README to view the helpful sources inspired the UX design and choices.
 
 ## **Project Scope**
