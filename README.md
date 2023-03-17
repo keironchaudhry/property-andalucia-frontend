@@ -520,6 +520,8 @@ The languages used are:
 
 The development environment used for this project was GitPod. Regular commits, pushes and merges to 'main' branch in GitHub via a 'development' branch were employed to be able to track and trace the development process of the website. All merges have been linked to their corresponding issues.
 
+Additionally a 'blog' branch was used to implement a blog feature, which was created as an additional feature by the developer due to excess time before submission date. All work was produced on the 'blog' branch and then merged with `main`.
+
 For local deployments instructions shall be written below, along with instructions with deployment to Heroku, the hosting service used to deploy this particular website. Heroku was chosen as the hosting service due to its database maintenance capabilities. 
 
 ## **Local deployment**
