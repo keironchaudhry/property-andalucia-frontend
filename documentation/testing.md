@@ -302,7 +302,7 @@ As a **User**, I can **view a blog post** so that I can **find out more about th
 
 | **Test** | Issue | Result |
 | --- | --- | --- |
-| 1 | Users should be able to individually view a blog post individually. | PASS |
+| 1 | Users should be able to view a blog post individually. | PASS |
 
 User Story [#91](https://github.com/keironchaudhry/property-andalucia-frontend/issues/91):
 
