@@ -119,6 +119,13 @@ Selling a property can be an arduous task; selling several properties more so. I
 
 ## **User Stories**
 
+* User stories are based on four types of users: anonymous users, buyer users, seller users and staff users.
+    * Anonymous users are defined as those who are not authenticated but have limited access to the web application.
+    * Buyer users are defined as those who have not marked themselves as a seller upon sign up, but have access to more features across the web application.
+    * Seller users are defined as those users who signed up as selling property, and therefore have access to more features across the web application.
+    * Staff users are defined as those users whose accounts have been created by admin in the backend, and who have been marked as "is_staff" and as a result having access to the blog features of the web application. 
+        * **Note:** These accounts can <u>only</u> be made in the backend using the admin panel. They are treated as employee accounts, and thus can only be made for special use, unlike the previous two users.
+
 Epics, User Stories and Backend Tasks can be found in this GitHub repository project Kanban board, and particularly for this project, all user stories can be found [here](https://github.com/users/keironchaudhry/projects/9/views/3).
 
 
