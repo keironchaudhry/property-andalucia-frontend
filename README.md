@@ -2,7 +2,7 @@
 
 ![am-i-responsive](/documentation/readme_images/design/am%20i%20responsive.png)
 
-Property Andalucia is a property marketplace platform designed for selling and buying property. It allows the user to create their own listings and sell their property. As a visitor you can also search for property using a variety of search filter methods. The users can register for the website as a seller or a buyer, and gain access to further features such as saving posts and following other users.
+Property Andalucia is a property marketplace platform designed for selling and buying property. It allows the user to create their own listings and sell their property. As a visitor you can also search for property using a variety of search filter methods. The users can register for the website as a seller or a buyer, and gain access to further features such as saving posts and following other users. It also contains a blog feature where users who are staff can published blog posts.
 
 This part of the project serves as the Frontend, created using React.js, which connects and interacts with the backend API through HTTP requests.
 
@@ -45,6 +45,11 @@ This part of the project serves as the Frontend, created using React.js, which c
         <li>[Follow Feed](#follow-feed)</li>
         <li>[Profile](#profile)</li>
         <li>[Edit Profile Form](#edit-profile-form)</li>
+        <li>[Blog Creation Form](#blog-creation-form)</li>
+        <li>[Blog Edit Form](#blog-edit-form)</li>
+        <li>[Blog List View](#blog-list-view)</li>
+        <li>[Search Feed](#search-feed)</li>
+        <li>[Blog Edit Form](#blog-edit-form)</li>
         <li>[Username and Password Forms](#username-and-password-forms)</li>
         <li>[No Results Found](#no-results-found)</li>
         </ul>
@@ -121,7 +126,7 @@ Epics, User Stories and Backend Tasks can be found in this GitHub repository pro
 
 ## **Web Structure**
 
-* Website is structured into 11 principal pages
+* Website is structured into 15 principal pages
 * All pages extend and produce a consistent style across the application
 * Pages are the following:
 
@@ -134,9 +139,14 @@ Epics, User Stories and Backend Tasks can be found in this GitHub repository pro
 | **Feed** | A list of all posts of followed accounts |
 | **Saved** | A list of all posts saved by the current user |
 | **Add Property** | A large form page where sellers can fill out their property data |
-| **Edit Property** | A large form page where sellers can modify pre-existing fields
+| **Edit Property** | A large form page where sellers can modify pre-existing fields |
+| **Post List** | A list view of the property posts featuring concise information |
 | **Post Detail** | A detailed view of the post featuring additional information |
 | **Search Filters** | A UI component where users are able to access a variety of search filter methods |
+| **Add Blog Post** | A form page where staff can create a blog post |
+| **Edit Blog Post** | A form page where staff can modify pre-existing fields for their blog post |
+| **Blog Post List** | A list view of all blog posts with a shortened description and search tab |
+| **Blog Detail** | A detailed view of the blog post featuring full description |
 | **User Profile** | A profile dashboard displaying information and user posts |
 | **Edit Profile** | A large form page where users can modify pre-existing input |
 | **Edit Username** | A form where the user can change their username |
@@ -177,11 +187,14 @@ The interactive icons found across the web application were imported from [Font 
 * State changes links depending on logged-in status versus logged-out
     * If a user signs up as a seller they will be able to see the link to 'Add Property', as well as the other collective iconed links: view 'Saved' properties, view property 'Feed' (property listed by other followed sellers), their profile and the 'Logout' icon.
     * If a user signs up as a non-seller they will be able to see all the aforementioned links save the 'Add Property' icon.
+    * If a user is staff of Property Andalucia, they will be able to see the 'Create post' icon.
+    * Additionally if a user is both staff and seller, they have access to both 'Add Property' and 'Create post' icons.
 * The brand logo is a clickable button that returns the user to home page.
 
 ![navbar-logged-out](/documentation/readme_images/features/navbar%20logged%20out.png)
 ![navbar-logged-in](/documentation/readme_images/features/navbar%20logged%20in.png)
 ![navbar-logged-in-2](/documentation/readme_images/features/navbar%20logged%20in%20(2).png)
+![navbar-logged-in-3](/documentation/readme_images/features/navbar%20logged%20in%20(3).png)
 
 * Designed to be responsive depending on screen size; links form a dropdown button when viewed on smaller viewport.
 ![navbar-small-viewport](/documentation/readme_images/features/navbar%20small%20viewport.png)
@@ -334,6 +347,52 @@ The interactive icons found across the web application were imported from [Font 
 
 ![edit-profile-form](/documentation/readme_images/features/edit%20profile%20form.png)
 
+#### **Blog Creation Form**
+
+* Authenticated staff users have exclusive access to the 'Create post' icon, which directs them to the blog creation form.
+* This form is not available to sellers, non-sellers and anonymous users, who are all redirected back to the home page if attempted entry.
+* Users are able to upload an image for their blog post
+* If the image field is left empty, an automated default image will be rendered from the API
+
+![blog-creation-form](/documentation/readme_images/features/blog%20creation%20form.png)
+
+#### **Blog Edit Form**
+
+* Edit blog form mimics the blog creation form, thus all of the fields are identical
+* The form contains pre-populated input and image fields, which are easily editable.
+* Save changes are evident from the moment of clicking the 'Save' button.
+
+![blog-edit-form](/documentation/readme_images/features/blog%20edit%20form.png)
+
+#### **Blog List View**
+
+* This view contains a shortened content field of blog posts, with a "Read more..." link.
+* All blog posts are ordered by creation date, the latest post being the top and first-seen post.
+* Features the publication date.
+* Features blog post owner avatar, which links to their profile.
+* Features blog post owner name for further information.
+
+![blog-list-view](/documentation/readme_images/features/blog%20list%20view.png)
+
+#### **Search Feed**
+
+* Search bar is available and accessible at the top of blog list view.
+* It can filtered post titles and blog post owner usernames.
+* It can be used by all users including anonymous users.
+
+![search-feed](/documentation/readme_images/features/search%20feed.png)
+
+#### **Blog Detail View**
+
+* A detail view version of the blog post which contains an expanded, full blog content feature.
+* It is individual and stand-alone.
+* If user is the blog post owner, there is a dropdown icon available with the edit and delete functionality.
+* Features the publication date.
+* Features blog post owner avatar, which links to their profile.
+* Features blog post owner name for further information.
+
+![blog-detail-view](/documentation/readme_images/features/blog%20detail%20view.png)
+
 #### **Username and Password Forms**
 
 * Username form contains functionality to change the username.
@@ -375,7 +434,7 @@ There are several components used and managed in this project and they are the f
     * The [react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api) package was used to create this component. An API key is also needed from Google Cloud.
 
 * MoreDropdown
-    * This component is used in the property detail view page, published notes and user profile. It is a UX improvement as it allows users to access a dropdown menu to be able to modify or delete their own data.
+    * This component is used in the property detail view page, published notes, user profile and blog detail view page. It is a UX improvement as it allows users to access a dropdown menu to be able to modify or delete their own data.
 
 * NavBar
     * The NavBar component is present on every page of the application. 
@@ -392,6 +451,7 @@ There are several components used and managed in this project and they are the f
 
 Ideas for possible future implementation are as follows:
 
+* ~~Blog section which features staff employed by the company that can produce blog posts with full CRUD functionality.~~
 * Implementation of a more active buyer account, i.e., buyer profiles should be more individual and particular to their nature
 * Implementation of more diversified search filters, such as being able to narrow down search results by size, state (new-build, renovated etc.), numbers of floors, by date of publication and so on
 * A direct messaging service where users can send private messages to another user
