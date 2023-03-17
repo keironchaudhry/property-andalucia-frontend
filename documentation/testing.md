@@ -7,7 +7,7 @@
     * [User Authentication](#user-authentication-2)
     * [Property](#property-3)
     * [Profile Creation and Management](#profile-creation-and-management-4)
-    * [Blog](#blog-5)
+    * [Blog](#blog-88)
 * [Code Validation](#code-validation)
     * [JSX](#jsx)
     * [CSS](#css)
