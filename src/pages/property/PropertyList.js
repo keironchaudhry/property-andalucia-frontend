@@ -114,7 +114,7 @@ function PropertyList({ message, filter = "" }) {
             {/* Property posts count display */}
             <div className="text-center mb-2 mt-4">
               {pathname === "/" && property.count !== 0 && (
-                <p className="h3">{property.count} Properties Up For Sale</p>
+                <p className={`${formStyles.PropertiesAvailableMobile} h3`}>{property.count} Properties Up For Sale</p>
               )}
             </div>
             {/* Property posts */}

@@ -138,9 +138,9 @@ const PropertyDetail = (props) => {
           {/* Property Name & Address*/}
           <Container className="align-items-center justify-content-between">
             <div className="d-flex flex-row justify-content-between mb-3">
-              <h3 className="align-items-center">
+              <h4 className="align-items-center">
                 <span>{name}</span>
-              </h3>
+              </h4>
               <div className="d-flex align-items-center">
                 {is_owner && propertyPage && (
                   <MoreDropdown
@@ -274,7 +274,7 @@ const PropertyDetail = (props) => {
           <div className="text-center mt-4 pb-4">
             <OverlayTrigger
               trigger="click"
-              placement="right"
+              placement="bottom"
               overlay={handlePopover}
             >
               <Button
@@ -307,9 +307,7 @@ const PropertyDetail = (props) => {
       ) : (
         // Property Listing View
         <Container className={`${styles.ListContainer} p-3 p-md-4 rounded`}>
-          {/* Property Name & Address*/}
-          <div>{is_owner && propertyPage && "..."}</div>
-
+          
           {/* Image */}
           <Card>
             <Link to={`/property/${id}`}>
