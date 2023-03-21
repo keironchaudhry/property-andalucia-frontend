@@ -51,7 +51,7 @@ export function ProfileEditDropdown({ id }) {
   return (
     <Dropdown
       className={`${styles.ProfileDropdown} ms-auto text-align-right`}
-      drop="right"
+      drop="bottom"
     >
       <Dropdown.Toggle as={ThreeDots} />
 
