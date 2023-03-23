@@ -265,13 +265,6 @@ const PropertyDetail = (props) => {
                   ) : (
                     <li>This property is not south-facing.</li>
                   )}
-                  {sold ? (
-                    <li>
-                      <strong>This property has been sold.</strong>
-                    </li>
-                  ) : (
-                    <li>This property is still up for sale.</li>
-                  )}
                 </ul>
               </Col>
             </div>
