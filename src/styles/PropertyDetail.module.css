@@ -45,6 +45,22 @@
   text-decoration: underline;
 }
 
+.Sold {
+  top: 20px;
+  left: 20px;
+  background-color: #f2cd5c;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  height: min-content;
+  width: max-content;
+}
+
+.Sold p {
+  margin-bottom: 0px;
+}
+
 @media screen and (max-width: 430px) {
   .PropertyNameMobile {
     font-size: 25px;
@@ -63,5 +79,10 @@
   .ViewMore {
     color: #f99417;
     font-size: 17.5px;
+  }
+
+  .Sold {
+    font-size: 15px;
+    letter-spacing: 1px;
   }
 }

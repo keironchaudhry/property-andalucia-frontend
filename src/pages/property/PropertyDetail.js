@@ -156,6 +156,13 @@ const PropertyDetail = (props) => {
           <Card>
             <Card.Img src={image} variant="top" alt="Property image" />
 
+            {/* "Sold" Overlay Banner */}
+            {sold && (
+              <Card.ImgOverlay className={`${styles.Sold} border border-dark`}>
+                <p>Sold</p>
+              </Card.ImgOverlay>
+            )}
+
             {/* User Profile */}
             <Card.Body className="d-flex flex-sm-row justify-content-between align-items-center">
               <Link to={`/profiles/${profile_id}`} className="d-md-none">
@@ -315,6 +322,13 @@ const PropertyDetail = (props) => {
             <Link to={`/property/${id}`}>
               <Card.Img src={image} variant="top" alt="Property image" />
             </Link>
+
+            {/* "Sold" Overlay Banner */}
+            {sold && (
+              <Card.ImgOverlay className={`${styles.Sold} border border-dark`}>
+                <p>Sold</p>
+              </Card.ImgOverlay>
+            )}
 
             {/* User Profile */}
             <Card.Body className="d-flex flex-sm-row justify-content-between align-items-center">
