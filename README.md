@@ -486,6 +486,8 @@ Testing can be found in a separate document [here](/documentation/testing.md).
 
 * To find a list of fixed bugs that were mended during development, [click here](https://github.com/keironchaudhry/property-andalucia-frontend/issues?q=label%3Abug+is%3Aclosed).
 
+* [An extra fixed bug here.](https://github.com/keironchaudhry/property-andalucia-frontend/commit/4179c4885fdaa44fbfcc50b0b56241585046e4d6#commitcomment-105717410)
+
 #### **Remaining Bugs**
 
 * There are currently no known bugs.
