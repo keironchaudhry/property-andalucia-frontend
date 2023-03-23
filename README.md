@@ -484,9 +484,15 @@ Testing can be found in a separate document [here](/documentation/testing.md).
 
 #### **Fixed Bugs**
 
-* To find a list of fixed bugs that were mended during development, [click here](https://github.com/keironchaudhry/property-andalucia-frontend/issues?q=label%3Abug+is%3Aclosed).
+* To find a list of fixed bugs that were mended during development, [click here.](https://github.com/keironchaudhry/property-andalucia-frontend/issues?q=label%3Abug+is%3Aclosed)
 
-* [An extra fixed bug here.](https://github.com/keironchaudhry/property-andalucia-frontend/commit/4179c4885fdaa44fbfcc50b0b56241585046e4d6#commitcomment-105717410)
+Additional fixed bugs on `main` branch:
+
+* [Faulty error warnings + fixed default images.](https://github.com/keironchaudhry/property-andalucia-frontend/commit/4179c4885fdaa44fbfcc50b0b56241585046e4d6#commitcomment-105717410)
+
+* [Correction of dropdown component direction.](https://github.com/keironchaudhry/property-andalucia-frontend/commit/32a24dbe9d5792b4ef1deab7c9360c39ffbc2d7f#commitcomment-105717753)
+
+* [Correction of overlay component direction.](https://github.com/keironchaudhry/property-andalucia-frontend/commit/999b19e83ca190739984d51d5f0274c8b0865b8b#commitcomment-105717964)
 
 #### **Remaining Bugs**
 
