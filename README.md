@@ -496,7 +496,9 @@ Additional fixed bugs on `main` branch:
 
 #### **Remaining Bugs**
 
-* There are currently no known bugs.
+* On the detail view of the property page, the `.toLocaleString()` JavaScript function doesn't work with the `price` data field. It causes the entire page to go blank. It does however work on the list view version.
+
+* When clicking "View More" on the property list view, it takes the user to the middle of the detail view page, rather than the top.
 
 
 # **Technologies and libraries used**
