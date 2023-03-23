@@ -62,7 +62,10 @@ export default function BlogCreateForm() {
 
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("image", imageInput.current.files[0]);
+    formData.append(
+      "image",
+      imageInput.current.files[0] ? imageInput.current.files[0] : ""
+    );
 
     try {
       const { data } = await axiosReq.post("/blog/create/", formData);
@@ -79,7 +82,7 @@ export default function BlogCreateForm() {
     <div className="text-center">
       {/* Blog Title */}
       <Form.Group controlId="title">
-        <Form.Label>Title</Form.Label>
+        <Form.Label>Title*</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -99,7 +102,7 @@ export default function BlogCreateForm() {
     <div className="text-center">
       {/* Blog Content Form */}
       <Form.Group controlId="content">
-        <Form.Label>Content</Form.Label>
+        <Form.Label>Content*</Form.Label>
         <Form.Control
           as="textarea"
           rows={8}
@@ -130,7 +133,7 @@ export default function BlogCreateForm() {
           <div>
             <Form.Label
               className={`${btnStyles.Button} ${btnStyles.Orange} btn`}
-              htmlFor="image-upload"
+              htmlFor="image"
             >
               Change image
             </Form.Label>
@@ -139,7 +142,7 @@ export default function BlogCreateForm() {
       ) : (
         <Form.Label
           className="d-flex flex-column justify-content-center"
-          htmlFor="image-upload"
+          htmlFor="image"
         >
           <Asset src={Upload} message="Upload an image for your blog post" />
         </Form.Label>
@@ -148,7 +151,7 @@ export default function BlogCreateForm() {
       <Form.Control
         className="d-none"
         type="file"
-        id="image-upload"
+        id="image"
         accept="image/*"
         onChange={handleChangeImage}
         ref={imageInput}

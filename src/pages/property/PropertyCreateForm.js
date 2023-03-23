@@ -33,8 +33,8 @@ export default function PropertyCreateForm() {
     municipality: "",
     street: "",
     postCode: "",
-    price: 0,
-    size: 0,
+    price: "",
+    size: "",
     bedrooms: "",
     bathrooms: "",
     garage: false,
@@ -115,7 +115,10 @@ export default function PropertyCreateForm() {
     formData.append("is_south_facing", isSouthFacing);
     formData.append("sold", sold);
     formData.append("description", description);
-    formData.append("image", imageInput.current.files[0]);
+    formData.append(
+      "image",
+      imageInput.current.files[0] ? imageInput.current.files[0] : ""
+    );
     formData.append("longitude", longitude);
     formData.append("latitude", latitude);
 
@@ -132,7 +135,6 @@ export default function PropertyCreateForm() {
 
   const mainFields = (
     <div className="text-center">
-
       {/* Property name form */}
       <Form.Group controlId="name">
         <Form.Label>Property Name</Form.Label>
@@ -151,7 +153,7 @@ export default function PropertyCreateForm() {
 
       {/* Description form */}
       <Form.Group controlId="description">
-        <Form.Label>Description</Form.Label>
+        <Form.Label>Description*</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
@@ -209,7 +211,7 @@ export default function PropertyCreateForm() {
           <div>
             <Form.Label
               className={`${btnStyles.Button} ${btnStyles.Orange} btn`}
-              htmlFor="image-upload"
+              htmlFor="image"
             >
               Change image
             </Form.Label>
@@ -218,7 +220,7 @@ export default function PropertyCreateForm() {
       ) : (
         <Form.Label
           className="d-flex flex-column justify-content-center"
-          htmlFor="image-upload"
+          htmlFor="image"
         >
           <Asset src={Upload} message="Upload an image of your property" />
         </Form.Label>
@@ -227,7 +229,7 @@ export default function PropertyCreateForm() {
       <Form.Control
         className="d-none"
         type="file"
-        id="image-upload"
+        id="image"
         accept="image/*"
         onChange={handleChangeImage}
         ref={imageInput}
@@ -295,7 +297,7 @@ export default function PropertyCreateForm() {
 
       {/* Municipality form */}
       <Form.Group controlId="municipality">
-        <Form.Label>Municipality</Form.Label>
+        <Form.Label>Municipality*</Form.Label>
         <Form.Control
           type="text"
           name="municipality"
@@ -327,7 +329,7 @@ export default function PropertyCreateForm() {
 
       {/* Postcode form */}
       <Form.Group controlId="postCode">
-        <Form.Label>Postcode</Form.Label>
+        <Form.Label>Postcode*</Form.Label>
         <Form.Control
           type="text"
           name="postCode"
@@ -343,7 +345,7 @@ export default function PropertyCreateForm() {
 
       {/* Price form */}
       <Form.Group controlId="price">
-        <Form.Label>Price (€)</Form.Label>
+        <Form.Label>Price (€)*</Form.Label>
         <Form.Control
           min="0"
           step="any"
@@ -358,10 +360,10 @@ export default function PropertyCreateForm() {
           {message}
         </Alert>
       ))}
-      
+
       {/* Size form */}
       <Form.Group controlId="size">
-        <Form.Label>Size (m²)</Form.Label>
+        <Form.Label>Size (m²)*</Form.Label>
         <Form.Control
           min="0"
           step="1"
@@ -379,7 +381,7 @@ export default function PropertyCreateForm() {
 
       {/* Bedroom count form */}
       <Form.Group controlId="bedrooms">
-        <Form.Label>Bedrooms</Form.Label>
+        <Form.Label>Bedrooms*</Form.Label>
         <Form.Control
           min="0"
           step="1"
@@ -397,7 +399,7 @@ export default function PropertyCreateForm() {
 
       {/* Bathroom count form */}
       <Form.Group controlId="bathrooms">
-        <Form.Label>Bathrooms</Form.Label>
+        <Form.Label>Bathrooms*</Form.Label>
         <Form.Control
           min="0"
           step="1"
@@ -424,7 +426,7 @@ export default function PropertyCreateForm() {
           onChange={handleCheckBox}
         />
       </Form.Group>
-      
+
       {/* Garage checkbox form */}
       <Form.Group controlId="garage">
         <Form.Check
@@ -436,7 +438,7 @@ export default function PropertyCreateForm() {
           onChange={handleCheckBox}
         />
       </Form.Group>
-      
+
       {/* South-facing checkbox form */}
       <Form.Group controlId="isSouthFacing">
         <Form.Check

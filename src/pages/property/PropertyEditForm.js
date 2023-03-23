@@ -39,8 +39,8 @@ export default function PropertyEditForm() {
     municipality: "",
     street: "",
     postCode: "",
-    price: 0,
-    size: 0,
+    price: "",
+    size: "",
     bedrooms: "",
     bathrooms: "",
     garage: false,
@@ -217,7 +217,7 @@ export default function PropertyEditForm() {
 
       {/* Description form */}
       <Form.Group controlId="description">
-        <Form.Label>Description</Form.Label>
+        <Form.Label>Description*</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
@@ -275,7 +275,7 @@ export default function PropertyEditForm() {
           <div>
             <Form.Label
               className={`${btnStyles.Button} ${btnStyles.Bright} btn`}
-              htmlFor="image-upload"
+              htmlFor="image"
             >
               Change image
             </Form.Label>
@@ -284,7 +284,7 @@ export default function PropertyEditForm() {
       ) : (
         <Form.Label
           className="d-flex flex-column justify-content-center"
-          htmlFor="image-upload"
+          htmlFor="image"
         >
           <Asset src={Upload} message="Upload an image of your property" />
         </Form.Label>
@@ -293,7 +293,7 @@ export default function PropertyEditForm() {
       <Form.Control
         className="d-none"
         type="file"
-        id="image-upload"
+        id="image"
         accept="image/*"
         onChange={handleChangeImage}
         ref={imageInput}
@@ -361,7 +361,7 @@ export default function PropertyEditForm() {
 
       {/* Municipality form */}
       <Form.Group controlId="municipality">
-        <Form.Label>Municipality</Form.Label>
+        <Form.Label>Municipality*</Form.Label>
         <Form.Control
           type="text"
           name="municipality"
@@ -393,7 +393,7 @@ export default function PropertyEditForm() {
 
       {/* Postcode form */}
       <Form.Group controlId="postCode">
-        <Form.Label>Postcode</Form.Label>
+        <Form.Label>Postcode*</Form.Label>
         <Form.Control
           type="text"
           name="postCode"
@@ -409,7 +409,7 @@ export default function PropertyEditForm() {
 
       {/* Price form */}
       <Form.Group controlId="price">
-        <Form.Label>Price (€)</Form.Label>
+        <Form.Label>Price (€)*</Form.Label>
         <Form.Control
           min="0"
           step="any"
@@ -427,7 +427,7 @@ export default function PropertyEditForm() {
 
       {/* Size form */}
       <Form.Group controlId="size">
-        <Form.Label>Size (m²)</Form.Label>
+        <Form.Label>Size (m²)*</Form.Label>
         <Form.Control
           min="0"
           step="1"
@@ -445,7 +445,7 @@ export default function PropertyEditForm() {
 
       {/* Bedroom count form */}
       <Form.Group controlId="bedrooms">
-        <Form.Label>Bedrooms</Form.Label>
+        <Form.Label>Bedrooms*</Form.Label>
         <Form.Control
           min="0"
           step="1"
@@ -463,7 +463,7 @@ export default function PropertyEditForm() {
 
       {/* Bathroom count form */}
       <Form.Group controlId="bathrooms">
-        <Form.Label>Bathrooms</Form.Label>
+        <Form.Label>Bathrooms*</Form.Label>
         <Form.Control
           min="0"
           step="1"
