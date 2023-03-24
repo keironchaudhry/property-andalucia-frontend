@@ -502,6 +502,10 @@ Additional fixed bugs on `main` branch:
 
 * When clicking "View More" on the property list view, it takes the user to the middle of the detail view page, rather than the top.
 
+* There is one warning in the terminal via `react-hooks/exhaustive-deps`, saying that the   `useEffect` hook has a missing dependency. However when it is added, it compiles more warnings, and when followed through, eventually break the web application. This bug has no impact on the running or functioning of the web application in general and it is only seen when in development mode (i.e. when `npm start` is ran). This bug is hidden for now with the placement of `// eslint-disable-next-line` above the line of code (PropertyList.js : line 71).
+
+* Some of the images used across the website are large and high quality, affecting the Lighthouse performance score of the application. However when the same test is ran on the developers mentors' network, it scores a higher number. This can be referred to [here](https://github.com/keironchaudhry/property-andalucia-frontend/blob/main/documentation/testing.md).
+
 
 # **Technologies and libraries used**
 

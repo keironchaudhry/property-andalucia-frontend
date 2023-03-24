@@ -68,6 +68,7 @@ function PropertyList({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
+    // eslint-disable-next-line
   }, [
     filter,
     province,
