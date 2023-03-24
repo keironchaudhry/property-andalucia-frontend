@@ -263,6 +263,7 @@ The interactive icons found across the web application were imported from [Font 
 * Each listed object contains brief but important information about the listing, such as the image, the title, address, the price, description, measurement and bedroom/bathroom count.
 * Each listing also contains the profile avatar and name of each object owner, as well as a save button. 
 * All listings are ordered by creation date, the latest post being the top and first-seen post.
+* When a property has been sold, an image overlay with "Sold" appears over the property image.
 
 ![property-list-view](/documentation/readme_images/features/property%20list%20view.png)
 
@@ -272,6 +273,7 @@ The interactive icons found across the web application were imported from [Font 
 * It contains a button to reveal the object owners telephone and email information. This can only be accessed by authenticated users and not by anonymous visitors.
 * Contains a "Location" section, featuring the Google Maps component with the location of the property.
 * Contains the "Notes" section at the bottom of the page, where all authenticated users can leave a private note. 
+* When a property has been sold, an image overlay with "Sold" appears over the property image.
 
 ![property-detail-view](/documentation/readme_images/features/property%20detail%20view.png)
 
