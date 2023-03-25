@@ -85,7 +85,7 @@ function ProfilePage() {
             </Col>
           </Row>
           {/* Profile-related follow/following count */}
-          <Row className="justify-content-center no-gutters">
+          <Row className="justify-content-center no-gutters mb-4">
             <Col className="my-2">
               <div>Followers: {profile?.followers_count}</div>
             </Col>
