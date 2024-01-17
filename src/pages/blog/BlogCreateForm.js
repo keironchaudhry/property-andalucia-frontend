@@ -9,7 +9,7 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
-import Asset from "../../components/Asset";
+import Asset from "../../components/asset/Asset.js";
 import Upload from "../../assets/upload.png";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";

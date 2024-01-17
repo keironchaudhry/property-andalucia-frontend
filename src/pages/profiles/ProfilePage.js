@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import Asset from "../../components/Asset";
+import Asset from "../../components/asset/Asset.js";
 
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";

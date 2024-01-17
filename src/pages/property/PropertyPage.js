@@ -12,7 +12,7 @@ import { fetchMoreData } from "../../utils/utils";
 import PropertyDetail from "./PropertyDetail";
 import Note from "../notes/Note";
 import NoteCreateForm from "../notes/NoteCreateForm";
-import Asset from "../../components/Asset";
+import Asset from "../../components/asset/Asset.js";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import PopularProfiles from "../profiles/PopularProfiles";
 
