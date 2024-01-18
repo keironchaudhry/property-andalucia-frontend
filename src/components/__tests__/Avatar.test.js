@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Avatar from "../Avatar";
+import Avatar from "../avatar/Avatar";
 
 test("Avatar image renders when source prop is true", () => {
   render(<Avatar src={true} />);

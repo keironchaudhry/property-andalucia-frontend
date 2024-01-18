@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
-import Avatar from "../../components/Avatar";
+import Avatar from "../../components/avatar/Avatar.js";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/Profile.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";

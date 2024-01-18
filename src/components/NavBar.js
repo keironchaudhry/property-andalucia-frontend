@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 
 import styles from "../styles/NavBar.module.css";
 import logo from "../assets/logo.png";
-import Avatar from "./Avatar";
+import Avatar from "./avatar/Avatar.js";
 import {
   useCurrentUser,
   useSetCurrentUser,

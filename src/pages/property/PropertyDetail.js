@@ -14,7 +14,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/PropertyDetail.module.css";
-import Avatar from "../../components/Avatar";
+import Avatar from "../../components/avatar/Avatar.js";
 import Map from "../../components/Map";
 
 /**

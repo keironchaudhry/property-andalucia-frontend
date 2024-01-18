@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
-import Avatar from "../../components/Avatar";
+import Avatar from "../../components/avatar/Avatar.js";
 import styles from "../../styles/PropertyDetail.module.css";
 import mobileStyles from "../../styles/BlogDetail.module.css";
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-import Avatar from "../../components/Avatar";
+import Avatar from "../../components/avatar/Avatar.js";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 
