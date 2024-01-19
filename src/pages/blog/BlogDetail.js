@@ -10,7 +10,7 @@ import mobileStyles from "../../styles/BlogDetail.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
-import { MoreDropdown } from "../../components/MoreDropdown";
+import { MoreDropdown } from "../../components/moredropdown/MoreDropdown.js";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.

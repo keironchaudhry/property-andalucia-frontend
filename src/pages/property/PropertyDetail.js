@@ -9,7 +9,7 @@ import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
 import Popover from "react-bootstrap/Popover";
 
-import { MoreDropdown } from "../../components/MoreDropdown";
+import { MoreDropdown } from "../../components/moredropdown/MoreDropdown.js";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";

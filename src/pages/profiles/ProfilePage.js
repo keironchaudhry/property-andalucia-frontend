@@ -23,7 +23,7 @@ import {
 } from "../../contexts/ProfileDataContext";
 import { fetchMoreData } from "../../utils/utils";
 import PropertyDetail from "../property/PropertyDetail";
-import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import { ProfileEditDropdown } from "../../components/moredropdown/MoreDropdown.js";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.

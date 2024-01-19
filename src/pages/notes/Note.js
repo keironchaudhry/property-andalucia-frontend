@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Media from "react-bootstrap/Media";
 
 import { axiosRes } from "../../api/axiosDefaults";
-import { MoreDropdown } from "../../components/MoreDropdown";
+import { MoreDropdown } from "../../components/moredropdown/MoreDropdown.js";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import NoteEditForm from "./NoteEditForm";
 
