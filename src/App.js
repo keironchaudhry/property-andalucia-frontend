@@ -15,7 +15,7 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
-import NotFound from "./components/NotFound";
+import NotFound from "./components/notfound/NotFound.js";
 import BlogCreateForm from "./pages/blog/BlogCreateForm";
 import BlogPage from "./pages/blog/BlogPage";
 import BlogEditForm from "./pages/blog/BlogEditForm";

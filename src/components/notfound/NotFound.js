@@ -1,7 +1,7 @@
 import React from "react";
-import NoResults from "../assets/noresults.png";
-import styles from "../styles/NotFound.module.css";
-import Asset from "./asset/Asset.js";
+import NoResults from "../asset/Asset.js";
+import styles from "./NotFound.module.css";
+import Asset from "../asset/Asset.js";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.

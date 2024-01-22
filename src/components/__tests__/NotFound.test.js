@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import NotFound from "../NotFound";
+import NotFound from "../notfound/NotFound.js";
 
 test("Page renders when searched-for page is nonexistent", () => {
   render(<NotFound />);
