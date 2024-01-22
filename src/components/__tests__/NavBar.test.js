@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import NavBar from "../NavBar";
+import NavBar from "../navbar/NavBar.js";
 
 test("Test navbar links for logged-out users", () => {
   render(

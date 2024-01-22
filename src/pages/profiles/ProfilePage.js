@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import Asset from "../../components/Asset";
+import Asset from "../../components/asset/Asset.js";
 
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -23,7 +23,7 @@ import {
 } from "../../contexts/ProfileDataContext";
 import { fetchMoreData } from "../../utils/utils";
 import PropertyDetail from "../property/PropertyDetail";
-import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import { ProfileEditDropdown } from "../../components/moredropdown/MoreDropdown.js";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.

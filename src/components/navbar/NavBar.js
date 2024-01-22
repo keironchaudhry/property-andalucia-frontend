@@ -6,15 +6,15 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 
-import styles from "../styles/NavBar.module.css";
-import logo from "../assets/logo.png";
-import Avatar from "./Avatar";
+import styles from "./NavBar.module.css";
+import logo from "../../assets/logo.png";
+import Avatar from "../avatar/Avatar.js";
 import {
   useCurrentUser,
   useSetCurrentUser,
-} from "../contexts/CurrentUserContext";
-import useUntoggle from "../hooks/useUntoggle";
-import { removeTokenTimestamp } from "../utils/utils";
+} from "../../contexts/CurrentUserContext.js";
+import useUntoggle from "../../hooks/useUntoggle.js";
+import { removeTokenTimestamp } from "../../utils/utils.js";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.

@@ -5,7 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 
-import Asset from "../../components/Asset";
+import Asset from "../../components/asset/Asset.js";
 import BlogDetail from "./BlogDetail";
 import NoResults from "../../assets/noresults.png";
 import styles from "../../styles/BlogList.module.css";

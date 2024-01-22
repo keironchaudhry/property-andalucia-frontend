@@ -11,7 +11,7 @@ import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 
 import PropertyDetail from "./PropertyDetail";
-import Asset from "../../components/Asset";
+import Asset from "../../components/asset/Asset.js";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 import { axiosReq } from "../../api/axiosDefaults";

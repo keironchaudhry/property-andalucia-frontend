@@ -9,13 +9,13 @@ import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
 import Popover from "react-bootstrap/Popover";
 
-import { MoreDropdown } from "../../components/MoreDropdown";
+import { MoreDropdown } from "../../components/moredropdown/MoreDropdown.js";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/PropertyDetail.module.css";
-import Avatar from "../../components/Avatar";
-import Map from "../../components/Map";
+import Avatar from "../../components/avatar/Avatar.js";
+import Map from "../../components/map/Map.js";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.

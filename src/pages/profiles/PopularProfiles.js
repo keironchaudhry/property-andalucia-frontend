@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 
 import Profile from "./Profile";
-import Asset from "../../components/Asset";
+import Asset from "../../components/asset/Asset.js";
 import formStyles from "../../styles/PropertyList.module.css";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 
