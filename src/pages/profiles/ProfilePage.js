@@ -9,7 +9,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import Asset from "../../components/asset/Asset.js";
 
-import styles from "../../styles/ProfilePage.module.css";
+import styles from "./ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import NoResults from "../../assets/noresults.png";
 

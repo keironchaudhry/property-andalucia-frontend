@@ -17,7 +17,7 @@ import {
 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import styles from "../../styles/ProfilePage.module.css";
+import styles from "./ProfilePage.module.css";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.

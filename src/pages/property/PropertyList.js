@@ -20,7 +20,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import NoResults from "../../assets/noresults.png";
 
 import appStyles from "../../App.module.css";
-import formStyles from "../../styles/PropertyList.module.css";
+import formStyles from "./PropertyList.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 /**

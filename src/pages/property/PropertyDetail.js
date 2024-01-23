@@ -13,7 +13,7 @@ import { MoreDropdown } from "../../components/moredropdown/MoreDropdown.js";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
-import styles from "../../styles/PropertyDetail.module.css";
+import styles from "./PropertyDetail.module.css";
 import Avatar from "../../components/avatar/Avatar.js";
 import Map from "../../components/map/Map.js";
 

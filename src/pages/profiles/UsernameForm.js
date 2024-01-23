@@ -15,7 +15,7 @@ import {
 } from "../../contexts/CurrentUserContext";
 
 import btnStyles from "../../styles/Button.module.css";
-import styles from "../../styles/ProfilePage.module.css";
+import styles from "./ProfilePage.module.css";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.

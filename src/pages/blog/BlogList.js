@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import Asset from "../../components/asset/Asset.js";
 import BlogDetail from "./BlogDetail";
 import NoResults from "../../assets/noresults.png";
-import styles from "../../styles/BlogList.module.css";
+import styles from "./BlogList.module.css";
 
 import { fetchMoreData } from "../../utils/utils";
 import { axiosReq } from "../../api/axiosDefaults";

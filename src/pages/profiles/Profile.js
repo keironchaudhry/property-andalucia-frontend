@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 import Avatar from "../../components/avatar/Avatar.js";
 import btnStyles from "../../styles/Button.module.css";
-import styles from "../../styles/Profile.module.css";
+import styles from "./Profile.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 

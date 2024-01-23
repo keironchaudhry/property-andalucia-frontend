@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import styles from "../../styles/PropertyDetail.module.css";
+import styles from "./PropertyDetail.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { fetchMoreData } from "../../utils/utils";
 import PropertyDetail from "./PropertyDetail";
