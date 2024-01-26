@@ -15,7 +15,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
+// import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/PropertyCreateEditForm.module.css";
 
 /**
@@ -132,7 +132,7 @@ export default function BlogCreateForm() {
           </figure>
           <div>
             <Form.Label
-              className={`${btnStyles.Button} ${btnStyles.Orange} btn`}
+              className={`${appStyles.Button} ${appStyles.Orange} btn`}
               htmlFor="image"
             >
               Change image
@@ -167,13 +167,13 @@ export default function BlogCreateForm() {
   const buttons = (
     <>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Bright} mr-1`}
+        className={`${appStyles.Button} ${appStyles.Bright} mr-1`}
         type="submit"
       >
         Create
       </Button>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Bright} ml-1`}
+        className={`${appStyles.Button} ${appStyles.Bright} ml-1`}
         onClick={() => {
           history.goBack();
         }}
