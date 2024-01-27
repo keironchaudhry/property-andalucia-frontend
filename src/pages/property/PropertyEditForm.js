@@ -10,7 +10,7 @@ import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
 
 import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
+// import btnStyles from "../../styles/Button.module.css";
 import styles from "./PropertyCreateEditForm.module.css";
 import Upload from "../../assets/upload.png";
 import Asset from "../../components/asset/Asset.js";
@@ -274,7 +274,7 @@ export default function PropertyEditForm() {
           </figure>
           <div>
             <Form.Label
-              className={`${btnStyles.Button} ${btnStyles.Bright} btn`}
+              className={`${appStyles.Button} ${appStyles.Bright} btn`}
               htmlFor="image"
             >
               Change image
@@ -536,13 +536,13 @@ export default function PropertyEditForm() {
   const buttons = (
     <>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Bright} mr-1`}
+        className={`${appStyles.Button} ${appStyles.Bright} mr-1`}
         type="submit"
       >
         Save
       </Button>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Bright} ml-1`}
+        className={`${appStyles.Button} ${appStyles.Bright} ml-1`}
         onClick={() => {
           history.goBack();
         }}

@@ -21,7 +21,7 @@ import NoResults from "../../assets/noresults.png";
 
 import appStyles from "../../App.module.css";
 import formStyles from "./PropertyList.module.css";
-import btnStyles from "../../styles/Button.module.css";
+// import btnStyles from "../../styles/Button.module.css";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
@@ -273,7 +273,7 @@ function PropertyList({ message, filter = "" }) {
                 {/* Buttons */}
                 <div className="flex-row text-center pt-1 pb-1">
                   <Button
-                    className={`${btnStyles.Button} ${btnStyles.Bright}`}
+                    className={`${appStyles.Button} ${appStyles.Bright}`}
                     type="submit"
                     aria-label="Search"
                     onClick={clearSearch}
