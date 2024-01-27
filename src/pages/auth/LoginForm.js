@@ -99,7 +99,7 @@ const LoginForm = () => {
 
             {/* Login button */}
             <Button
-              className={`${appStylesStyles.Button} ${appStylesStyles.Wide} ${appStylesStyles.Bright} mt-3`}
+              className={`${appStyles.Button} ${appStyles.Wide} ${appStyles.Bright} mt-3`}
               type="submit"
               variant="warning"
             >
