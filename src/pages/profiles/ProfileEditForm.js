@@ -16,7 +16,7 @@ import {
 } from "../../contexts/CurrentUserContext";
 
 import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
+// import btnStyles from "../../styles/Button.module.css";
 import styles from "./ProfilePage.module.css";
 
 /**
@@ -151,13 +151,13 @@ const ProfileEditForm = () => {
 
       {/* Submit/cancel buttons */}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        className={`${appStyles.Button} ${appStyles.Bright}`}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        className={`${appStyles.Button} ${appStyles.Bright}`}
         type="submit"
       >
         Save
@@ -189,7 +189,7 @@ const ProfileEditForm = () => {
               ))}
               <div>
                 <Form.Label
-                  className={`${btnStyles.Button} ${btnStyles.Bright} btn my-auto`}
+                  className={`${appStyles.Button} ${appStyles.Bright} btn my-auto`}
                   htmlFor="image-upload"
                 >
                   Change the image

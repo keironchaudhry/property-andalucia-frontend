@@ -10,7 +10,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/asset/Asset.js";
 
 import styles from "./ProfilePage.module.css";
-import btnStyles from "../../styles/Button.module.css";
+// import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
 import NoResults from "../../assets/noresults.png";
 
 import PopularProfiles from "./PopularProfiles";
@@ -100,14 +101,14 @@ function ProfilePage() {
             !is_owner &&
             (profile?.following_id ? (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.Bright}`}
+                className={`${appStyles.Button} ${appStyles.Bright}`}
                 onClick={() => handleUnfollow(profile)}
               >
                 Unfollow
               </Button>
             ) : (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.Bright}`}
+                className={`${appStyles.Button} ${appStyles.Bright}`}
                 onClick={() => handleFollow(profile)}
               >
                 Follow
