@@ -5,8 +5,9 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
 import Avatar from "../../components/avatar/Avatar.js";
-import styles from "../../styles/PropertyDetail.module.css";
-import mobileStyles from "../../styles/BlogDetail.module.css";
+// import styles from "../../styles/PropertyDetail.module.css";
+import styles from "../property/PropertyDetail.module.css";
+import mobileStyles from "./BlogDetail.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
-import styles from "../../styles/SignInUpForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import styles from "./SignInUpForm.module.css";
+// import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 import Form from "react-bootstrap/Form";
@@ -99,7 +99,7 @@ const LoginForm = () => {
 
             {/* Login button */}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} mt-3`}
+              className={`${appStyles.Button} ${appStyles.Wide} ${appStyles.Bright} mt-3`}
               type="submit"
               variant="warning"
             >

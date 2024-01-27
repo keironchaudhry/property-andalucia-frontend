@@ -3,7 +3,8 @@ import Container from "react-bootstrap/Container";
 
 import Profile from "./Profile";
 import Asset from "../../components/asset/Asset.js";
-import formStyles from "../../styles/PropertyList.module.css";
+// import formStyles from "../../styles/PropertyList.module.css";
+import formStyles from "../property/PropertyList.module.css";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 
 /**

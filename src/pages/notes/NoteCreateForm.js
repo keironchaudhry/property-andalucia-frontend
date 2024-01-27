@@ -6,7 +6,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 import Avatar from "../../components/avatar/Avatar.js";
 import { axiosRes } from "../../api/axiosDefaults";
-import btnStyles from "../../styles/Button.module.css";
+// import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
@@ -62,7 +63,7 @@ export default function NoteCreateForm(props) {
       <div className="align-self-end">
         {/* Submit button */}
         <button
-          className={`${btnStyles.Button} ${btnStyles.Bright}`}
+          className={`${appStyles.Button} ${appStyles.Bright}`}
           disabled={!content.trim()}
           type="submit"
         >

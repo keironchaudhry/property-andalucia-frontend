@@ -11,8 +11,9 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-import btnStyles from "../../styles/Button.module.css";
-import styles from "../../styles/ProfilePage.module.css";
+// import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
+import styles from "./ProfilePage.module.css";
 
 /**
  * Code adapted from Code Institute's "Moments" walkthrough.
@@ -96,14 +97,14 @@ const UserPasswordForm = () => {
 
             {/* Submit/cancel buttons */}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Bright}`}
+              className={`${appStyles.Button} ${appStyles.Bright}`}
               onClick={() => history.goBack()}
             >
               Cancel
             </Button>
             <Button
               type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Bright}`}
+              className={`${appStyles.Button} ${appStyles.Bright}`}
             >
               Save
             </Button>
