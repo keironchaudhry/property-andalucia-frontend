@@ -15,13 +15,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 import appStyles from "../../App.module.css";
-// import btnStyles from "../../styles/Button.module.css";
-// import styles from "../../styles/PropertyCreateEditForm.module.css";
-import styles from "../property/PropertyCreateEditForm.module.css";
-
-/**
- * Code adapted from Code Institute's "Moments" walkthrough.
- */
+import styles from "./BlogCreateForm.module.css";
 
 export default function BlogCreateForm() {
   useRedirect("notStaff");
