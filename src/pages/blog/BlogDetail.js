@@ -5,17 +5,12 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
 import Avatar from "../../components/avatar/Avatar.js";
-// import styles from "../../styles/PropertyDetail.module.css";
-import styles from "../property/PropertyDetail.module.css";
+import styles from "./BlogDetail.module.css";
 import mobileStyles from "./BlogDetail.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/moredropdown/MoreDropdown.js";
-
-/**
- * Code adapted from Code Institute's "Moments" walkthrough.
- */
 
 const BlogDetail = (props) => {
   const {
@@ -53,7 +48,7 @@ const BlogDetail = (props) => {
       {blogPage ? (
         // Blog Detail View
         <Container
-          className={`${styles.PropertyContainer} mt-3 p-3 p-md-4 rounded mt-1 container-fluid`}
+          className={`${styles.BlogContainer} mt-3 p-3 p-md-4 rounded mt-1 container-fluid`}
         >
           <Container className="align-items-center justify-content-between">
             <div className="d-flex flex-row justify-content-between mb-3">
@@ -104,7 +99,7 @@ const BlogDetail = (props) => {
       ) : (
         // List View
         <Container
-          className={`${styles.PropertyContainer} mt-3 p-3 p-md-4 rounded mt-1 container-fluid`}
+          className={`${styles.BlogContainer} mt-3 p-3 p-md-4 rounded mt-1 container-fluid`}
         >
           <Container className="align-items-center justify-content-between">
             <div className="d-flex flex-row justify-content-between mb-3">

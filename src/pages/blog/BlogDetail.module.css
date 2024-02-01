@@ -1,3 +1,15 @@
+.BlogContainer {
+  background-color: #ffffff;
+  border: 1px solid #dadadf;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.ViewMore {
+  color: #f99417;
+  font-size: 22.5px;
+}
+
 @media screen and (max-width: 430px) {
   .TitleMobileScreen {
     font-size: 15px;
