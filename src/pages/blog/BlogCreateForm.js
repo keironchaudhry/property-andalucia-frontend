@@ -15,7 +15,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 import appStyles from "../../App.module.css";
-import styles from "./BlogCreateForm.module.css";
+import styles from "./BlogCreateEditForm.module.css";
 
 export default function BlogCreateForm() {
   useRedirect("notStaff");
