@@ -16,12 +16,7 @@ import {
 } from "../../contexts/CurrentUserContext";
 
 import appStyles from "../../App.module.css";
-// import btnStyles from "../../styles/Button.module.css";
 import styles from "./ProfilePage.module.css";
-
-/**
- * Code adapted from Code Institute's "Moments" walkthrough.
- */
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();

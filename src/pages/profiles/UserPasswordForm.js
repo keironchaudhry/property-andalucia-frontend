@@ -11,13 +11,8 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-// import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import styles from "./ProfilePage.module.css";
-
-/**
- * Code adapted from Code Institute's "Moments" walkthrough.
- */
+import styles from "./UsernameForm.module.css";
 
 const UserPasswordForm = () => {
   const history = useHistory();
