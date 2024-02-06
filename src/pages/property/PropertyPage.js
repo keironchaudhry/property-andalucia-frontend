@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import styles from "./PropertyDetail.module.css";
+import styles from "./PropertyPage.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { fetchMoreData } from "../../utils/utils";
 import PropertyDetail from "./PropertyDetail";
@@ -87,15 +87,16 @@ function PropertyPage() {
           ) : currentUser ? (
             // If there are no notes
             <div className="mb-4 text-center">
-              <span>Leave yourself a private note here. Don't worry, they can't be seen by anyone else.</span>
+              <span>
+                Leave yourself a private note here. Don't worry, they can't be
+                seen by anyone else.
+              </span>
             </div>
           ) : (
             // If user is not authenticated
             <div className="mt-4 mb-4 text-center">
               <span>
-                <u>
-                  Create an account or login to leave private notes.
-                </u>
+                <u>Create an account or login to leave private notes.</u>
               </span>
             </div>
           )}
