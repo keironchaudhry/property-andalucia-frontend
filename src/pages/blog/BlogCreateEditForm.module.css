@@ -1,0 +1,9 @@
+.AssetContainer {
+  min-height: 345px;
+}
+
+.FormContainer {
+  background-color: #ffffff;
+  border: 1px solid #dadadf;
+  border-radius: 4px;
+}

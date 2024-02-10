@@ -3,15 +3,10 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 import Avatar from "../../components/avatar/Avatar.js";
-// import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import styles from "./Profile.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
-
-/**
- * Code adapted from Code Institute's "Moments" walkthrough.
- */
 
 const Profile = (props) => {
   const { profile, mobile, imageSize = 55 } = props;
