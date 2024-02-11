@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
-import styles from "./SignInUpForm.module.css";
+import styles from "./LoginForm.module.css";
 // import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -63,7 +63,7 @@ const LoginForm = () => {
           {/* Enter username form */}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="username">
-              <Form.Label className="d-none">Username</Form.Label>
+              <Form.Label className={`${styles.UsernameContainer} d-none`}>Username</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
@@ -99,7 +99,7 @@ const LoginForm = () => {
 
             {/* Login button */}
             <Button
-              className={`${appStyles.Button} ${appStyles.Wide} ${appStyles.Bright} mt-3`}
+              className={`${styles.Button} ${styles.Wide} ${styles.Bright} mt-sm-3`}
               type="submit"
               variant="warning"
             >

@@ -1,0 +1,123 @@
+.Row {
+  padding-top: 2rem;
+}
+
+.Input {
+  background: #ffffff;
+  border: 2px solid #f0f1f9;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #7177a1;
+  padding: 20px;
+}
+
+.Checkbox {
+  accent-color: #f2cd5c;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.Header {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #fc7300;
+}
+
+.Link {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.Link span {
+  color: #ff9254;
+}
+
+.Container {
+  padding: 30px 10px;
+}
+
+.SignInCol {
+  height: 320px;
+}
+
+.SignUpCol {
+  height: 375px;
+}
+
+/* Button design */
+
+.Button {
+  font-size: 1.1rem;
+  align-self: center;
+  border-radius: 10px;
+  border-color: transparent;
+  margin-left: 2px;
+  margin-right: 2px;
+  min-width: 75px;
+  padding: 5px 20px;
+}
+
+.Button:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 100ms;
+  letter-spacing: 1px;
+}
+
+.Button:hover:active {
+  background-color: #f2cd5c !important;
+}
+
+.Button:active {
+  background-color: #fc7300 !important;
+}
+
+.Button:focus {
+  background-color: #fc7300 !important;
+  box-shadow: none;
+}
+
+.Wide {
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.Orange,
+.OrangeOutline:hover,
+.Bright:hover {
+  background-color: #f2cd5c;
+  color: #ffffff;
+}
+
+.OrangeOutline,
+.Orange:hover {
+  background-color: #ffffff;
+  color: #f2cd5c;
+}
+
+.Bright {
+  background-color: #fc7300;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 330px) {
+  .Header {
+    font-size: 20px;
+  }
+
+  .Input {
+    padding: 10px;
+  }
+
+  .Button {
+    font-size: 0.95rem;
+    padding: 5px 10px;
+  }
+}
