@@ -118,12 +118,6 @@
 
   .Button {
     font-size: 0.95rem;
-    align-self: center;
-    border-radius: 10px;
-    border-color: transparent;
-    margin-left: 2px;
-    margin-right: 2px;
-    min-width: 75px;
     padding: 5px 10px;
   }
 }
