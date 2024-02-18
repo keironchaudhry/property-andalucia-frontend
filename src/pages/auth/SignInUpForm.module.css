@@ -15,7 +15,7 @@
   accent-color: #f2cd5c;
   text-align: center;
   letter-spacing: 0.5px;
-}  
+}
 
 .Header {
   font-weight: bold;
@@ -47,4 +47,85 @@
 
 .SignUpCol {
   height: 375px;
+}
+
+/* Button design */
+
+.Button {
+  font-size: 1.1rem;
+  align-self: center;
+  border-radius: 10px;
+  border-color: transparent;
+  margin-left: 2px;
+  margin-right: 2px;
+  min-width: 75px;
+  padding: 5px 20px;
+}
+
+.Button:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 100ms;
+  letter-spacing: 1px;
+}
+
+.Button:hover:active {
+  background-color: #f2cd5c !important;
+}
+
+.Button:active {
+  background-color: #fc7300 !important;
+}
+
+.Button:focus {
+  background-color: #fc7300 !important;
+  box-shadow: none;
+}
+
+.Wide {
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.Orange,
+.OrangeOutline:hover,
+.Bright:hover {
+  background-color: #f2cd5c;
+  color: #ffffff;
+}
+
+.OrangeOutline,
+.Orange:hover {
+  background-color: #ffffff;
+  color: #f2cd5c;
+}
+
+.Bright {
+  background-color: #fc7300;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 330px) {
+  .Header {
+    font-size: 20px;
+  }
+
+  .Input {
+    padding: 10px;
+  }
+
+  .Button {
+    font-size: 0.95rem;
+    padding: 5px 10px;
+  }
+
+  .Checkbox {
+    font-size: 14px;
+  }
+
+  .Link {
+    font-size: 14px;
+  }
 }

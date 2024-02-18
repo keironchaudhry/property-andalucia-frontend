@@ -15,10 +15,6 @@ import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";
 
-/**
- * Code adapted from Code Institute's "Moments" walkthrough.
- */
-
 const SignUpForm = () => {
   useRedirect("loggedIn");
 
@@ -134,7 +130,7 @@ const SignUpForm = () => {
             
             {/* Sign Up Button */}
             <Button
-              className={`${appStyles.Button} ${appStyles.Wide} ${appStyles.Bright}`}
+              className={`${styles.Button} ${styles.Wide} ${styles.Bright}`}
               type="submit"
               variant="warning"
             >
