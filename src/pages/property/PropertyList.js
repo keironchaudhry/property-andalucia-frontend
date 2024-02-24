@@ -21,14 +21,9 @@ import NoResults from "../../assets/noresults.png";
 
 import appStyles from "../../App.module.css";
 import formStyles from "./PropertyList.module.css";
-// import btnStyles from "../../styles/Button.module.css";
 
 /**
- * Code adapted from Code Institute's "Moments" walkthrough.
- */
-
-/**
- * Search form has been created to filter down results based 
+ * Search form has been created to filter down results based
  * on : province, property type, price, bedroom/bathroom count.
  */
 
@@ -100,10 +95,8 @@ function PropertyList({ message, filter = "" }) {
       maxPrice !== ""
     ) {
       clearSearchFilter();
-      fetchProperties();
-    } else {
-      fetchProperties();
     }
+    fetchProperties();
   };
 
   return (
@@ -115,7 +108,9 @@ function PropertyList({ message, filter = "" }) {
             {/* Property posts count display */}
             <div className="text-center mb-2 mt-4">
               {pathname === "/" && property.count !== 0 && (
-                <p className={`${formStyles.PropertiesAvailableMobile} h3`}>{property.count} Properties Up For Sale</p>
+                <p className={`${formStyles.PropertiesAvailableMobile} h3`}>
+                  {property.count} Properties Up For Sale
+                </p>
               )}
             </div>
             {/* Property posts */}
